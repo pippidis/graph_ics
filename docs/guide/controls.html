@@ -1,0 +1,604 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Visual guide | graph_ics</title><link rel="icon" type="image/svg+xml" href="../logo/figures/favicon.svg"><link rel="icon" href="../logo/figures/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../logo/figures/icon-180.png"><meta property="og:site_name" content="graph_ics"><meta property="og:type" content="website"><meta property="og:title" content="Visual guide | graph_ics"><meta property="og:image" content="https://graph-ics.pippidis.no/logo/figures/banner@2x.png"><meta name="description" content="graph_ics: generative artwork from sprawling networks. Explore examples, spatial maps, typography and the Python manual."><style>
+:root{color-scheme:light;--ink:#284d68;--muted:#526872;--paper:#ffffff;--line:#d5dfe5;--accent:#a64152}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{color:#284d68}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #a64152;outline-offset:4px}
+.topbar{position:sticky;top:0;z-index:10;padding:18px max(24px,calc((100vw - 1440px)/2));background:#ffffffed;color:var(--ink);border-bottom:1px solid var(--line);backdrop-filter:blur(12px);display:flex;gap:28px;align-items:center;flex-wrap:wrap}.brand{font-weight:750;letter-spacing:.04em}.topbar a{color:inherit;text-decoration:none}.topbar a[aria-current]{border-bottom:2px solid var(--accent)}.topbar nav{min-width:0;display:flex;gap:24px;flex-wrap:wrap}.container{max-width:1488px;padding:36px 24px 64px;margin:auto}.intro{margin-bottom:32px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;font-weight:700;color:var(--accent)}h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.08;letter-spacing:-.04em;margin:14px 0 20px}h2{font-size:1.55rem;line-height:1.25}h3{font-size:1.1rem;line-height:1.35}.intro p{font-size:1.1rem;color:var(--muted)}.paths{display:flex;gap:14px;flex-wrap:wrap}.button,button{border:1px solid var(--line);background:white;color:var(--ink);padding:9px 14px;border-radius:6px;font:inherit;cursor:pointer;text-decoration:none}.button:hover,button:hover{background:#edf2f5}.filters{display:flex;gap:18px;flex-wrap:wrap;align-items:end;padding:20px;background:#f0f4f6;border:1px solid var(--line);border-radius:8px;margin:28px 0}.filters label{display:grid;gap:5px;font-size:.85rem;font-weight:650}.filters .check{display:flex;align-items:center;padding:10px 0}.filters input[type=search]{min-width:230px}.filters input,.filters select{font:inherit;padding:9px;border:1px solid #aabbb8;border-radius:4px;background:white;color:var(--ink)}.filters input[type=checkbox]{width:18px;height:18px}#count{margin-left:auto;font-size:.9rem;color:var(--muted)}
+.grid,.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}article{min-width:0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:18px}article[hidden]{display:none}article h2,article h3{margin:10px 0}article p{font-size:.94rem}.image-link{display:block;margin:-18px -18px 18px;background:#f5f7f8}.image-link img{display:block;width:100%;height:260px;object-fit:contain}article img{width:100%;height:auto;display:block}article .meta{font-size:.82rem;color:var(--muted)}.swatches{display:flex;gap:4px}.swatches span{width:20px;height:9px;border:1px solid #0002;border-radius:2px}.downloads{display:flex;gap:16px;font-size:.9rem;font-weight:650;margin:15px 0}.downloads a{white-space:nowrap}details{border-top:1px solid var(--line);padding-top:12px;margin-top:16px}summary{cursor:pointer;font-weight:650}li{margin:8px 0}ul{padding-left:21px}code{font-size:.88em}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f4f6;padding:14px;border-radius:5px;font-size:.82rem;line-height:1.65}button.copy{font-size:.78rem;padding:5px 10px;margin-bottom:5px}.hint,.notice{color:var(--muted);font-size:.9rem}.notice{border-left:3px solid #7f9baa;padding:8px 16px;background:#f0f4f6}.section-nav{display:flex;gap:10px 22px;flex-wrap:wrap;margin:24px 0}.section-nav a{font-size:.9rem}section{margin:48px 0}img{max-width:100%;height:auto}.hero{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:center;margin-bottom:40px}.hero .intro{margin:0}.hero img{border-radius:8px;width:100%}.start{background:#f0f4f6;padding:24px;border-radius:8px}table{border-collapse:collapse;width:100%;text-align:left;font-size:.9rem}th,td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.table-scroll{overflow-x:auto}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px}.comparison img{max-width:100%;max-height:1000px;width:auto;display:block;margin:auto}.comparison figure{margin:0;background:white;padding:20px;border:1px solid var(--line)}figcaption{margin-top:15px;font-size:.9rem;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:60px;padding-top:20px;font-size:.85rem;color:var(--muted)}#more{display:block;margin:30px auto}#empty{padding:40px;text-align:center}.alpha{background:repeating-conic-gradient(#ddd 0% 25%,#fff 0% 50%) 0/16px 16px}noscript{display:block;padding:12px}.style-key{max-width:760px;width:100%;height:auto}
+@media(max-width:1050px){.grid,.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{gap:16px}#count{margin-left:0}}@media(max-width:650px){.grid,.cards,.comparison,.hero{grid-template-columns:1fr}.container{padding:24px 16px}.topbar{position:sticky;top:0;z-index:10;padding:16px}.topbar nav{gap:14px}.filters{gap:12px}.filters label,.filters input[type=search]{width:100%;min-width:0}.image-link img{height:240px}h1{font-size:2.5rem}td{padding:8px}}
+
+h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400}h1{letter-spacing:-.035em}.brand{display:flex;align-items:center;gap:10px}.brand img{width:32px;height:32px}.hero{padding:28px 0 50px}.intro{max-width:none}.container{max-width:1320px}.skip-link{position:absolute;top:-100px;left:16px;z-index:20;background:white;padding:12px}.skip-link:focus{top:8px}.manual{max-width:none;margin:0}.manual h2{margin-top:48px}.manual pre{overflow:auto}.manual table{display:block;overflow:auto}.about{border-top:1px solid var(--line);padding-top:30px}.topbar nav{gap:18px;font-size:.9rem}dialog{border:1px solid var(--line);border-radius:8px;width:90vw;max-width:1400px;height:85vh;padding:16px}dialog::backdrop{background:#132b3ddd}.viewer-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.viewer-canvas{overflow:auto;height:calc(100% - 65px);margin-top:16px}.viewer-canvas img{max-width:none;display:block}.animation-toggle{display:block;margin:12px 0}footer{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}section{margin:64px 0}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media(max-width:650px){.hero{padding-top:0}.topbar{position:relative}.manual h1{font-size:2.1rem}html{scroll-padding-top:20px}}
+
+.guide-layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:48px}.chapter-nav{position:sticky;top:100px;align-self:start;max-height:80vh;overflow:auto}.chapter-nav ol{padding-left:24px}.chapter-nav a{text-decoration:none;color:var(--ink)}.chapter-nav a[aria-current]{color:var(--accent);font-weight:700}.guide-body{min-width:0}.guide-body .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-body h2{margin-top:40px}.breadcrumbs{font-size:.85rem;margin-bottom:24px}.chapter-pager{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:24px;margin-top:48px}.on-this-page{border-left:2px solid var(--line);padding-left:20px}.mobile-chapters{display:none}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}.feature-grid img{width:100%;height:230px;object-fit:contain}.guide-body pre{overflow-wrap:anywhere}.guide-body table{display:block;overflow:auto}.guide-body article{padding:16px}.guide-body>article{border:0;padding:0}.guide-body p{max-width:none}@media(max-width:850px){.guide-layout{display:block}.chapter-nav{display:none}.mobile-chapters{display:block;margin-bottom:28px}.feature-grid{grid-template-columns:1fr}}@media(max-width:550px){.guide-body .grid{grid-template-columns:1fr}}
+
+.about-page{width:100%}.about-page .intro{max-width:none;margin-bottom:36px}.about-page .intro p,.about-page section p{font-size:1rem;line-height:1.75;color:var(--ink);max-width:none}.about-page section{margin:36px 0}.about-page section h2{margin-bottom:16px}.about-page h1{font-size:clamp(2.2rem,4vw,3.4rem)}.reference-nav{list-style:none;padding-left:14px;border-left:1px solid var(--line);margin:10px 0}.reference-nav li{font-size:.88rem}.breadcrumbs{display:flex;flex-wrap:wrap;gap:6px}
+
+.repository-link{margin-left:auto;display:inline-flex;align-items:center;gap:8px;min-height:44px;white-space:nowrap;font-size:.9rem}.repository-link svg{width:22px;height:22px;fill:currentColor;flex-shrink:0}.repository-link:hover{color:var(--accent)}@media(max-width:1050px){.topbar .brand{order:0}.topbar .repository-link{order:1}.topbar nav{order:2;flex-basis:100%}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="../index.html"><img src="../logo/figures/icon-64.png" alt="" width="32" height="32">graph_ics</a><nav aria-label="Library"><a href="../index.html">Home</a><a href="../gallery/index.html">Gallery</a><a href="index.html" aria-current="page">Guide</a><a href="../about/index.html">About</a></nav><a class="repository-link" href="https://github.com/pippidis/graph_ics" aria-label="graph_ics on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span>GitHub</span></a></header><main class="container" id="main"><!-- CONTENT START --><header class="intro"><span class="eyebrow">Visual guide</span><h1>Change one thing.</h1><p>Compare the controls side by side. Each example explains what changes, what stays fixed, and how to reproduce the result.</p></header><nav class="section-nav" aria-label="Visual guide sections"><a href="#scene-files">Dimensions &amp; scenes</a><a href="#shapes">Shapes</a><a href="#lines">Connections</a><a href="#angles">Angles</a><a href="#seeds">Seeds</a><a href="#population">Population</a><a href="#palettes">Palettes</a><a href="#output">Export</a><a href="#animation">Replay</a><a href="#files">Files</a></nav><details id="cli"><summary>All command-line options</summary><div class="table-scroll"><table><thead><tr><th scope="col">Option</th><th scope="col">What it does</th><th scope="col">Example</th></tr></thead><tbody><tr><td><code>--fill-area</code></td><td>Search unfilled space with periodic reseeding; nodes remains a safety cap. Stops report exhausted search or limits, not complete packing.</td><td><a href="#scene-files">Visual example</a></td></tr><tr><td><code>--config</code></td><td>Load a complete JSON/YAML scene; file paths resolve beside that scene.</td><td><a href="#scene-files">Visual example</a></td></tr><tr><td><code>--gif</code></td><td>Export an opaque looping GIF instead of individual PNG frames.</td><td><a href="#animation">Visual example</a></td></tr><tr><td><code>--node-inner-radius / --node-outer-radius / --node-buffer</code></td><td>Inner and outer ring radii, and clearance to unrelated geometry, in world units.</td><td><a href="#scene-files">Visual example</a></td></tr><tr><td><code>--edge-thickness / --edge-node-distance / --edge-length-min / --edge-length-max</code></td><td>Full stroke width, ring-to-line gap, and visible length range in world units.</td><td><a href="#scene-files">Visual example</a></td></tr><tr><td><code>--example</code></td><td>Select a documented recipe; list shows names and describe explains it.</td><td><a href="#angles">Visual example</a></td></tr><tr><td><code>--palette</code></td><td>Choose colours for the complete scene; geometry stays the same unless text width changes.</td><td><a href="#palettes">Visual example</a></td></tr><tr><td><code>--seed</code></td><td>Change the random layout; reuse the seed to reproduce it.</td><td><a href="#seeds">Visual example</a></td></tr><tr><td><code>--nodes</code></td><td>Requested total population including seeds. Constraints can stop growth below it.</td><td><a href="#population">Visual example</a></td></tr><tr><td><code>--node-shape</code></td><td>Circle, square, diamond, triangle or hexagon; hollow unless inner radius is zero.</td><td><a href="#shapes">Visual example</a></td></tr><tr><td><code>--edge-style</code></td><td>Solid, dashed, dotted or double lines inside a collision-protected corridor.</td><td><a href="#lines">Visual example</a></td></tr><tr><td><code>--minimum-angle</code></td><td>Hard ban below this incident angle in degrees; straight continuation is 180.</td><td><a href="#angles">Visual example</a></td></tr><tr><td><code>--preferred-angle</code></td><td>Soft angular target; must be at least the hard minimum when nonzero.</td><td><a href="#angles">Visual example</a></td></tr><tr><td><code>--angle-penalty</code></td><td>Strength from 0 to 1 of soft rejection below the preferred angle.</td><td><a href="#angles">Visual example</a></td></tr><tr><td><code>--scale</code></td><td>Output units per world unit: larger image, same geometry. Compare native dimensions below.</td><td><a href="#output">Visual example</a></td></tr><tr><td><code>--margin</code></td><td>World-unit whitespace around the region, scaled with the image.</td><td><a href="#output">Visual example</a></td></tr><tr><td><code>--transparent</code></td><td>Leave the background transparent. Checkerboard indicates alpha in these previews.</td><td><a href="#output">Visual example</a></td></tr><tr><td><code>--output</code></td><td>PNG/SVG file for render; new folder for frames; gallery folder for gallery.</td><td><a href="#files">Visual example</a></td></tr><tr><td><code>--record</code></td><td>Save accepted events as JSONL while rendering; later replay needs no growth rerun.</td><td><a href="#animation">Visual example</a></td></tr><tr><td><code>--log</code></td><td>Read recorded geometry for frames. Recipe, seed and node target do not rebuild it.</td><td><a href="#animation">Visual example</a></td></tr><tr><td><code>--fps</code></td><td>Frames per second. More samples make the same event timeline smoother.</td><td><a href="#animation">Visual example</a></td></tr><tr><td><code>--seconds-per-event</code></td><td>Increase to slow the recorded growth; each event is given this duration.</td><td><a href="#animation">Visual example</a></td></tr><tr><td><code>--max-frames</code></td><td>Safety cap: an oversized frame sequence is rejected, not silently truncated.</td><td><a href="#animation">Visual example</a></td></tr><tr><td><code>--force</code></td><td>Allow render to replace its existing image or recording; does not affect appearance.</td><td><a href="#files">Visual example</a></td></tr><tr><td><code>--all-palettes</code></td><td>Expand every regular recipe across all ten palettes instead of the curated selection.</td><td><a href="#palettes">Visual example</a></td></tr><tr><td><code>--quick</code></td><td>Generate six small scenes plus this controls guide; omit for all recipes and large examples.</td><td><a href="#files">Visual example</a></td></tr><tr><td><code>--help / -h</code></td><td>Show command-specific usage and defaults; no image is generated.</td><td><a href="#files">Visual example</a></td></tr></tbody></table></div></details><section id="shapes"><h2>Node shapes</h2><p>These vary only the visible node outline. Shape choice is preserved by replay.<br><img loading="lazy" decoding="async" class="style-key" src="../figures/style-key.png" alt="Enlarged shape and connection style key"></p><div class="grid"><article class="shapes"><h3>Shape Circle</h3><a class="alpha" href="../figures/control-shape-circle.png"><img src="../figures/control-shape-circle.png" loading="lazy" alt="shape-circle"></a><p>Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/shape-circle.png</pre><a href="../figures/control-shape-circle.svg">SVG</a></details></article><article class="shapes"><h3>Shape Square</h3><a class="alpha" href="../figures/control-shape-square.png"><img src="../figures/control-shape-square.png" loading="lazy" alt="shape-square"></a><p>Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape square --edge-style solid --scale 1 --margin 16 --output examples/output/shape-square.png</pre><a href="../figures/control-shape-square.svg">SVG</a></details></article><article class="shapes"><h3>Shape Diamond</h3><a class="alpha" href="../figures/control-shape-diamond.png"><img src="../figures/control-shape-diamond.png" loading="lazy" alt="shape-diamond"></a><p>Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape diamond --edge-style solid --scale 1 --margin 16 --output examples/output/shape-diamond.png</pre><a href="../figures/control-shape-diamond.svg">SVG</a></details></article><article class="shapes"><h3>Shape Triangle</h3><a class="alpha" href="../figures/control-shape-triangle.png"><img src="../figures/control-shape-triangle.png" loading="lazy" alt="shape-triangle"></a><p>Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape triangle --edge-style solid --scale 1 --margin 16 --output examples/output/shape-triangle.png</pre><a href="../figures/control-shape-triangle.svg">SVG</a></details></article><article class="shapes"><h3>Shape Hexagon</h3><a class="alpha" href="../figures/control-shape-hexagon.png"><img src="../figures/control-shape-hexagon.png" loading="lazy" alt="shape-hexagon"></a><p>Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape hexagon --edge-style solid --scale 1 --margin 16 --output examples/output/shape-hexagon.png</pre><a href="../figures/control-shape-hexagon.svg">SVG</a></details></article></div></section><section id="lines"><h2>Connection patterns</h2><p>Line patterns are rendering styles on straight connections. Curves, arrows and moving paths are not implemented.</p><div class="grid"><article class="lines"><h3>Line Solid</h3><a class="alpha" href="../figures/control-line-solid.png"><img src="../figures/control-line-solid.png" loading="lazy" alt="line-solid"></a><p>Same layout and full-width collision corridor. Dashed gaps remain reserved; double lines split the width into thirds.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example lines --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/line-solid.png</pre><a href="../figures/control-line-solid.svg">SVG</a></details></article><article class="lines"><h3>Line Dashed</h3><a class="alpha" href="../figures/control-line-dashed.png"><img src="../figures/control-line-dashed.png" loading="lazy" alt="line-dashed"></a><p>Same layout and full-width collision corridor. Dashed gaps remain reserved; double lines split the width into thirds.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example lines --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style dashed --scale 1 --margin 16 --output examples/output/line-dashed.png</pre><a href="../figures/control-line-dashed.svg">SVG</a></details></article><article class="lines"><h3>Line Dotted</h3><a class="alpha" href="../figures/control-line-dotted.png"><img src="../figures/control-line-dotted.png" loading="lazy" alt="line-dotted"></a><p>Same layout and full-width collision corridor. Dashed gaps remain reserved; double lines split the width into thirds.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example lines --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style dotted --scale 1 --margin 16 --output examples/output/line-dotted.png</pre><a href="../figures/control-line-dotted.svg">SVG</a></details></article><article class="lines"><h3>Line Double</h3><a class="alpha" href="../figures/control-line-double.png"><img src="../figures/control-line-double.png" loading="lazy" alt="line-double"></a><p>Same layout and full-width collision corridor. Dashed gaps remain reserved; double lines split the width into thirds.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example lines --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style double --scale 1 --margin 16 --output examples/output/line-double.png</pre><a href="../figures/control-line-double.svg">SVG</a></details></article></div></section><section id="angles"><h2>Angle restrictions</h2><p>Hard rules forbid small junctions; soft penalties merely make them less likely. Stricter settings change the subsequent random growth and can reduce coverage.</p><div class="grid"><article class="angles"><h3>Angles Free</h3><a class="alpha" href="../figures/control-angles-free.png"><img src="../figures/control-angles-free.png" loading="lazy" alt="angles-free"></a><p>Hard minimum 0 degrees; preference 0; penalty 0. Identical seed and target, different rejection decisions.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --minimum-angle 0 --preferred-angle 0 --angle-penalty 0 --output examples/output/angles-free.png</pre><a href="../figures/control-angles-free.svg">SVG</a></details></article><article class="angles"><h3>Angles Hard 45</h3><a class="alpha" href="../figures/control-angles-hard-45.png"><img src="../figures/control-angles-hard-45.png" loading="lazy" alt="angles-hard-45"></a><p>Hard minimum 45 degrees; preference 0; penalty 0. Identical seed and target, different rejection decisions.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --minimum-angle 45 --preferred-angle 0 --angle-penalty 0 --output examples/output/angles-hard-45.png</pre><a href="../figures/control-angles-hard-45.svg">SVG</a></details></article><article class="angles"><h3>Angles Soft 80</h3><a class="alpha" href="../figures/control-angles-soft-80.png"><img src="../figures/control-angles-soft-80.png" loading="lazy" alt="angles-soft-80"></a><p>Hard minimum 0 degrees; preference 80; penalty 0.9. Identical seed and target, different rejection decisions.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --minimum-angle 0 --preferred-angle 80 --angle-penalty 0.9 --output examples/output/angles-soft-80.png</pre><a href="../figures/control-angles-soft-80.svg">SVG</a></details></article><article class="angles"><h3>Angles Strict 60 90</h3><a class="alpha" href="../figures/control-angles-strict-60-90.png"><img src="../figures/control-angles-strict-60-90.png" loading="lazy" alt="angles-strict-60-90"></a><p>Hard minimum 60 degrees; preference 90; penalty 0.9. Identical seed and target, different rejection decisions.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --minimum-angle 60 --preferred-angle 90 --angle-penalty 0.9 --output examples/output/angles-strict-60-90.png</pre><a href="../figures/control-angles-strict-60-90.svg">SVG</a></details></article></div></section><section id="seeds"><h2>Random seeds</h2><p>Compare patterns while holding all geometry controls fixed.</p><div class="grid"><article class="seeds"><h3>Seed 7</h3><a class="alpha" href="../figures/control-seed-7.png"><img src="../figures/control-seed-7.png" loading="lazy" alt="seed-7"></a><p>Same settings, different random layout.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/seed-7.png</pre><a href="../figures/control-seed-7.svg">SVG</a></details></article><article class="seeds"><h3>Seed 19</h3><a class="alpha" href="../figures/control-seed-19.png"><img src="../figures/control-seed-19.png" loading="lazy" alt="seed-19"></a><p>Same settings, different random layout.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 19 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/seed-19.png</pre><a href="../figures/control-seed-19.svg">SVG</a></details></article></div></section><section id="population"><h2>Population target</h2><p>A target is not a promise. Every candidate must fit and the attempt budget is finite.</p><div class="grid"><article class="population"><h3>Nodes 60</h3><a class="alpha" href="../figures/control-nodes-60.png"><img src="../figures/control-nodes-60.png" loading="lazy" alt="nodes-60"></a><p>Increasing the requested population fills more of the available canvas.</p><p>632 &times; 432; 60 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 60 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/nodes-60.png</pre><a href="../figures/control-nodes-60.svg">SVG</a></details></article><article class="population"><h3>Nodes 180</h3><a class="alpha" href="../figures/control-nodes-180.png"><img src="../figures/control-nodes-180.png" loading="lazy" alt="nodes-180"></a><p>Increasing the requested population fills more of the available canvas.</p><p>632 &times; 432; 180 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 180 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/nodes-180.png</pre><a href="../figures/control-nodes-180.svg">SVG</a></details></article><article class="population"><h3>Nodes 480</h3><a class="alpha" href="../figures/control-nodes-480.png"><img src="../figures/control-nodes-480.png" loading="lazy" alt="nodes-480"></a><p>Increasing the requested population fills more of the available canvas.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/nodes-480.png</pre><a href="../figures/control-nodes-480.svg">SVG</a></details></article></div></section><section id="palettes"><h2>Colour schemes</h2><p>Porcelain is white; Linen and Light are warm near-white alternatives. Arctic is a dark blue ice palette.</p><div class="grid"><article class="palettes"><h3>Palette Porcelain</h3><a class="alpha" href="../figures/control-palette-porcelain.png"><img src="../figures/control-palette-porcelain.png" loading="lazy" alt="palette-porcelain"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-porcelain.png</pre><a href="../figures/control-palette-porcelain.svg">SVG</a></details></article><article class="palettes"><h3>Palette Linen</h3><a class="alpha" href="../figures/control-palette-linen.png"><img src="../figures/control-palette-linen.png" loading="lazy" alt="palette-linen"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette linen --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-linen.png</pre><a href="../figures/control-palette-linen.svg">SVG</a></details></article><article class="palettes"><h3>Palette Historical</h3><a class="alpha" href="../figures/control-palette-historical.png"><img src="../figures/control-palette-historical.png" loading="lazy" alt="palette-historical"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette historical --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-historical.png</pre><a href="../figures/control-palette-historical.svg">SVG</a></details></article><article class="palettes"><h3>Palette Light</h3><a class="alpha" href="../figures/control-palette-light.png"><img src="../figures/control-palette-light.png" loading="lazy" alt="palette-light"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette light --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-light.png</pre><a href="../figures/control-palette-light.svg">SVG</a></details></article><article class="palettes"><h3>Palette Arctic</h3><a class="alpha" href="../figures/control-palette-arctic.png"><img src="../figures/control-palette-arctic.png" loading="lazy" alt="palette-arctic"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette arctic --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-arctic.png</pre><a href="../figures/control-palette-arctic.svg">SVG</a></details></article><article class="palettes"><h3>Palette Aurora</h3><a class="alpha" href="../figures/control-palette-aurora.png"><img src="../figures/control-palette-aurora.png" loading="lazy" alt="palette-aurora"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette aurora --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-aurora.png</pre><a href="../figures/control-palette-aurora.svg">SVG</a></details></article><article class="palettes"><h3>Palette Ember</h3><a class="alpha" href="../figures/control-palette-ember.png"><img src="../figures/control-palette-ember.png" loading="lazy" alt="palette-ember"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette ember --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-ember.png</pre><a href="../figures/control-palette-ember.svg">SVG</a></details></article><article class="palettes"><h3>Palette Forest</h3><a class="alpha" href="../figures/control-palette-forest.png"><img src="../figures/control-palette-forest.png" loading="lazy" alt="palette-forest"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette forest --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-forest.png</pre><a href="../figures/control-palette-forest.svg">SVG</a></details></article><article class="palettes"><h3>Palette Orchid</h3><a class="alpha" href="../figures/control-palette-orchid.png"><img src="../figures/control-palette-orchid.png" loading="lazy" alt="palette-orchid"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette orchid --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-orchid.png</pre><a href="../figures/control-palette-orchid.svg">SVG</a></details></article><article class="palettes"><h3>Palette Blueprint</h3><a class="alpha" href="../figures/control-palette-blueprint.png"><img src="../figures/control-palette-blueprint.png" loading="lazy" alt="palette-blueprint"></a><p>Only the colour scheme changes here; no text means the exact same geometry.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette blueprint --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-blueprint.png</pre><a href="../figures/control-palette-blueprint.svg">SVG</a></details></article></div></section><section id="output"><h2>Export scale, margin and transparency</h2><p>Thumbnails fit the same column width. Open the image to compare native resolution; SVG remains vector. Alpha is shown over a checkerboard.</p><div class="grid"><article class="output"><h3>Normal</h3><a class="alpha" href="../figures/control-normal.png"><img src="../figures/control-normal.png" loading="lazy" alt="normal"></a><p>Compare the dimensions and whitespace; growth geometry is unchanged.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/normal.png</pre><a href="../figures/control-normal.svg">SVG</a></details></article><article class="output"><h3>Double Resolution</h3><a class="alpha" href="../figures/control-double-resolution.png"><img src="../thumbnails/control-double-resolution.png" loading="lazy" alt="double-resolution"></a><p>Compare the dimensions and whitespace; growth geometry is unchanged.</p><p>1264 &times; 864; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 2 --margin 16 --output examples/output/double-resolution.png</pre><a href="../figures/control-double-resolution.svg">SVG</a></details></article><article class="output"><h3>Wide Margin</h3><a class="alpha" href="../figures/control-wide-margin.png"><img src="../figures/control-wide-margin.png" loading="lazy" alt="wide-margin"></a><p>Compare the dimensions and whitespace; growth geometry is unchanged.</p><p>760 &times; 560; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 80 --output examples/output/wide-margin.png</pre><a href="../figures/control-wide-margin.svg">SVG</a></details></article><article class="output"><h3>Transparent</h3><a class="alpha" href="../figures/control-transparent.png"><img src="../figures/control-transparent.png" loading="lazy" alt="transparent"></a><p>Compare the dimensions and whitespace; growth geometry is unchanged.</p><p>632 &times; 432; 480 nodes</p><details><summary>Reproduce / SVG</summary><pre class="command">graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --transparent --output examples/output/transparent.png</pre><a href="../figures/control-transparent.svg">SVG</a></details></article></div></section><section id="scene-files"><h2>Dimensions, maps, boundaries and lettering</h2><p>Each example is a complete downloadable JSON or YAML scene. Edit its values, then pass it to <code>render --config</code> or <code>frames --config</code>. Coordinates and dimensions use world units; output scale controls pixels per world unit.</p><p>Ring wall = outer radius minus inner radius. A hollow circle needs inner diameter &times; output scale large enough to see; a one-pixel wall is a useful starting point. A letter stroke must be wider than twice the outer radius to fit a node, and longer than two radii plus two gaps plus the visible edge length to fit a connection. Increase the font size or reduce geometry dimensions for thin strokes. Fonts are resolved locally, so use the same installed font to reproduce outlines across machines.</p><p>Boundary files accept GeoJSON Polygon or MultiPolygon, including holes; a file path resolves relative to the scene. <code>text_region</code> uses glyphs as the allowed region; <code>texts[].exclusion_mode: glyph</code> excludes glyphs instead. Border strokes are centred on the supplied boundary and do not add collision padding. Density is a packing request, not an exact count.</p><div class="grid"><article><h3>Fine Rings</h3><a href="../figures/scene-fine-rings.png"><img loading="lazy" src="../figures/scene-fine-rings.png" alt="Radius 3, inner radius 2.5: a 0.5-unit wall."></a><p>Radius 3, inner radius 2.5: a 0.5-unit wall.</p><p>650 nodes of 650 requested. Stop: target_reached. 240/240 occupied tiles; 100.0% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/fine-rings.json">JSON scene</a> &middot; <a href="../scenes/fine-rings.yaml">YAML scene</a> &middot; <a href="../figures/scene-fine-rings.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/fine-rings.yaml --output examples/output/fine-rings.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;node_outer_radius&quot;: 3,
+    &quot;node_inner_radius&quot;: 2.5
+  }
+}</pre></details></article><article><h3>Heavy Rings</h3><a href="../figures/scene-heavy-rings.png"><img loading="lazy" src="../figures/scene-heavy-rings.png" alt="Radius 5, inner radius 2: a 3-unit wall. Larger nodes consume more space."></a><p>Radius 5, inner radius 2: a 3-unit wall. Larger nodes consume more space.</p><p>609 nodes of 650 requested. Stop: attempt_budget_exhausted. 240/240 occupied tiles; 100.0% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/heavy-rings.json">JSON scene</a> &middot; <a href="../scenes/heavy-rings.yaml">YAML scene</a> &middot; <a href="../figures/scene-heavy-rings.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/heavy-rings.yaml --output examples/output/heavy-rings.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;node_outer_radius&quot;: 5,
+    &quot;node_inner_radius&quot;: 2
+  }
+}</pre></details></article><article><h3>Solid Nodes</h3><a href="../figures/scene-solid-nodes.png"><img loading="lazy" src="../figures/scene-solid-nodes.png" alt="Zero inner radius makes a filled node."></a><p>Zero inner radius makes a filled node.</p><p>650 nodes of 650 requested. Stop: target_reached. 240/240 occupied tiles; 100.0% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/solid-nodes.json">JSON scene</a> &middot; <a href="../scenes/solid-nodes.yaml">YAML scene</a> &middot; <a href="../figures/scene-solid-nodes.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/solid-nodes.yaml --output examples/output/solid-nodes.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;node_outer_radius&quot;: 3,
+    &quot;node_inner_radius&quot;: 0
+  }
+}</pre></details></article><article><h3>Fine Lines</h3><a href="../figures/scene-fine-lines.png"><img loading="lazy" src="../figures/scene-fine-lines.png" alt="Connection width 0.5. Zoom in to inspect fine strokes."></a><p>Connection width 0.5. Zoom in to inspect fine strokes.</p><p>650 nodes of 650 requested. Stop: target_reached. 240/240 occupied tiles; 100.0% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/fine-lines.json">JSON scene</a> &middot; <a href="../scenes/fine-lines.yaml">YAML scene</a> &middot; <a href="../figures/scene-fine-lines.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/fine-lines.yaml --output examples/output/fine-lines.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;edge_thickness&quot;: 0.5
+  }
+}</pre></details></article><article><h3>Heavy Lines</h3><a href="../figures/scene-heavy-lines.png"><img loading="lazy" src="../figures/scene-heavy-lines.png" alt="Connection width 3. The whole stroke must fit."></a><p>Connection width 3. The whole stroke must fit.</p><p>650 nodes of 650 requested. Stop: target_reached. 240/240 occupied tiles; 100.0% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/heavy-lines.json">JSON scene</a> &middot; <a href="../scenes/heavy-lines.yaml">YAML scene</a> &middot; <a href="../figures/scene-heavy-lines.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/heavy-lines.yaml --output examples/output/heavy-lines.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;edge_thickness&quot;: 3
+  }
+}</pre></details></article><article><h3>Short Links</h3><a href="../figures/scene-short-links.png"><img loading="lazy" src="../figures/scene-short-links.png" alt="Visible connection length 4 to 8; shorter steps create a finer texture."></a><p>Visible connection length 4 to 8; shorter steps create a finer texture.</p><p>650 nodes of 650 requested. Stop: target_reached. 230/240 occupied tiles; 95.8% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/short-links.json">JSON scene</a> &middot; <a href="../scenes/short-links.yaml">YAML scene</a> &middot; <a href="../figures/scene-short-links.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/short-links.yaml --output examples/output/short-links.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;edge_length_min&quot;: 4,
+    &quot;edge_length_max&quot;: 8
+  }
+}</pre></details></article><article><h3>Long Links</h3><a href="../figures/scene-long-links.png"><img loading="lazy" src="../figures/scene-long-links.png" alt="Visible connection length 25 to 40; long steps leave larger openings."></a><p>Visible connection length 25 to 40; long steps leave larger openings.</p><p>432 nodes of 650 requested. Stop: attempt_budget_exhausted. 222/240 occupied tiles; 92.5% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/long-links.json">JSON scene</a> &middot; <a href="../scenes/long-links.yaml">YAML scene</a> &middot; <a href="../figures/scene-long-links.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/long-links.yaml --output examples/output/long-links.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;edge_length_min&quot;: 25,
+    &quot;edge_length_max&quot;: 40
+  }
+}</pre></details></article><article><h3>Wide Gaps</h3><a href="../figures/scene-wide-gaps.png"><img loading="lazy" src="../figures/scene-wide-gaps.png" alt="Four world units separate each ring from its connection."></a><p>Four world units separate each ring from its connection.</p><p>650 nodes of 650 requested. Stop: target_reached. 240/240 occupied tiles; 100.0% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/wide-gaps.json">JSON scene</a> &middot; <a href="../scenes/wide-gaps.yaml">YAML scene</a> &middot; <a href="../figures/scene-wide-gaps.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/wide-gaps.yaml --output examples/output/wide-gaps.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;edge_node_distance&quot;: 4
+  }
+}</pre></details></article><article><h3>Wide Buffers</h3><a href="../figures/scene-wide-buffers.png"><img loading="lazy" src="../figures/scene-wide-buffers.png" alt="A five-unit buffer keeps unrelated nodes and edges further apart."></a><p>A five-unit buffer keeps unrelated nodes and edges further apart.</p><p>393 nodes of 650 requested. Stop: attempt_budget_exhausted. 237/240 occupied tiles; 98.8% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/wide-buffers.json">JSON scene</a> &middot; <a href="../scenes/wide-buffers.yaml">YAML scene</a> &middot; <a href="../figures/scene-wide-buffers.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/wide-buffers.yaml --output examples/output/wide-buffers.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;style&quot;: {
+    &quot;node_buffer&quot;: 5
+  }
+}</pre></details></article><article><h3>Text Box</h3><a href="../figures/scene-text-box.png"><img loading="lazy" src="../figures/scene-text-box.png" alt="Measured rectangle: useful for clear labels, but excludes spaces between letters."></a><p>Measured rectangle: useful for clear labels, but excludes spaces between letters.</p><p>640 nodes of 650 requested. Stop: attempt_budget_exhausted. 208/212 occupied tiles; 99.5% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/text-box.json">JSON scene</a> &middot; <a href="../scenes/text-box.yaml">YAML scene</a> &middot; <a href="../figures/scene-text-box.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/text-box.yaml --output examples/output/text-box.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;texts&quot;: [
+    {
+      &quot;content&quot;: &quot;graph_ics&quot;,
+      &quot;x&quot;: 300,
+      &quot;y&quot;: 210,
+      &quot;size&quot;: 95,
+      &quot;align&quot;: &quot;center&quot;,
+      &quot;bold&quot;: true,
+      &quot;padding&quot;: 2,
+      &quot;color&quot;: &quot;#a64152&quot;,
+      &quot;exclusion_mode&quot;: &quot;box&quot;
+    }
+  ]
+}</pre></details></article><article><h3>Text Hug</h3><a href="../figures/scene-text-hug.png"><img loading="lazy" src="../figures/scene-text-hug.png" alt="Glyph exclusion: branches can enter spaces between letters and sufficiently large letter holes."></a><p>Glyph exclusion: branches can enter spaces between letters and sufficiently large letter holes.</p><p>650 nodes of 650 requested. Stop: target_reached. 227/240 occupied tiles; 97.9% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/text-hug.json">JSON scene</a> &middot; <a href="../scenes/text-hug.yaml">YAML scene</a> &middot; <a href="../figures/scene-text-hug.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/text-hug.yaml --output examples/output/text-hug.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;texts&quot;: [
+    {
+      &quot;content&quot;: &quot;graph_ics&quot;,
+      &quot;x&quot;: 300,
+      &quot;y&quot;: 210,
+      &quot;size&quot;: 95,
+      &quot;align&quot;: &quot;center&quot;,
+      &quot;bold&quot;: true,
+      &quot;padding&quot;: 2,
+      &quot;color&quot;: &quot;#a64152&quot;,
+      &quot;exclusion_mode&quot;: &quot;glyph&quot;
+    }
+  ]
+}</pre></details></article><article><h3>Graph Lettering</h3><a href="../figures/scene-graph-lettering.png"><img loading="lazy" src="../thumbnails/scene-graph-lettering.png" alt="The graph itself forms the letters. No text fill is drawn; counters remain empty."></a><p>The graph itself forms the letters. No text fill is drawn; counters remain empty.</p><p>2277 nodes of 3200 requested. Stop: attempt_budget_exhausted. 422/510 occupied tiles; 98.7% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/graph-lettering.json">JSON scene</a> &middot; <a href="../scenes/graph-lettering.yaml">YAML scene</a> &middot; <a href="../figures/scene-graph-lettering.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/graph-lettering.yaml --output examples/output/graph-lettering.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 3200,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;fill_area&quot;: true,
+    &quot;total_attempts&quot;: 180000,
+    &quot;seed_attempts&quot;: 2000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 20,
+      &quot;max_tiles&quot;: 12000,
+      &quot;reseed_attempts&quot;: 6000,
+      &quot;reseed_interval&quot;: 100,
+      &quot;seed_components&quot;: true
+    }
+  },
+  &quot;seeds&quot;: 30,
+  &quot;text_region&quot;: {
+    &quot;content&quot;: &quot;graph_ics&quot;,
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 260,
+    &quot;size&quot;: 300,
+    &quot;bold&quot;: true,
+    &quot;padding&quot;: 0
+  },
+  &quot;style&quot;: {
+    &quot;node_outer_radius&quot;: 2,
+    &quot;node_inner_radius&quot;: 1,
+    &quot;node_buffer&quot;: 0.3,
+    &quot;edge_thickness&quot;: 0.7,
+    &quot;edge_node_distance&quot;: 0.5,
+    &quot;edge_length_min&quot;: 3,
+    &quot;edge_length_max&quot;: 7
+  }
+}</pre></details></article><article><h3>Colour Gradient</h3><a href="../figures/scene-colour-gradient.png"><img loading="lazy" src="../figures/scene-colour-gradient.png" alt="A continuous colour field, sampled at node centres and edge midpoints. It does not alter geometry."></a><p>A continuous colour field, sampled at node centres and edge midpoints. It does not alter geometry.</p><p>650 nodes of 650 requested. Stop: target_reached. 240/240 occupied tiles; 100.0% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/colour-gradient.json">JSON scene</a> &middot; <a href="../scenes/colour-gradient.yaml">YAML scene</a> &middot; <a href="../figures/scene-colour-gradient.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/colour-gradient.yaml --output examples/output/colour-gradient.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;color_map&quot;: {
+    &quot;field&quot;: {
+      &quot;kind&quot;: &quot;gradient&quot;,
+      &quot;axis&quot;: &quot;x&quot;
+    },
+    &quot;colors&quot;: [
+      &quot;#246b87&quot;,
+      &quot;#e7b96d&quot;,
+      &quot;#a64152&quot;
+    ]
+  }
+}</pre></details></article><article><h3>Colour Raster</h3><a href="../figures/scene-colour-raster.png"><img loading="lazy" src="../figures/scene-colour-raster.png" alt="A painted scalar raster becomes a colour map through bilinear interpolation."></a><p>A painted scalar raster becomes a colour map through bilinear interpolation.</p><p>650 nodes of 650 requested. Stop: target_reached. 240/240 occupied tiles; 100.0% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/colour-raster.json">JSON scene</a> &middot; <a href="../scenes/colour-raster.yaml">YAML scene</a> &middot; <a href="../figures/scene-colour-raster.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/colour-raster.yaml --output examples/output/colour-raster.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;color_map&quot;: {
+    &quot;field&quot;: {
+      &quot;kind&quot;: &quot;raster&quot;,
+      &quot;pixels&quot;: [
+        [0, 0.4, 1],
+        [0.8, 0.2, 0.7],
+        [1, 0.5, 0]
+      ]
+    },
+    &quot;colors&quot;: [
+      &quot;#274f7c&quot;,
+      &quot;#a7c6ad&quot;,
+      &quot;#b34d6a&quot;
+    ]
+  }
+}</pre></details></article><article><h3>Radial Density</h3><a href="../figures/scene-radial-density.png"><img loading="lazy" src="../figures/scene-radial-density.png" alt="An abstract focal point, not population: density rises smoothly toward the centre."></a><p>An abstract focal point, not population: density rises smoothly toward the centre.</p><p>321 nodes of 650 requested. Stop: attempt_budget_exhausted. 212/240 occupied tiles; 88.3% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/radial-density.json">JSON scene</a> &middot; <a href="../scenes/radial-density.yaml">YAML scene</a> &middot; <a href="../figures/scene-radial-density.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/radial-density.yaml --output examples/output/radial-density.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;fields&quot;: {
+    &quot;density&quot;: {
+      &quot;kind&quot;: &quot;radial&quot;,
+      &quot;min&quot;: 0.0008,
+      &quot;max&quot;: 0.006,
+      &quot;sigma&quot;: 110
+    }
+  }
+}</pre></details></article><article><h3>Painted Density</h3><a href="../figures/scene-painted-density.png"><img loading="lazy" src="../figures/scene-painted-density.png" alt="A coarse painted mask creates bands of dense and open texture. Any scalar measurement can play this role."></a><p>A coarse painted mask creates bands of dense and open texture. Any scalar measurement can play this role.</p><p>420 nodes of 650 requested. Stop: attempt_budget_exhausted. 236/240 occupied tiles; 98.3% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/painted-density.json">JSON scene</a> &middot; <a href="../scenes/painted-density.yaml">YAML scene</a> &middot; <a href="../figures/scene-painted-density.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/painted-density.yaml --output examples/output/painted-density.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;fields&quot;: {
+    &quot;density&quot;: {
+      &quot;kind&quot;: &quot;raster&quot;,
+      &quot;pixels&quot;: [
+        [0.001, 0.006, 0.001],
+        [0.006, 0.001, 0.006],
+        [0.001, 0.006, 0.001]
+      ]
+    }
+  }
+}</pre></details></article><article><h3>Variable Dimensions</h3><a href="../figures/scene-variable-dimensions.png"><img loading="lazy" src="../figures/scene-variable-dimensions.png" alt="Coordinated scale changes radius, wall, gap, line width and length together; colour remains independent."></a><p>Coordinated scale changes radius, wall, gap, line width and length together; colour remains independent.</p><p>650 nodes of 650 requested. Stop: target_reached. 238/240 occupied tiles; 99.2% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/variable-dimensions.json">JSON scene</a> &middot; <a href="../scenes/variable-dimensions.yaml">YAML scene</a> &middot; <a href="../figures/scene-variable-dimensions.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/variable-dimensions.yaml --output examples/output/variable-dimensions.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;fields&quot;: {
+    &quot;coordinated_scale&quot;: {
+      &quot;kind&quot;: &quot;gradient&quot;,
+      &quot;min&quot;: 0.55,
+      &quot;max&quot;: 1.5
+    }
+  },
+  &quot;color_map&quot;: {
+    &quot;field&quot;: {
+      &quot;kind&quot;: &quot;gradient&quot;,
+      &quot;axis&quot;: &quot;x&quot;
+    },
+    &quot;colors&quot;: [
+      &quot;#246b87&quot;,
+      &quot;#e7b96d&quot;,
+      &quot;#a64152&quot;
+    ]
+  }
+}</pre></details></article><article><h3>Boundary Hidden</h3><a href="../figures/scene-boundary-hidden.png"><img loading="lazy" src="../figures/scene-boundary-hidden.png" alt="Same GeoJSON outline and hole. Border visibility, colour and width affect rendering; containment always uses the supplied polygon."></a><p>Same GeoJSON outline and hole. Border visibility, colour and width affect rendering; containment always uses the supplied polygon.</p><p>608 nodes of 650 requested. Stop: attempt_budget_exhausted. 198/200 occupied tiles; 99.9% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/boundary-hidden.json">JSON scene</a> &middot; <a href="../scenes/boundary-hidden.yaml">YAML scene</a> &middot; <a href="../figures/scene-boundary-hidden.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/boundary-hidden.yaml --output examples/output/boundary-hidden.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;boundary&quot;: {
+    &quot;type&quot;: &quot;Polygon&quot;,
+    &quot;coordinates&quot;: [
+      [
+        [20, 20],
+        [580, 20],
+        [580, 340],
+        [350, 340],
+        [300, 240],
+        [250, 340],
+        [20, 340],
+        [20, 20]
+      ],
+      [
+        [250, 70],
+        [350, 70],
+        [350, 150],
+        [250, 150],
+        [250, 70]
+      ]
+    ]
+  },
+  &quot;boundary_style&quot;: {
+    &quot;visible&quot;: false,
+    &quot;width&quot;: 0.5,
+    &quot;color&quot;: &quot;#527e9e&quot;
+  }
+}</pre></details></article><article><h3>Boundary Fine</h3><a href="../figures/scene-boundary-fine.png"><img loading="lazy" src="../figures/scene-boundary-fine.png" alt="Same GeoJSON outline and hole. Border visibility, colour and width affect rendering; containment always uses the supplied polygon."></a><p>Same GeoJSON outline and hole. Border visibility, colour and width affect rendering; containment always uses the supplied polygon.</p><p>608 nodes of 650 requested. Stop: attempt_budget_exhausted. 198/200 occupied tiles; 99.9% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/boundary-fine.json">JSON scene</a> &middot; <a href="../scenes/boundary-fine.yaml">YAML scene</a> &middot; <a href="../figures/scene-boundary-fine.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/boundary-fine.yaml --output examples/output/boundary-fine.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;boundary&quot;: {
+    &quot;type&quot;: &quot;Polygon&quot;,
+    &quot;coordinates&quot;: [
+      [
+        [20, 20],
+        [580, 20],
+        [580, 340],
+        [350, 340],
+        [300, 240],
+        [250, 340],
+        [20, 340],
+        [20, 20]
+      ],
+      [
+        [250, 70],
+        [350, 70],
+        [350, 150],
+        [250, 150],
+        [250, 70]
+      ]
+    ]
+  },
+  &quot;boundary_style&quot;: {
+    &quot;visible&quot;: true,
+    &quot;width&quot;: 0.5,
+    &quot;color&quot;: &quot;#527e9e&quot;
+  }
+}</pre></details></article><article><h3>Boundary Bold</h3><a href="../figures/scene-boundary-bold.png"><img loading="lazy" src="../figures/scene-boundary-bold.png" alt="Same GeoJSON outline and hole. Border visibility, colour and width affect rendering; containment always uses the supplied polygon."></a><p>Same GeoJSON outline and hole. Border visibility, colour and width affect rendering; containment always uses the supplied polygon.</p><p>608 nodes of 650 requested. Stop: attempt_budget_exhausted. 198/200 occupied tiles; 99.9% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/boundary-bold.json">JSON scene</a> &middot; <a href="../scenes/boundary-bold.yaml">YAML scene</a> &middot; <a href="../figures/scene-boundary-bold.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/boundary-bold.yaml --output examples/output/boundary-bold.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 650,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;total_attempts&quot;: 35000,
+    &quot;refill_passes&quot;: 2,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 30,
+      &quot;reseed_attempts&quot;: 1200
+    }
+  },
+  &quot;boundary&quot;: {
+    &quot;type&quot;: &quot;Polygon&quot;,
+    &quot;coordinates&quot;: [
+      [
+        [20, 20],
+        [580, 20],
+        [580, 340],
+        [350, 340],
+        [300, 240],
+        [250, 340],
+        [20, 340],
+        [20, 20]
+      ],
+      [
+        [250, 70],
+        [350, 70],
+        [350, 150],
+        [250, 150],
+        [250, 70]
+      ]
+    ]
+  },
+  &quot;boundary_style&quot;: {
+    &quot;visible&quot;: true,
+    &quot;width&quot;: 4,
+    &quot;color&quot;: &quot;#a64152&quot;
+  }
+}</pre></details></article><article><h3>Area Fill</h3><a href="../figures/scene-area-fill.png"><img loading="lazy" src="../figures/scene-area-fill.png" alt="Area fill searches beyond the requested local tile populations; the node count is a safety cap. Compare stop reason and tile coverage, not just count."></a><p>Area fill searches beyond the requested local tile populations; the node count is a safety cap. Compare stop reason and tile coverage, not just count.</p><p>816 nodes of 2200 requested. Stop: attempt_budget_exhausted. 346/360 occupied tiles; 98.4% of tile area has a node. This is a coarse coverage measure, not solid ink coverage.</p><p><a href="../scenes/area-fill.json">JSON scene</a> &middot; <a href="../scenes/area-fill.yaml">YAML scene</a> &middot; <a href="../figures/scene-area-fill.svg">SVG</a></p><details><summary>Settings and command</summary><pre class="command">graph-ics render --config docs/scenes/area-fill.yaml --output examples/output/area-fill.png</pre><pre>{
+  &quot;version&quot;: 1,
+  &quot;palette&quot;: &quot;porcelain&quot;,
+  &quot;width&quot;: 600,
+  &quot;height&quot;: 360,
+  &quot;nodes&quot;: 2200,
+  &quot;seed&quot;: 7,
+  &quot;growth&quot;: {
+    &quot;fill_area&quot;: true,
+    &quot;total_attempts&quot;: 100000,
+    &quot;refill_passes&quot;: 1,
+    &quot;refill_attempts&quot;: 10000,
+    &quot;coverage&quot;: {
+      &quot;tile_size&quot;: 25,
+      &quot;reseed_attempts&quot;: 3000
+    }
+  }
+}</pre></details></article></div></section><section id="animation"><h2>Watch the graph grow</h2><p>A complete 480-node growth run, followed by a pause on the finished artwork. Use Play animation to watch the sequence, or pause to return to the completed artwork. <a href="../figures/growth.gif" download>Download GIF</a> or <a href="../example-growth.jsonl">download the event log</a>.</p><img loading="lazy" decoding="async" class="style-key" src="../figures/growth-poster.png" data-poster="../figures/growth-poster.png" data-animation="../figures/growth.gif" alt="Animated growth from seeds to a filled graph"><p>Higher fps gives more samples of the same timeline; seconds per event changes speed. GIF needs an opaque background and has a limited colour palette; use PNG frames for transparency and full colour. The exporter rejects oversized frame or pixel budgets before rendering.</p><pre class="command">graph-ics frames --log docs/example-growth.jsonl --gif --palette porcelain --fps 15 --seconds-per-event 0.015 --max-frames 300 --output examples/output/growth.gif</pre></section><section id="files"><h2>Commands and files</h2><p>list and describe print information; render writes one PNG/SVG, optionally with a JSONL log; frames writes a numbered PNG sequence; gallery writes this library. --force only permits overwriting render outputs. --quick selects the six-scene smoke gallery; this controls page is still included. --output chooses their location, without altering the artwork.</p><pre class="command">graph-ics list
+graph-ics describe density
+graph-ics render --help
+graph-ics gallery --output examples/gallery</pre><p>All generated figures sit in figures/ below the gallery index. Open the PNG/SVG links above to compare file formats visually.</p></section><!-- CONTENT END --><footer><span>graph_ics &middot; Art grown from connections.</span><span>A project by <a href="https://pippidis.no">Johannes Pippidis Lorentzen</a></span></footer></main><script>
+for(const pre of document.querySelectorAll('pre.command')){const button=document.createElement('button');button.className='copy';button.type='button';button.textContent='Copy command';button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(pre.textContent);button.textContent='Copied';setTimeout(()=>button.textContent='Copy command',1800);}catch{const range=document.createRange();range.selectNodeContents(pre);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='Selected - press Ctrl/Cmd+C';}});pre.before(button);}
+
+(()=>{
+    const links=Array.from(document.querySelectorAll('.topbar nav a'));
+    const sections=links.map(link=>({link,section:document.getElementById(new URL(link.href).hash.slice(1))})).filter(item=>item.section);
+    if(!sections.length)return;
+    const select=link=>{for(const item of links){if(item===link)item.setAttribute('aria-current','location');else item.removeAttribute('aria-current');}};
+    const fromHash=()=>{
+        const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if(!target)return false;
+        const match=sections.find(item=>item.section===target||item.section.contains(target));
+        if(match){select(match.link);return true;}
+        return false;
+    };
+    const fromScroll=()=>{
+        const offset=document.querySelector('.topbar').getBoundingClientRect().bottom+30;
+        let current=sections[0];
+        for(const item of sections){if(item.section.getBoundingClientRect().top<=offset)current=item;}
+        if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)current=sections[sections.length-1];
+        select(current.link);
+    };
+    let scrollingToHash=false,settle;
+    const navigate=()=>{scrollingToHash=fromHash();clearTimeout(settle);settle=setTimeout(()=>{scrollingToHash=false;},1200);};
+    for(const item of sections)item.link.addEventListener('click',()=>{select(item.link);scrollingToHash=true;clearTimeout(settle);settle=setTimeout(()=>{scrollingToHash=false;},1200);});
+    window.addEventListener('hashchange',navigate);
+    window.addEventListener('scroll',()=>{if(!scrollingToHash)fromScroll();},{passive:true});
+    window.addEventListener('scrollend',()=>{scrollingToHash=false;fromScroll();});
+    if(location.hash)navigate();else fromScroll();
+})();
+
+(()=>{
+ for(const image of document.querySelectorAll('img[data-animation]')){
+  const button=document.createElement('button');button.className='animation-toggle';button.textContent='Play animation';button.type='button';let playing=false;
+  button.onclick=()=>{playing=!playing;image.src=playing?image.dataset.animation:image.dataset.poster;button.textContent=playing?'Pause animation':'Play animation';button.setAttribute('aria-pressed',String(playing));};
+  button.setAttribute('aria-pressed','false');image.before(button);
+ }
+ const links=[...document.querySelectorAll('a.image-link')];if(!links.length)return;
+ const dialog=document.createElement('dialog');dialog.setAttribute('aria-label','Artwork viewer');
+ dialog.innerHTML='<div class="viewer-tools"><button type="button" data-close>Close</button><label>Zoom <input type="range" min="50" max="300" value="100" aria-label="Image zoom"></label><a download>Download original</a></div><div class="viewer-canvas"><img alt=""></div>';
+ document.body.append(dialog);const picture=dialog.querySelector('img'),slider=dialog.querySelector('input'),download=dialog.querySelector('a');let origin;
+ const zoom=()=>{picture.style.width=slider.value+'%';};slider.oninput=zoom;
+ dialog.querySelector('[data-close]').onclick=()=>dialog.close();dialog.addEventListener('close',()=>origin?.focus());
+ for(const link of links)link.addEventListener('click',event=>{if(event.ctrlKey||event.metaKey||event.shiftKey)return;event.preventDefault();origin=link;picture.src=link.href;picture.alt=link.querySelector('img')?.alt||'Graph artwork';download.href=link.href;slider.value='100';zoom();dialog.showModal();});
+})();
+</script></body></html>

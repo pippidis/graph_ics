@@ -1,0 +1,12 @@
+{
+  "seed": 7,
+  "target_nodes": 18000,
+  "nodes": 10834,
+  "edges": 10252,
+  "status": "attempt_budget_exhausted",
+  "seconds": 58.312354299996514,
+  "validation": {
+    "objects": 21086,
+    "candidate_pairs": 86921
+  }
+}

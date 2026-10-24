@@ -1,0 +1,354 @@
+[
+  {
+    "group": "shapes",
+    "name": "shape-circle",
+    "explanation": "Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/shape-circle.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "shapes",
+    "name": "shape-square",
+    "explanation": "Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape square --edge-style solid --scale 1 --margin 16 --output examples/output/shape-square.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "shapes",
+    "name": "shape-diamond",
+    "explanation": "Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape diamond --edge-style solid --scale 1 --margin 16 --output examples/output/shape-diamond.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "shapes",
+    "name": "shape-triangle",
+    "explanation": "Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape triangle --edge-style solid --scale 1 --margin 16 --output examples/output/shape-triangle.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "shapes",
+    "name": "shape-hexagon",
+    "explanation": "Same layout and outer radius. Polygon corners fit inside the reserved circle; endpoint gaps can therefore look larger.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape hexagon --edge-style solid --scale 1 --margin 16 --output examples/output/shape-hexagon.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "lines",
+    "name": "line-solid",
+    "explanation": "Same layout and full-width collision corridor. Dashed gaps remain reserved; double lines split the width into thirds.",
+    "command": "graph-ics render --example lines --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/line-solid.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "lines",
+    "name": "line-dashed",
+    "explanation": "Same layout and full-width collision corridor. Dashed gaps remain reserved; double lines split the width into thirds.",
+    "command": "graph-ics render --example lines --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style dashed --scale 1 --margin 16 --output examples/output/line-dashed.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "lines",
+    "name": "line-dotted",
+    "explanation": "Same layout and full-width collision corridor. Dashed gaps remain reserved; double lines split the width into thirds.",
+    "command": "graph-ics render --example lines --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style dotted --scale 1 --margin 16 --output examples/output/line-dotted.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "lines",
+    "name": "line-double",
+    "explanation": "Same layout and full-width collision corridor. Dashed gaps remain reserved; double lines split the width into thirds.",
+    "command": "graph-ics render --example lines --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style double --scale 1 --margin 16 --output examples/output/line-double.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "angles",
+    "name": "angles-free",
+    "explanation": "Hard minimum 0 degrees; preference 0; penalty 0. Identical seed and target, different rejection decisions.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --minimum-angle 0 --preferred-angle 0 --angle-penalty 0 --output examples/output/angles-free.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "angles",
+    "name": "angles-hard-45",
+    "explanation": "Hard minimum 45 degrees; preference 0; penalty 0. Identical seed and target, different rejection decisions.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --minimum-angle 45 --preferred-angle 0 --angle-penalty 0 --output examples/output/angles-hard-45.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "angles",
+    "name": "angles-soft-80",
+    "explanation": "Hard minimum 0 degrees; preference 80; penalty 0.9. Identical seed and target, different rejection decisions.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --minimum-angle 0 --preferred-angle 80 --angle-penalty 0.9 --output examples/output/angles-soft-80.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "angles",
+    "name": "angles-strict-60-90",
+    "explanation": "Hard minimum 60 degrees; preference 90; penalty 0.9. Identical seed and target, different rejection decisions.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --minimum-angle 60 --preferred-angle 90 --angle-penalty 0.9 --output examples/output/angles-strict-60-90.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "seeds",
+    "name": "seed-7",
+    "explanation": "Same settings, different random layout.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/seed-7.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "seeds",
+    "name": "seed-19",
+    "explanation": "Same settings, different random layout.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 19 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/seed-19.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "population",
+    "name": "nodes-60",
+    "explanation": "Increasing the requested population fills more of the available canvas.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 60 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/nodes-60.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 60
+  },
+  {
+    "group": "population",
+    "name": "nodes-180",
+    "explanation": "Increasing the requested population fills more of the available canvas.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 180 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/nodes-180.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 180
+  },
+  {
+    "group": "population",
+    "name": "nodes-480",
+    "explanation": "Increasing the requested population fills more of the available canvas.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/nodes-480.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-porcelain",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-porcelain.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-linen",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette linen --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-linen.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-historical",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette historical --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-historical.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-light",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette light --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-light.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-arctic",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette arctic --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-arctic.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-aurora",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette aurora --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-aurora.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-ember",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette ember --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-ember.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-forest",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette forest --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-forest.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-orchid",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette orchid --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-orchid.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "palettes",
+    "name": "palette-blueprint",
+    "explanation": "Only the colour scheme changes here; no text means the exact same geometry.",
+    "command": "graph-ics render --example sprawl --palette blueprint --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/palette-blueprint.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "output",
+    "name": "normal",
+    "explanation": "Compare the dimensions and whitespace; growth geometry is unchanged.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --output examples/output/normal.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "output",
+    "name": "double-resolution",
+    "explanation": "Compare the dimensions and whitespace; growth geometry is unchanged.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 2 --margin 16 --output examples/output/double-resolution.png",
+    "dimensions": [
+      1264,
+      864
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "output",
+    "name": "wide-margin",
+    "explanation": "Compare the dimensions and whitespace; growth geometry is unchanged.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 80 --output examples/output/wide-margin.png",
+    "dimensions": [
+      760,
+      560
+    ],
+    "nodes": 480
+  },
+  {
+    "group": "output",
+    "name": "transparent",
+    "explanation": "Compare the dimensions and whitespace; growth geometry is unchanged.",
+    "command": "graph-ics render --example sprawl --palette porcelain --nodes 480 --seed 7 --node-shape circle --edge-style solid --scale 1 --margin 16 --transparent --output examples/output/transparent.png",
+    "dimensions": [
+      632,
+      432
+    ],
+    "nodes": 480
+  }
+]

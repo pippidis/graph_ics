@@ -1,0 +1,179 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parameters | graph_ics</title><link rel="icon" type="image/svg+xml" href="../logo/figures/favicon.svg"><link rel="icon" href="../logo/figures/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../logo/figures/icon-180.png"><meta property="og:site_name" content="graph_ics"><meta property="og:type" content="website"><meta property="og:title" content="Parameters | graph_ics"><meta property="og:image" content="https://graph-ics.pippidis.no/logo/figures/banner@2x.png"><meta name="description" content="graph_ics: generative artwork from sprawling networks. Explore examples, spatial maps, typography and the Python manual."><style>
+:root{color-scheme:light;--ink:#284d68;--muted:#526872;--paper:#ffffff;--line:#d5dfe5;--accent:#a64152}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{color:#284d68}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #a64152;outline-offset:4px}
+.topbar{position:sticky;top:0;z-index:10;padding:18px max(24px,calc((100vw - 1440px)/2));background:#ffffffed;color:var(--ink);border-bottom:1px solid var(--line);backdrop-filter:blur(12px);display:flex;gap:28px;align-items:center;flex-wrap:wrap}.brand{font-weight:750;letter-spacing:.04em}.topbar a{color:inherit;text-decoration:none}.topbar a[aria-current]{border-bottom:2px solid var(--accent)}.topbar nav{min-width:0;display:flex;gap:24px;flex-wrap:wrap}.container{max-width:1488px;padding:36px 24px 64px;margin:auto}.intro{margin-bottom:32px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;font-weight:700;color:var(--accent)}h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.08;letter-spacing:-.04em;margin:14px 0 20px}h2{font-size:1.55rem;line-height:1.25}h3{font-size:1.1rem;line-height:1.35}.intro p{font-size:1.1rem;color:var(--muted)}.paths{display:flex;gap:14px;flex-wrap:wrap}.button,button{border:1px solid var(--line);background:white;color:var(--ink);padding:9px 14px;border-radius:6px;font:inherit;cursor:pointer;text-decoration:none}.button:hover,button:hover{background:#edf2f5}.filters{display:flex;gap:18px;flex-wrap:wrap;align-items:end;padding:20px;background:#f0f4f6;border:1px solid var(--line);border-radius:8px;margin:28px 0}.filters label{display:grid;gap:5px;font-size:.85rem;font-weight:650}.filters .check{display:flex;align-items:center;padding:10px 0}.filters input[type=search]{min-width:230px}.filters input,.filters select{font:inherit;padding:9px;border:1px solid #aabbb8;border-radius:4px;background:white;color:var(--ink)}.filters input[type=checkbox]{width:18px;height:18px}#count{margin-left:auto;font-size:.9rem;color:var(--muted)}
+.grid,.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}article{min-width:0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:18px}article[hidden]{display:none}article h2,article h3{margin:10px 0}article p{font-size:.94rem}.image-link{display:block;margin:-18px -18px 18px;background:#f5f7f8}.image-link img{display:block;width:100%;height:260px;object-fit:contain}article img{width:100%;height:auto;display:block}article .meta{font-size:.82rem;color:var(--muted)}.swatches{display:flex;gap:4px}.swatches span{width:20px;height:9px;border:1px solid #0002;border-radius:2px}.downloads{display:flex;gap:16px;font-size:.9rem;font-weight:650;margin:15px 0}.downloads a{white-space:nowrap}details{border-top:1px solid var(--line);padding-top:12px;margin-top:16px}summary{cursor:pointer;font-weight:650}li{margin:8px 0}ul{padding-left:21px}code{font-size:.88em}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f4f6;padding:14px;border-radius:5px;font-size:.82rem;line-height:1.65}button.copy{font-size:.78rem;padding:5px 10px;margin-bottom:5px}.hint,.notice{color:var(--muted);font-size:.9rem}.notice{border-left:3px solid #7f9baa;padding:8px 16px;background:#f0f4f6}.section-nav{display:flex;gap:10px 22px;flex-wrap:wrap;margin:24px 0}.section-nav a{font-size:.9rem}section{margin:48px 0}img{max-width:100%;height:auto}.hero{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:center;margin-bottom:40px}.hero .intro{margin:0}.hero img{border-radius:8px;width:100%}.start{background:#f0f4f6;padding:24px;border-radius:8px}table{border-collapse:collapse;width:100%;text-align:left;font-size:.9rem}th,td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.table-scroll{overflow-x:auto}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px}.comparison img{max-width:100%;max-height:1000px;width:auto;display:block;margin:auto}.comparison figure{margin:0;background:white;padding:20px;border:1px solid var(--line)}figcaption{margin-top:15px;font-size:.9rem;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:60px;padding-top:20px;font-size:.85rem;color:var(--muted)}#more{display:block;margin:30px auto}#empty{padding:40px;text-align:center}.alpha{background:repeating-conic-gradient(#ddd 0% 25%,#fff 0% 50%) 0/16px 16px}noscript{display:block;padding:12px}.style-key{max-width:760px;width:100%;height:auto}
+@media(max-width:1050px){.grid,.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{gap:16px}#count{margin-left:0}}@media(max-width:650px){.grid,.cards,.comparison,.hero{grid-template-columns:1fr}.container{padding:24px 16px}.topbar{position:sticky;top:0;z-index:10;padding:16px}.topbar nav{gap:14px}.filters{gap:12px}.filters label,.filters input[type=search]{width:100%;min-width:0}.image-link img{height:240px}h1{font-size:2.5rem}td{padding:8px}}
+
+h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400}h1{letter-spacing:-.035em}.brand{display:flex;align-items:center;gap:10px}.brand img{width:32px;height:32px}.hero{padding:28px 0 50px}.intro{max-width:none}.container{max-width:1320px}.skip-link{position:absolute;top:-100px;left:16px;z-index:20;background:white;padding:12px}.skip-link:focus{top:8px}.manual{max-width:none;margin:0}.manual h2{margin-top:48px}.manual pre{overflow:auto}.manual table{display:block;overflow:auto}.about{border-top:1px solid var(--line);padding-top:30px}.topbar nav{gap:18px;font-size:.9rem}dialog{border:1px solid var(--line);border-radius:8px;width:90vw;max-width:1400px;height:85vh;padding:16px}dialog::backdrop{background:#132b3ddd}.viewer-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.viewer-canvas{overflow:auto;height:calc(100% - 65px);margin-top:16px}.viewer-canvas img{max-width:none;display:block}.animation-toggle{display:block;margin:12px 0}footer{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}section{margin:64px 0}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media(max-width:650px){.hero{padding-top:0}.topbar{position:relative}.manual h1{font-size:2.1rem}html{scroll-padding-top:20px}}
+
+.guide-layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:48px}.chapter-nav{position:sticky;top:100px;align-self:start;max-height:80vh;overflow:auto}.chapter-nav ol{padding-left:24px}.chapter-nav a{text-decoration:none;color:var(--ink)}.chapter-nav a[aria-current]{color:var(--accent);font-weight:700}.guide-body{min-width:0}.guide-body .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-body h2{margin-top:40px}.breadcrumbs{font-size:.85rem;margin-bottom:24px}.chapter-pager{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:24px;margin-top:48px}.on-this-page{border-left:2px solid var(--line);padding-left:20px}.mobile-chapters{display:none}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}.feature-grid img{width:100%;height:230px;object-fit:contain}.guide-body pre{overflow-wrap:anywhere}.guide-body table{display:block;overflow:auto}.guide-body article{padding:16px}.guide-body>article{border:0;padding:0}.guide-body p{max-width:none}@media(max-width:850px){.guide-layout{display:block}.chapter-nav{display:none}.mobile-chapters{display:block;margin-bottom:28px}.feature-grid{grid-template-columns:1fr}}@media(max-width:550px){.guide-body .grid{grid-template-columns:1fr}}
+
+.about-page{width:100%}.about-page .intro{max-width:none;margin-bottom:36px}.about-page .intro p,.about-page section p{font-size:1rem;line-height:1.75;color:var(--ink);max-width:none}.about-page section{margin:36px 0}.about-page section h2{margin-bottom:16px}.about-page h1{font-size:clamp(2.2rem,4vw,3.4rem)}.reference-nav{list-style:none;padding-left:14px;border-left:1px solid var(--line);margin:10px 0}.reference-nav li{font-size:.88rem}.breadcrumbs{display:flex;flex-wrap:wrap;gap:6px}
+
+.repository-link{margin-left:auto;display:inline-flex;align-items:center;gap:8px;min-height:44px;white-space:nowrap;font-size:.9rem}.repository-link svg{width:22px;height:22px;fill:currentColor;flex-shrink:0}.repository-link:hover{color:var(--accent)}@media(max-width:1050px){.topbar .brand{order:0}.topbar .repository-link{order:1}.topbar nav{order:2;flex-basis:100%}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="../index.html"><img src="../logo/figures/icon-64.png" alt="" width="32" height="32">graph_ics</a><nav aria-label="Library"><a href="../index.html">Home</a><a href="../gallery/index.html">Gallery</a><a href="../guide/index.html" aria-current="page">Guide</a><a href="../about/index.html">About</a></nav><a class="repository-link" href="https://github.com/pippidis/graph_ics" aria-label="graph_ics on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span>GitHub</span></a></header><main class="container" id="main"><!-- CONTENT START --><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../guide/index.html">Guide</a> / <a href="../guide/reference.html">Reference</a> / <span aria-current="page">Parameters</span></nav><div class="guide-layout"><aside class="chapter-nav"><nav aria-label="Guide chapters"><ol><li><a href="../guide/index.html">Getting started</a></li><li><a href="../guide/nodes.html">Nodes and connections</a></li><li><a href="../guide/maps.html">Colours and spatial maps</a></li><li><a href="../guide/boundaries.html">Boundaries and filling</a></li><li><a href="../guide/text.html">Text</a></li><li><a href="../guide/colonies.html">Multiple colonies</a></li><li><a href="../guide/animation.html">Animation and export</a></li><li><a href="../guide/scenes.html">Scene files</a></li><li><a href="../guide/reference.html">Reference</a><ul class="reference-nav"><li><a href="API.html">Python API</a></li><li><a href="PARAMETERS.html" aria-current="page">Parameters</a></li><li><a href="ALGORITHM.html">Algorithm</a></li><li><a href="SCENES.html">Scene schema</a></li><li><a href="ANIMATION.html">Replay and export</a></li><li><a href="INSTALLATION.html">Installation</a></li><li><a href="EXAMPLES.html">CLI recipes</a></li><li><a href="DATA.html">Data credits</a></li></ul></li></ol></nav></aside><div class="guide-body"><details class="mobile-chapters"><summary>Guide chapters</summary><nav aria-label="Guide chapters"><ol><li><a href="../guide/index.html">Getting started</a></li><li><a href="../guide/nodes.html">Nodes and connections</a></li><li><a href="../guide/maps.html">Colours and spatial maps</a></li><li><a href="../guide/boundaries.html">Boundaries and filling</a></li><li><a href="../guide/text.html">Text</a></li><li><a href="../guide/colonies.html">Multiple colonies</a></li><li><a href="../guide/animation.html">Animation and export</a></li><li><a href="../guide/scenes.html">Scene files</a></li><li><a href="../guide/reference.html">Reference</a><ul class="reference-nav"><li><a href="API.html">Python API</a></li><li><a href="PARAMETERS.html" aria-current="page">Parameters</a></li><li><a href="ALGORITHM.html">Algorithm</a></li><li><a href="SCENES.html">Scene schema</a></li><li><a href="ANIMATION.html">Replay and export</a></li><li><a href="INSTALLATION.html">Installation</a></li><li><a href="EXAMPLES.html">CLI recipes</a></li><li><a href="DATA.html">Data credits</a></li></ul></li></ol></nav></details><!-- CHAPTER CONTENT --><h1 id="parameter-guide">Parameter guide</h1>
+<p>Use <code>build_example(name, palette="arctic", seed=7)</code> for a ready-configured, unbuilt graph. Call <code>build()</code> to finish it. Recipes demonstrate combinations; the Python API exposes the individual controls below. <a href="EXAMPLES.html">The sample library</a> maps controls to figures and runnable commands. Unless explicitly marked, lengths are world units, not pixels.</p><nav class="on-this-page" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#geometry-and-style">Geometry and style</a></li><li><a href="#growth-coverage-and-quality">Growth, coverage and quality</a></li><li><a href="#density-and-variable-scale">Density and variable scale</a></li><li><a href="#regions-and-experimental-contours">Regions and experimental contours</a></li><li><a href="#cooperating-and-competing-colonies">Cooperating and competing colonies</a></li><li><a href="#text-export-and-animation">Text, export and animation</a></li><li><a href="#shape-and-line-controls">Shape and line controls</a></li></ul></nav>
+<h2 id="geometry-and-style">Geometry and style</h2>
+<p><code>Graph</code> accepts <code>target_nodes</code> (including seeds), <code>target_seed_nodes</code>, <code>input_nodes</code>, and <code>target_extra_edges</code>. Targets are requests: obstacles, spacing and bounded retries can prevent reaching them. <code>seed</code> controls its local random generator. Supplied nodes are copied. <code>outline_polygon</code> contains the graph; <code>illegal_areas</code> exclude geometry. <code>region</code> is the richer alternative described below. <code>texts</code> adds measured text exclusions.</p>
+<p><code>node_inner_radius</code>, <code>node_outer_radius</code>, and <code>node_buffer</code> control rings and clearance. <code>edge_length_min</code>, <code>edge_length_max</code>, <code>edge_thickness</code>, and <code>edge_node_distance</code> control visible connections and their separation from unrelated rings. <code>extra_edge_elongation_factor</code> controls additional-edge reach. <code>node_color</code>, <code>edge_color</code>, their opacity controls, and <code>draw_border</code> affect appearance. See constructor signatures for defaults; the historical style deliberately uses different artwork dimensions from the minimal <code>Graph</code> defaults.</p>
+<p><code>GraphStyle.historical()</code>, <code>.light()</code>, and <code>.named(name)</code> return immutable presets. <code>.palette_names()</code> lists all ten palettes. Use <code>dataclasses.replace(style, ...)</code> for custom radii, lengths, thickness, colours, background, text colour or colony colours, then <code>style.create_graph(...)</code>. The sample factories apply the text/colony colours to their objects; background is passed separately to export.</p>
+<p><code>node_direction_function(parent)</code> returns radians; <code>node_length_function(parent)</code> returns a positive visible edge length. Legacy <code>node_radius_scale_map</code>, <code>edge_length_scale_map</code>, and <code>edge_thickness_scale_map</code> accept a Point. Prefer <code>SpatialFields</code> for new code. <code>spatial_backend="hash"</code> uses local queries; <code>"brute"</code> is the reference implementation. <code>cell_size</code> tunes indexing, not geometry rules.</p>
+<h2 id="growth-coverage-and-quality">Growth, coverage and quality</h2>
+<p>Configure <code>graph.growth(settings=GrowthSettings(...), policy=...)</code> before building. The default random frontier spreads growth; <code>NewestTip</code> favours the latest branch. Custom policies implement the policy protocol; they cannot be combined with built-in coverage or colony scheduling.</p>
+<table>
+<thead>
+<tr>
+<th>GrowthSettings option</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>failures_per_parent</td>
+<td>Accumulated local failures (success does not reset this counter) before retiring a parent (30)</td>
+</tr>
+<tr>
+<td>seed_attempts</td>
+<td>Initial seed-placement budget (100)</td>
+</tr>
+<tr>
+<td>total_attempts</td>
+<td>Global attempt cap; None selects an automatically bounded budget</td>
+</tr>
+<tr>
+<td>coverage</td>
+<td>Optional CoverageSettings; None uses ordinary frontier selection</td>
+</tr>
+<tr>
+<td>max_degree</td>
+<td>Maximum incident edges per node (6)</td>
+</tr>
+<tr>
+<td>loop_attempts / loop_distance</td>
+<td>Budget (1000) and search radius (40) for extra connections</td>
+</tr>
+<tr>
+<td>remove_isolated_nodes</td>
+<td>Remove degree-zero nodes at completion (True)</td>
+</tr>
+<tr>
+<td>refill_passes / refill_attempts</td>
+<td>Bounded cleanup/refill rounds (0) and their attempt budget (1000)</td>
+</tr>
+</tbody>
+</table>
+<p><code>CoverageSettings</code> uses <code>tile_size=25</code>, <code>max_tiles=4096</code>, and <code>parent_choices=8</code> to favour underfilled tiles. <code>allow_components=True</code> permits reseeding; <code>reseed_attempts=200</code> bounds it. Colonies disable automatic unowned reseeding. <code>boundary_weight=1</code>, <code>boundary_band=10</code>, <code>narrow_weight=1</code>, and <code>narrow_width=20</code> bias difficult regions; narrow-region weighting requires contour information. Coverage does not guarantee filling every pocket.</p>
+<p><code>AngleSettings(minimum=0, preferred=0, penalty=0)</code> measures the smaller angle between outward incident directions in degrees: a straight continuation is 180. The hard minimum bans candidates; the preferred angle and penalty provide soft rejection below the preference. Zero penalty disables soft rejection. The quality recipe uses 40/75/0.85. Strong restrictions can reduce coverage. Cleanup only removes isolated dots, not connected leaves or small components.</p>
+<h2 id="density-and-variable-scale">Density and variable scale</h2>
+<p><code>SpatialFields</code> independently accepts <code>radius</code>, <code>length</code>, <code>thickness</code>, <code>density</code>, and <code>coordinated_scale</code> scalar fields. Multipliers change local geometry; density is requested nodes per square world unit, converted to preferred spacing <code>1/sqrt(density)</code>. Collision constraints still win. <code>scale_limits=(0.1, 10)</code>, <code>spacing_limits=(0.1, 10000)</code>, <code>ring_ratio=None</code>, and <code>refinement_steps=6</code> bound adaptation.</p>
+<pre><code class="language-python">from graph_ics import CallableField, ImageField, SpatialFields
+fields = SpatialFields(density=CallableField(lambda x, y: 1 / (17 + 25*x/600)**2))
+raster = ImageField(((0.0007, 0.003, 0.0007), (0.0007, 0.003, 0.0007)), bounds=(0, 0, 600, 400))
+</code></pre>
+<p><code>ConstantField(value)</code> is uniform; <code>CallableField(function)</code> receives x and y. <code>ImageField</code> interpolates rectangular rows across <code>(min_x, min_y, max_x, max_y)</code>. Row zero maps to minimum y (the top in rendered coordinates). <code>outside="clamp"</code> repeats edge values; <code>"constant"</code> returns <code>outside_value</code>; <code>"error"</code> rejects out-of-bounds samples. The PNG loader supports red, green, blue, alpha and luminance channels and a mapped value range; loading PNG requires Cairo. Density changes placement; coordinated scale changes geometry; export scale changes output pixels only.</p>
+<h2 id="regions-and-experimental-contours">Regions and experimental contours</h2>
+<p><code>RegionSpec(shape, mode="inside", padding=0, canvas=None, band_width=20)</code> supports inside, outside and boundary-band regions. Outside mode needs a finite canvas. Shapes may contain holes; illegal areas remain additional exclusions.</p>
+<p><code>ContourSettings</code> exposes <code>mode="contain"</code>, <code>"follow"</code>, or <code>"terminate"</code>: containment prevents crossing; follow biases tangent growth without requiring a closed loop; terminate aims ends at boundary anchors. Letter/country silhouette recognition is <strong>not complete</strong>. These are heuristics, not contour tracing or exact boundary coverage.</p>
+<table>
+<thead>
+<tr>
+<th>Contour control</th>
+<th>Purpose and default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaptive / minimum_radius</td>
+<td>Adapt to local width (True), with minimum radius 1</td>
+</tr>
+<tr>
+<td>maximum_neighbor_ratio</td>
+<td>Limit adjacent size changes (2)</td>
+</tr>
+<tr>
+<td>width_resolution / width_samples / width_divisor</td>
+<td>Width sampling resolution (10), cap (10000), and conversion to local scale (4)</td>
+</tr>
+<tr>
+<td>anchor_spacing / max_anchors</td>
+<td>Boundary sampling spacing (15) and cap (2000)</td>
+</tr>
+<tr>
+<td>boundary_fraction</td>
+<td>Fraction of growth influenced toward boundary targets (0.6)</td>
+</tr>
+<tr>
+<td>tangent_window / guidance</td>
+<td>Tangent measurement window (10) and bias strength (0.85)</td>
+</tr>
+<tr>
+<td>tolerance / strict_terminals</td>
+<td>Output-space tolerance (0.5) and strict feasibility handling (False)</td>
+</tr>
+<tr>
+<td>readability</td>
+<td>Readability for intended output</td>
+</tr>
+</tbody>
+</table>
+<p><code>Readability</code> uses <code>output_scale=1</code>, <code>stroke=0.5</code>, <code>hole_diameter=1</code>, <code>edge_gap=0.75</code>, and <code>separation=0.75</code>. These constrain geometry during construction. Exporting below the design scale is rejected; enlarging an export does not retroactively improve coverage. Inspect contour diagnostics for infeasible narrow regions.</p>
+<h2 id="cooperating-and-competing-colonies">Cooperating and competing colonies</h2>
+<p><code>Colony(id, seeds, weight=1, color="#a6b7c8")</code> supplies ownership and starting positions. <code>Interaction(first, second, attraction=0, allow_join=False, clearance=0)</code> configures each pair. Attraction ranges from -1 (repulsion) to +1 (attraction). Soft repulsion steers growth; hard clearance keeps rival geometry separated. Positive clearance and joining are incompatible. Joining connects ownership groups without relabelling them. Existing nodes do not move.</p>
+<p><code>ColonySettings</code> takes colonies and interactions plus <code>influence_distance=100</code>, <code>target_bridges=0</code>, <code>bridge_attempts=1000</code>, and <code>bridge_distance=40</code>. Bridge attempts remain bounded and collision checked. Weight affects growth scheduling; influence distance limits steering reach. Strong repulsion can leave intentional empty territory.</p>
+<h2 id="text-export-and-animation">Text, export and animation</h2>
+<p><code>Text(content, x, y, size=32, font="sans-serif", padding=8, color="#e04e3b", opacity=1, align="left", bold=False, italic=False, padding_em=0)</code> uses a baseline position. Effective exclusion padding is absolute padding plus size times padding_em. Cairo measures the actual font path; font substitution changes output. Text defaults to a rectangular exclusion; set <code>exclusion_mode="glyph"</code> to hug the individual outlines. <code>measure().glyph_region</code> provides a polygonal region for graph lettering.</p>
+<p><code>export_graph(graph, path, margin=5, scale=1, background=None, frame="artwork")</code> exports PNG or SVG. None means transparent. Region framing preserves the canvas; artwork framing crops to visible geometry. Text and border strokes contribute to bounds. Sample commands use region framing with margin 16.</p>
+<p>Attach <code>EventRecorder(graph, path=None, retain=True)</code> <strong>before</strong> building. <code>EventLog.load(path)</code> reads versioned JSONL. <code>Playback(log, seconds_per_event=0.1, speed=1)</code> supports advance, seek, pause and resume. <code>ReplayRenderer</code> accepts scale, margin, background and frame; <code>export_sequence(..., fps=24, max_frames=10000)</code> limits frame export. <code>LiveGrowth</code> advances under attempt/time budgets. Replay reveals recorded geometry; it is not a moving-node simulation. See <a href="ANIMATION.html">the animation guide</a> for its workflow and limitations.</p>
+<p>Inspect growth stop status and attempts, quality, coverage, contour and colony reports rather than assuming target counts were attained. <code>built</code> means construction stopped, not that every target was met. <code>to_networkx()</code> returns a topology copy; <code>directed=True</code> includes directed relationships. Parent lineage, connected components and colony ownership express different things.</p>
+<h2 id="shape-and-line-controls">Shape and line controls</h2>
+<p><code>Graph(node_shape=..., edge_style=...)</code>, <code>GraphStyle</code>, <code>build_example</code>, and the CLI support <code>circle</code>, <code>square</code>, <code>diamond</code>, <code>triangle</code>, <code>hexagon</code> nodes and <code>solid</code>, <code>dashed</code>, <code>dotted</code>, <code>double</code> connections. Direct <code>Node</code> uses <code>shape</code>; direct <code>Edge</code> uses <code>style</code>. Polygon vertices fit inside outer_radius; inner_radius defines a similar inner polygon. A zero inner radius fills the shape. Rotation is fixed (square axis-aligned, diamond point-up).</p>
+<p>Node collision and endpoint clipping reserve the entire circumscribed disk for every shape. This conservative choice preserves safety and identical layouts when changing shape, though polygon attachment gaps can look larger. Lines remain straight: dash gaps and the centre of a double line remain reserved. Double strokes each use one third of the full thickness with a one-third gap. Dotted lines place circular dots inside the stroke corridor. Curves and arrows are not implemented.</p>
+<p>Contour readability uses the polygon's inscribed radius for wall/hole dimensions and one-third thickness for each double stroke. Replay records these choices; older logs without style fields retain circle/solid defaults. Partial animation reveals the actual styled stroke through a clip.</p>
+<p><code>graph-ics render --help</code> and <code>frames --help</code> explain each flag. The visual controls page (<code>docs/guide/controls.html</code>, included in the checkout) includes the complete CLI table, runnable commands and paired figures. The UK input page (<code>docs/guide/population.html</code>) documents coordinates, source year, units and the logarithmic density mapping.</p>
+<p>See <a href="SCENES.html">scene files, dimensions, glyph contours and spatial colour maps</a> for JSON/YAML input and complete visual comparisons.</p><!-- CHAPTER END --><nav class="chapter-pager" aria-label="Chapter navigation"><a href="API.html">Previous: Python API</a><a href="ALGORITHM.html">Next: Algorithm</a></nav></div></div><!-- CONTENT END --><footer><span>graph_ics &middot; Art grown from connections.</span><span>A project by <a href="https://pippidis.no">Johannes Pippidis Lorentzen</a></span></footer></main><script>
+for(const pre of document.querySelectorAll('pre.command')){const button=document.createElement('button');button.className='copy';button.type='button';button.textContent='Copy command';button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(pre.textContent);button.textContent='Copied';setTimeout(()=>button.textContent='Copy command',1800);}catch{const range=document.createRange();range.selectNodeContents(pre);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='Selected - press Ctrl/Cmd+C';}});pre.before(button);}
+
+(()=>{
+    const links=Array.from(document.querySelectorAll('.topbar nav a'));
+    const sections=links.map(link=>({link,section:document.getElementById(new URL(link.href).hash.slice(1))})).filter(item=>item.section);
+    if(!sections.length)return;
+    const select=link=>{for(const item of links){if(item===link)item.setAttribute('aria-current','location');else item.removeAttribute('aria-current');}};
+    const fromHash=()=>{
+        const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if(!target)return false;
+        const match=sections.find(item=>item.section===target||item.section.contains(target));
+        if(match){select(match.link);return true;}
+        return false;
+    };
+    const fromScroll=()=>{
+        const offset=document.querySelector('.topbar').getBoundingClientRect().bottom+30;
+        let current=sections[0];
+        for(const item of sections){if(item.section.getBoundingClientRect().top<=offset)current=item;}
+        if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)current=sections[sections.length-1];
+        select(current.link);
+    };
+    let scrollingToHash=false,settle;
+    const navigate=()=>{scrollingToHash=fromHash();clearTimeout(settle);settle=setTimeout(()=>{scrollingToHash=false;},1200);};
+    for(const item of sections)item.link.addEventListener('click',()=>{select(item.link);scrollingToHash=true;clearTimeout(settle);settle=setTimeout(()=>{scrollingToHash=false;},1200);});
+    window.addEventListener('hashchange',navigate);
+    window.addEventListener('scroll',()=>{if(!scrollingToHash)fromScroll();},{passive:true});
+    window.addEventListener('scrollend',()=>{scrollingToHash=false;fromScroll();});
+    if(location.hash)navigate();else fromScroll();
+})();
+
+(()=>{
+ for(const image of document.querySelectorAll('img[data-animation]')){
+  const button=document.createElement('button');button.className='animation-toggle';button.textContent='Play animation';button.type='button';let playing=false;
+  button.onclick=()=>{playing=!playing;image.src=playing?image.dataset.animation:image.dataset.poster;button.textContent=playing?'Pause animation':'Play animation';button.setAttribute('aria-pressed',String(playing));};
+  button.setAttribute('aria-pressed','false');image.before(button);
+ }
+ const links=[...document.querySelectorAll('a.image-link')];if(!links.length)return;
+ const dialog=document.createElement('dialog');dialog.setAttribute('aria-label','Artwork viewer');
+ dialog.innerHTML='<div class="viewer-tools"><button type="button" data-close>Close</button><label>Zoom <input type="range" min="50" max="300" value="100" aria-label="Image zoom"></label><a download>Download original</a></div><div class="viewer-canvas"><img alt=""></div>';
+ document.body.append(dialog);const picture=dialog.querySelector('img'),slider=dialog.querySelector('input'),download=dialog.querySelector('a');let origin;
+ const zoom=()=>{picture.style.width=slider.value+'%';};slider.oninput=zoom;
+ dialog.querySelector('[data-close]').onclick=()=>dialog.close();dialog.addEventListener('close',()=>origin?.focus());
+ for(const link of links)link.addEventListener('click',event=>{if(event.ctrlKey||event.metaKey||event.shiftKey)return;event.preventDefault();origin=link;picture.src=link.href;picture.alt=link.querySelector('img')?.alt||'Graph artwork';download.href=link.href;slider.value='100';zoom();dialog.showModal();});
+})();
+</script></body></html>

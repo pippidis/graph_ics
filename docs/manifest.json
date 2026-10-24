@@ -1,0 +1,4300 @@
+{
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "dependencies": {
+      "graph-ics": "0.0.1",
+      "shapely": "2.2.0",
+      "networkx": "3.7",
+      "pycairo": "1.29.2"
+    }
+  },
+  "quick": false,
+  "all_palettes": false,
+  "cases": [
+    {
+      "example": "sprawl",
+      "palette": "arctic",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 477,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2261,
+      "accepted_attempts": 482,
+      "rejected_attempts": 1779,
+      "status": "target_reached",
+      "generation_seconds": 0.219080099981511,
+      "validation_seconds": 0.014557200018316507,
+      "render_seconds": 0.025634099991293624,
+      "validation": {
+        "objects": 957,
+        "candidate_pairs": 715
+      },
+      "quality": {
+        "removed_nodes": 2,
+        "refill_passes": 1,
+        "refill_attempts": 50,
+        "refill_additions": 2,
+        "hard_rejections": 110,
+        "soft_rejections": 55,
+        "minimum_angle": 30.197036386976606,
+        "angle_histogram": [
+          0,
+          149,
+          155,
+          182,
+          145,
+          176
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 3,
+      "command": "python -m graph_ics render --example sprawl --palette arctic --seed 7 --output examples/output/sprawl-arctic.png",
+      "options": [
+        "coverage.tile_size",
+        "coverage.reseed_attempts",
+        "failures_per_parent"
+      ],
+      "explanation": "Balanced branching across a rectangular canvas with bounded reseeding.",
+      "limitation": "A node target is an upper goal, not a guarantee of complete packing.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 68.60000000000002,
+        "occupied_tiles": 149,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9933333333333333
+      },
+      "fill_area": false
+    },
+    {
+      "example": "typography",
+      "palette": "arctic",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 476,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2708,
+      "accepted_attempts": 481,
+      "rejected_attempts": 2227,
+      "status": "target_reached",
+      "generation_seconds": 0.2576318000210449,
+      "validation_seconds": 0.014876300003379583,
+      "render_seconds": 0.022539300000062212,
+      "validation": {
+        "objects": 956,
+        "candidate_pairs": 721
+      },
+      "quality": {
+        "removed_nodes": 1,
+        "refill_passes": 1,
+        "refill_attempts": 2,
+        "refill_additions": 1,
+        "hard_rejections": 136,
+        "soft_rejections": 58,
+        "minimum_angle": 30.17766890465162,
+        "angle_histogram": [
+          0,
+          159,
+          150,
+          148,
+          173,
+          158
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 4,
+      "command": "python -m graph_ics render --example typography --palette arctic --seed 7 --output examples/output/typography-arctic.png",
+      "options": [
+        "Text.size",
+        "Text.padding_em",
+        "Text.align"
+      ],
+      "explanation": "Graph growth wraps around a measured text rectangle; padding scales with font size.",
+      "limitation": "The exclusion is a rectangle, not individual glyph outlines.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 62.55933480389215,
+        "occupied_tiles": 139,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9890488763647751
+      },
+      "fill_area": false
+    },
+    {
+      "example": "density",
+      "palette": "linen",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 229,
+      "edges": 225,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 4285,
+      "accepted_attempts": 234,
+      "rejected_attempts": 4051,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 0.40808220001053996,
+      "validation_seconds": 0.0073345999990124255,
+      "render_seconds": 0.014212200010661036,
+      "validation": {
+        "objects": 454,
+        "candidate_pairs": 1875
+      },
+      "quality": {
+        "removed_nodes": 5,
+        "refill_passes": 1,
+        "refill_attempts": 960,
+        "refill_additions": 1,
+        "hard_rejections": 0,
+        "soft_rejections": 1,
+        "minimum_angle": 38.380619199226054,
+        "angle_histogram": [
+          0,
+          15,
+          81,
+          84,
+          65,
+          80
+        ],
+        "achieved_nodes": 229,
+        "target_shortfall": 251
+      },
+      "components": 4,
+      "command": "python -m graph_ics render --example density --palette linen --seed 7 --output examples/output/density-linen.png",
+      "options": [
+        "SpatialFields.density",
+        "CoverageSettings",
+        "spacing_limits"
+      ],
+      "explanation": "Desired population and spacing vary smoothly from dense left to sparse right.",
+      "limitation": "Density is in nodes per square world unit and remains a packing heuristic.",
+      "coverage": {
+        "expected_nodes": 336.02896758038355,
+        "actual_nodes": 229,
+        "residual_underfill": 117.42646935218345,
+        "occupied_tiles": 134,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 300,
+        "reseeds": 4,
+        "occupied_tile_area_fraction": 0.8933333333333333
+      },
+      "fill_area": false
+    },
+    {
+      "example": "raster",
+      "palette": "blueprint",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 283,
+      "edges": 273,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 4944,
+      "accepted_attempts": 287,
+      "rejected_attempts": 4657,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 0.4854934000177309,
+      "validation_seconds": 0.00921699998434633,
+      "render_seconds": 0.015317399986088276,
+      "validation": {
+        "objects": 556,
+        "candidate_pairs": 2135
+      },
+      "quality": {
+        "removed_nodes": 4,
+        "refill_passes": 1,
+        "refill_attempts": 960,
+        "refill_additions": 3,
+        "hard_rejections": 0,
+        "soft_rejections": 0,
+        "minimum_angle": 40.37681936759567,
+        "angle_histogram": [
+          0,
+          37,
+          87,
+          72,
+          80,
+          95
+        ],
+        "achieved_nodes": 283,
+        "target_shortfall": 197
+      },
+      "components": 10,
+      "command": "python -m graph_ics render --example raster --palette blueprint --seed 7 --output examples/output/raster-blueprint.png",
+      "options": [
+        "ImageField.pixels",
+        "ImageField.bounds",
+        "ImageField.outside"
+      ],
+      "explanation": "A small scalar image creates a dense central band using world-coordinate bilinear interpolation.",
+      "limitation": "Row zero maps to minimum y; a lower-resolution raster smooths small features.",
+      "coverage": {
+        "expected_nodes": 444.0,
+        "actual_nodes": 283,
+        "residual_underfill": 165.04,
+        "occupied_tiles": 141,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 300,
+        "reseeds": 9,
+        "occupied_tile_area_fraction": 0.94
+      },
+      "fill_area": false
+    },
+    {
+      "example": "scale",
+      "palette": "aurora",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 475,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2702,
+      "accepted_attempts": 480,
+      "rejected_attempts": 2222,
+      "status": "target_reached",
+      "generation_seconds": 0.34373030002461746,
+      "validation_seconds": 0.01330620000953786,
+      "render_seconds": 0.021512200008146465,
+      "validation": {
+        "objects": 955,
+        "candidate_pairs": 710
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 97,
+        "soft_rejections": 55,
+        "minimum_angle": 30.036030672284337,
+        "angle_histogram": [
+          0,
+          146,
+          141,
+          159,
+          175,
+          154
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 5,
+      "command": "python -m graph_ics render --example scale --palette aurora --seed 7 --output examples/output/scale-aurora.png",
+      "options": [
+        "SpatialFields.coordinated_scale",
+        "scale_limits",
+        "ring_ratio"
+      ],
+      "explanation": "Rings, gaps, buffers, lengths, and stroke widths grow together across the canvas.",
+      "limitation": "Large geometry can displace small details; field feasibility is not guaranteed.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 83.40000000000002,
+        "occupied_tiles": 149,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9933333333333333
+      },
+      "fill_area": false
+    },
+    {
+      "example": "obstacles",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 475,
+      "dimensions": [
+        633,
+        433
+      ],
+      "attempts": 2613,
+      "accepted_attempts": 480,
+      "rejected_attempts": 2133,
+      "status": "target_reached",
+      "generation_seconds": 0.23499619998619892,
+      "validation_seconds": 0.014603200019337237,
+      "render_seconds": 0.021797800000058487,
+      "validation": {
+        "objects": 955,
+        "candidate_pairs": 711
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 118,
+        "soft_rejections": 52,
+        "minimum_angle": 30.010599272147576,
+        "angle_histogram": [
+          0,
+          162,
+          141,
+          184,
+          152,
+          158
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 5,
+      "command": "python -m graph_ics render --example obstacles --palette porcelain --seed 7 --output examples/output/obstacles-porcelain.png",
+      "options": [
+        "outline_polygon",
+        "illegal_areas",
+        "draw_border"
+      ],
+      "explanation": "Full nodes and strokes stay inside a concave outline and outside an internal obstacle.",
+      "limitation": "Exact containment does not imply every narrow pocket will be filled.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 56.17391304347825,
+        "occupied_tiles": 141,
+        "usable_tiles": 142,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9981884057971014
+      },
+      "fill_area": false
+    },
+    {
+      "example": "band",
+      "palette": "forest",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 349,
+      "edges": 339,
+      "dimensions": [
+        563,
+        383
+      ],
+      "attempts": 6124,
+      "accepted_attempts": 382,
+      "rejected_attempts": 5742,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 0.49087900001904927,
+      "validation_seconds": 0.010318199987523258,
+      "render_seconds": 0.015458299982128665,
+      "validation": {
+        "objects": 688,
+        "candidate_pairs": 539
+      },
+      "quality": {
+        "removed_nodes": 33,
+        "refill_passes": 1,
+        "refill_attempts": 960,
+        "refill_additions": 5,
+        "hard_rejections": 131,
+        "soft_rejections": 54,
+        "minimum_angle": 30.04266483495921,
+        "angle_histogram": [
+          0,
+          132,
+          95,
+          123,
+          113,
+          103
+        ],
+        "achieved_nodes": 349,
+        "target_shortfall": 131
+      },
+      "components": 10,
+      "command": "python -m graph_ics render --example band --palette forest --seed 7 --output examples/output/band-forest.png",
+      "options": [
+        "RegionSpec.mode=band",
+        "band_width",
+        "padding"
+      ],
+      "explanation": "Grow within a finite-width band around a supplied polygon.",
+      "limitation": "This uses supplied polygons; importing glyphs or SVG paths is deferred.",
+      "coverage": {
+        "expected_nodes": 480.00000000000006,
+        "actual_nodes": 349,
+        "residual_underfill": 137.28005626163838,
+        "occupied_tiles": 98,
+        "usable_tiles": 102,
+        "tile_size": 40,
+        "reseed_attempts": 300,
+        "reseeds": 38,
+        "occupied_tile_area_fraction": 0.9898967212748487
+      },
+      "fill_area": false
+    },
+    {
+      "example": "follow",
+      "palette": "arctic",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 459,
+      "dimensions": [
+        633,
+        433
+      ],
+      "attempts": 2663,
+      "accepted_attempts": 585,
+      "rejected_attempts": 2078,
+      "status": "target_reached",
+      "generation_seconds": 0.36206400001537986,
+      "validation_seconds": 0.014288199978182092,
+      "render_seconds": 0.021390899986727163,
+      "validation": {
+        "objects": 939,
+        "candidate_pairs": 795
+      },
+      "quality": {
+        "removed_nodes": 105,
+        "refill_passes": 1,
+        "refill_attempts": 607,
+        "refill_additions": 105,
+        "hard_rejections": 62,
+        "soft_rejections": 40,
+        "minimum_angle": 30.94084874884628,
+        "angle_histogram": [
+          0,
+          99,
+          112,
+          119,
+          115,
+          180
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 21,
+      "command": "python -m graph_ics render --example follow --palette arctic --seed 7 --output examples/output/follow-arctic.png",
+      "options": [
+        "ContourSettings.mode=follow",
+        "boundary_fraction",
+        "guidance"
+      ],
+      "explanation": "Bias growth along a boundary while retaining interior branches.",
+      "limitation": "Experimental: gaps can remain and a closed boundary loop is not promised.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 74.00000000000001,
+        "occupied_tiles": 149,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9933333333333333
+      },
+      "contours": {
+        "boundary_coverage": 0.628,
+        "boundary_nodes": 30,
+        "unreadable_boundary_samples": 0,
+        "terminal_count": 195,
+        "unanchored_terminals": [
+          "node_000013",
+          "node_000036",
+          "node_000037",
+          "node_000057",
+          "node_000065",
+          "node_000071",
+          "node_000081",
+          "node_000091",
+          "node_000106",
+          "node_000109",
+          "node_000115",
+          "node_000121",
+          "node_000128",
+          "node_000148",
+          "node_000150",
+          "node_000153",
+          "node_000168",
+          "node_000170",
+          "node_000173",
+          "node_000174",
+          "node_000178",
+          "node_000191",
+          "node_000206",
+          "node_000214",
+          "node_000230",
+          "node_000237",
+          "node_000238",
+          "node_000254",
+          "node_000266",
+          "node_000267",
+          "node_000270",
+          "node_000277",
+          "node_000279",
+          "node_000283",
+          "node_000286",
+          "node_000290",
+          "node_000292",
+          "node_000293",
+          "node_000297",
+          "node_000302",
+          "node_000304",
+          "node_000307",
+          "node_000308",
+          "node_000309",
+          "node_000310",
+          "node_000311",
+          "node_000312",
+          "node_000314",
+          "node_000316",
+          "node_000317",
+          "node_000325",
+          "node_000326",
+          "node_000331",
+          "node_000335",
+          "node_000340",
+          "node_000342",
+          "node_000344",
+          "node_000346",
+          "node_000351",
+          "node_000360",
+          "node_000364",
+          "node_000367",
+          "node_000370",
+          "node_000372",
+          "node_000373",
+          "node_000374",
+          "node_000375",
+          "node_000386",
+          "node_000387",
+          "node_000389",
+          "node_000391",
+          "node_000394",
+          "node_000396",
+          "node_000404",
+          "node_000408",
+          "node_000413",
+          "node_000414",
+          "node_000416",
+          "node_000419",
+          "node_000420",
+          "node_000425",
+          "node_000426",
+          "node_000432",
+          "node_000433",
+          "node_000434",
+          "node_000435",
+          "node_000437",
+          "node_000439",
+          "node_000441",
+          "node_000442",
+          "node_000444",
+          "node_000445",
+          "node_000447",
+          "node_000448",
+          "node_000449",
+          "node_000450",
+          "node_000455",
+          "node_000457",
+          "node_000458",
+          "node_000462",
+          "node_000463",
+          "node_000464",
+          "node_000465",
+          "node_000467",
+          "node_000468",
+          "node_000474",
+          "node_000475",
+          "node_000477",
+          "node_000480",
+          "node_000490",
+          "node_000491",
+          "node_000492",
+          "node_000493",
+          "node_000497",
+          "node_000500",
+          "node_000501",
+          "node_000504",
+          "node_000505",
+          "node_000507",
+          "node_000508",
+          "node_000509",
+          "node_000510",
+          "node_000511",
+          "node_000512",
+          "node_000515",
+          "node_000516",
+          "node_000519",
+          "node_000520",
+          "node_000521",
+          "node_000523",
+          "node_000524",
+          "node_000527",
+          "node_000528",
+          "node_000529",
+          "node_000531",
+          "node_000533",
+          "node_000534",
+          "node_000535",
+          "node_000536",
+          "node_000537",
+          "node_000538",
+          "node_000539",
+          "node_000542",
+          "node_000543",
+          "node_000544",
+          "node_000545",
+          "node_000547",
+          "node_000548",
+          "node_000550",
+          "node_000551",
+          "node_000552",
+          "node_000555",
+          "node_000557",
+          "node_000559",
+          "node_000560",
+          "node_000564",
+          "node_000566",
+          "node_000567",
+          "node_000568",
+          "node_000569",
+          "node_000570",
+          "node_000571",
+          "node_000573",
+          "node_000574",
+          "node_000575",
+          "node_000576",
+          "node_000577",
+          "node_000578",
+          "node_000579",
+          "node_000580",
+          "node_000581",
+          "node_000582",
+          "node_000583",
+          "node_000584"
+        ],
+        "terminal_distances": [
+          142.69103448812982,
+          137.57745174031157,
+          161.0962469838938,
+          1.0000000116860974e-07,
+          1.0000000116860974e-07,
+          24.023588578720194,
+          90.45866823538141,
+          106.17134552666916,
+          73.96288133917763,
+          7.983923094759689,
+          145.16589665314757,
+          58.60748987729206,
+          17.701913721914767,
+          28.416251472144566,
+          1.0000000028043132e-07,
+          151.13493358583236,
+          1.0000000028043132e-07,
+          21.857223333367187,
+          21.03580001612181,
+          172.95657551799263,
+          106.77163988519172,
+          64.6103479388903,
+          87.41950048573739,
+          35.59471531080021,
+          117.80050908516796,
+          1.0000002248489182e-07,
+          1.0000002248489182e-07,
+          150.59024672091667,
+          1.0000002248489182e-07,
+          1.0000002248489182e-07,
+          1.0000002248489182e-07,
+          1.0000002248489182e-07,
+          2.872842431371282,
+          18.46381190624635,
+          9.999996564147295e-08,
+          9.999996564147295e-08,
+          9.999996564147295e-08,
+          9.999996564147295e-08,
+          120.67131916644793,
+          9.999996564147295e-08,
+          16.85216118429082,
+          145.78069697421137,
+          9.999996564147295e-08,
+          9.999996564147295e-08,
+          149.26380705916705,
+          88.20879045360023,
+          118.35841809407074,
+          99.18568837377074,
+          102.422623741081,
+          6.162205681583716,
+          124.67282642667112,
+          30.74893512520258,
+          20.965513982202083,
+          131.324995939087,
+          9.936659176063252,
+          16.500913196668748,
+          5.107391899042829,
+          23.42727165300497,
+          30.3528849048663,
+          181.8866496065824,
+          160.18934113280872,
+          14.562135341450087,
+          9.521784605331673,
+          1.6239118404114112,
+          58.76962326852714,
+          22.605660000820844,
+          22.21057458982464,
+          65.12034969348849,
+          15.654390314180091,
+          103.67083016560484,
+          25.518739764185288,
+          135.8707450212736,
+          107.7694179962129,
+          76.93105762698352,
+          173.54962731091112,
+          133.98437234898964,
+          8.001732627914635,
+          11.633933062404932,
+          19.550641292798126,
+          7.316056950261327,
+          105.57115400573673,
+          66.3250462642826,
+          14.515058730739725,
+          122.1092752854675,
+          8.728113506940304,
+          7.633827141161873,
+          15.656988984511663,
+          113.12809892817998,
+          86.59428399217347,
+          119.65843576354081,
+          30.045435733742835,
+          22.984113783231557,
+          91.00976397359261,
+          25.686332198174288,
+          34.28518654914171,
+          40.38381827452781,
+          131.76884397322016,
+          100.02239362838475,
+          177.34847476821315,
+          69.20553596188675,
+          50.36738728949153,
+          19.414743172629198,
+          158.0680420004583,
+          141.27129588963808,
+          79.60425051207744,
+          29.65673733757751,
+          172.6753214229962,
+          140.16685599837362,
+          22.96353467109452,
+          23.169670280187347,
+          135.95066693399022,
+          5.066069925936063,
+          1.7030068694309703,
+          89.70121490787875,
+          39.25736795342459,
+          15.23655359092416,
+          18.606226358722743,
+          17.94286760614864,
+          93.84854709828483,
+          27.15132839590453,
+          105.60663384572094,
+          42.8804473338016,
+          112.04370413381773,
+          85.10175776714769,
+          103.22031015594101,
+          108.0335215053451,
+          1.0000000005838672e-07,
+          6.109567403778627,
+          8.559075043720668,
+          48.3850042642378,
+          32.88410086291924,
+          93.95125402918775,
+          17.513918077143583,
+          149.00334349837823,
+          31.184997168267245,
+          136.87030849296883,
+          61.81895106467948,
+          25.61830386794099,
+          45.66442401055633,
+          10.385447518985815,
+          63.68693620386557,
+          52.37449169197062,
+          15.988719141220006,
+          46.259651694840954,
+          10.194296997374584,
+          22.5577795701551,
+          8.01671227846299,
+          1.0000000116860974e-07,
+          33.731783228669215,
+          29.098715971094293,
+          6.390566725437019,
+          4.411978235748233,
+          150.3199414730635,
+          52.58857106584687,
+          35.8659486714734,
+          2.407953418931305,
+          27.710378103724114,
+          12.655708098731651,
+          6.117419718205442,
+          46.97911830349388,
+          40.68569712953716,
+          25.13899790464653,
+          22.022827060031545,
+          178.75182183267336,
+          58.724747227676566,
+          159.87398311127112,
+          39.484810333331495,
+          33.60386642413578,
+          21.597202125235373,
+          64.98272568565217,
+          12.569729648450448,
+          1.0000000116860974e-07,
+          121.91292929331927,
+          78.48267490621865,
+          79.0054543858247,
+          53.64921832205244,
+          64.97043190566124,
+          19.957350103435058,
+          38.32754329330672,
+          45.05070854840298,
+          53.821001135953566,
+          14.12383006726617,
+          1.0000000005838672e-07,
+          59.16623915614548,
+          92.89885465884687,
+          4.466455667152488,
+          84.14636910480598,
+          117.39043130546897,
+          42.53450918135468,
+          72.44089241578934,
+          40.321826706492345,
+          18.120239741580296,
+          185.98949333940735,
+          37.62462411205656,
+          10.800315056184218
+        ],
+        "unanchored_reasons": [
+          [
+            "node_000013",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000036",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000037",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000057",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000065",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000071",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000081",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000091",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000106",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000109",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000115",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000121",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000128",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000148",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000150",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000153",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000168",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000170",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000173",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000174",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000178",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000191",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000206",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000214",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000230",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000237",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000238",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000254",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000266",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000267",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000270",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000277",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000279",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000283",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000286",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000290",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000292",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000293",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000297",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000302",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000304",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000307",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000308",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000309",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000310",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000311",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000312",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000314",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000316",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000317",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000325",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000326",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000331",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000335",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000340",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000342",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000344",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000346",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000351",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000360",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000364",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000367",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000370",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000372",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000373",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000374",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000375",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000386",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000387",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000389",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000391",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000394",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000396",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000404",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000408",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000413",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000414",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000416",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000419",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000420",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000425",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000426",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000432",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000433",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000434",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000435",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000437",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000439",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000441",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000442",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000444",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000445",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000447",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000448",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000449",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000450",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000455",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000457",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000458",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000462",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000463",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000464",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000465",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000467",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000468",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000474",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000475",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000477",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000480",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000490",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000491",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000492",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000493",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000497",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000500",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000501",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000504",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000505",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000507",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000508",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000509",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000510",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000511",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000512",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000515",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000516",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000519",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000520",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000521",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000523",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000524",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000527",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000528",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000529",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000531",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000533",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000534",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000535",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000536",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000537",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000538",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000539",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000542",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000543",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000544",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000545",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000547",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000548",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000550",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000551",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000552",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000555",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000557",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000559",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000560",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000564",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000566",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000567",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000568",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000569",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000570",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000571",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000573",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000574",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000575",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000576",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000577",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000578",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000579",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000580",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000581",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000582",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000583",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000584",
+            "run_stopped_before_anchor"
+          ]
+        ],
+        "readable_failures": 0,
+        "width_failures": 9,
+        "neighbor_ratio_failures": 9,
+        "strict_satisfied": false,
+        "sampled_width_resolution": 10,
+        "minimum_radius": 1.0,
+        "maximum_radius": 4.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "terminate",
+      "palette": "orchid",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 476,
+      "dimensions": [
+        633,
+        433
+      ],
+      "attempts": 2416,
+      "accepted_attempts": 481,
+      "rejected_attempts": 1935,
+      "status": "target_reached",
+      "generation_seconds": 0.4241477999894414,
+      "validation_seconds": 0.013444399985019118,
+      "render_seconds": 0.02003739998326637,
+      "validation": {
+        "objects": 956,
+        "candidate_pairs": 519
+      },
+      "quality": {
+        "removed_nodes": 1,
+        "refill_passes": 1,
+        "refill_attempts": 43,
+        "refill_additions": 1,
+        "hard_rejections": 188,
+        "soft_rejections": 52,
+        "minimum_angle": 30.346344172916012,
+        "angle_histogram": [
+          0,
+          133,
+          138,
+          138,
+          161,
+          188
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 4,
+      "command": "python -m graph_ics render --example terminate --palette orchid --seed 7 --output examples/output/terminate-orchid.png",
+      "options": [
+        "ContourSettings.mode=terminate",
+        "strict_terminals",
+        "tolerance"
+      ],
+      "explanation": "Bias branch tips toward the region boundary.",
+      "limitation": "Experimental: terminal anchoring can remain unmet; inspect the contour report.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 70.40000000000002,
+        "occupied_tiles": 150,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 1.0
+      },
+      "contours": {
+        "boundary_coverage": 0.5195,
+        "boundary_nodes": 10,
+        "unreadable_boundary_samples": 0,
+        "terminal_count": 217,
+        "unanchored_terminals": [
+          "node_000003",
+          "node_000005",
+          "node_000013",
+          "node_000014",
+          "node_000018",
+          "node_000022",
+          "node_000023",
+          "node_000026",
+          "node_000028",
+          "node_000032",
+          "node_000033",
+          "node_000035",
+          "node_000038",
+          "node_000042",
+          "node_000043",
+          "node_000047",
+          "node_000049",
+          "node_000055",
+          "node_000056",
+          "node_000058",
+          "node_000059",
+          "node_000061",
+          "node_000065",
+          "node_000075",
+          "node_000077",
+          "node_000078",
+          "node_000084",
+          "node_000085",
+          "node_000086",
+          "node_000088",
+          "node_000092",
+          "node_000097",
+          "node_000102",
+          "node_000110",
+          "node_000112",
+          "node_000115",
+          "node_000118",
+          "node_000119",
+          "node_000120",
+          "node_000121",
+          "node_000125",
+          "node_000126",
+          "node_000137",
+          "node_000141",
+          "node_000147",
+          "node_000149",
+          "node_000150",
+          "node_000157",
+          "node_000158",
+          "node_000163",
+          "node_000171",
+          "node_000172",
+          "node_000174",
+          "node_000176",
+          "node_000179",
+          "node_000183",
+          "node_000187",
+          "node_000188",
+          "node_000190",
+          "node_000192",
+          "node_000194",
+          "node_000195",
+          "node_000196",
+          "node_000198",
+          "node_000201",
+          "node_000202",
+          "node_000207",
+          "node_000211",
+          "node_000225",
+          "node_000227",
+          "node_000231",
+          "node_000241",
+          "node_000243",
+          "node_000244",
+          "node_000252",
+          "node_000260",
+          "node_000264",
+          "node_000265",
+          "node_000266",
+          "node_000268",
+          "node_000270",
+          "node_000272",
+          "node_000274",
+          "node_000276",
+          "node_000281",
+          "node_000282",
+          "node_000283",
+          "node_000286",
+          "node_000289",
+          "node_000291",
+          "node_000292",
+          "node_000297",
+          "node_000298",
+          "node_000299",
+          "node_000300",
+          "node_000305",
+          "node_000306",
+          "node_000312",
+          "node_000313",
+          "node_000315",
+          "node_000317",
+          "node_000318",
+          "node_000320",
+          "node_000322",
+          "node_000323",
+          "node_000324",
+          "node_000325",
+          "node_000326",
+          "node_000327",
+          "node_000329",
+          "node_000330",
+          "node_000333",
+          "node_000336",
+          "node_000337",
+          "node_000341",
+          "node_000343",
+          "node_000345",
+          "node_000346",
+          "node_000347",
+          "node_000349",
+          "node_000350",
+          "node_000351",
+          "node_000352",
+          "node_000357",
+          "node_000359",
+          "node_000360",
+          "node_000361",
+          "node_000362",
+          "node_000363",
+          "node_000364",
+          "node_000365",
+          "node_000368",
+          "node_000369",
+          "node_000370",
+          "node_000375",
+          "node_000376",
+          "node_000377",
+          "node_000378",
+          "node_000379",
+          "node_000380",
+          "node_000381",
+          "node_000383",
+          "node_000386",
+          "node_000388",
+          "node_000389",
+          "node_000390",
+          "node_000391",
+          "node_000392",
+          "node_000394",
+          "node_000395",
+          "node_000398",
+          "node_000400",
+          "node_000401",
+          "node_000402",
+          "node_000403",
+          "node_000405",
+          "node_000406",
+          "node_000407",
+          "node_000408",
+          "node_000411",
+          "node_000412",
+          "node_000415",
+          "node_000416",
+          "node_000418",
+          "node_000419",
+          "node_000420",
+          "node_000421",
+          "node_000423",
+          "node_000425",
+          "node_000426",
+          "node_000427",
+          "node_000430",
+          "node_000431",
+          "node_000434",
+          "node_000436",
+          "node_000437",
+          "node_000438",
+          "node_000439",
+          "node_000440",
+          "node_000441",
+          "node_000442",
+          "node_000446",
+          "node_000447",
+          "node_000449",
+          "node_000450",
+          "node_000451",
+          "node_000452",
+          "node_000453",
+          "node_000456",
+          "node_000457",
+          "node_000458",
+          "node_000459",
+          "node_000462",
+          "node_000463",
+          "node_000465",
+          "node_000466",
+          "node_000467",
+          "node_000468",
+          "node_000470",
+          "node_000472",
+          "node_000473",
+          "node_000474",
+          "node_000476",
+          "node_000477",
+          "node_000478",
+          "node_000479",
+          "node_000480"
+        ],
+        "terminal_distances": [
+          30.799354864824082,
+          34.30164995830431,
+          14.482781682428435,
+          22.5618220533065,
+          34.98080216236915,
+          28.546621555384604,
+          137.9540625910582,
+          185.62922449362623,
+          28.17320311292407,
+          129.5936069392635,
+          22.958109355631205,
+          116.24202447632733,
+          18.030928620724783,
+          79.80682856531332,
+          23.52828175321747,
+          34.21057404419724,
+          65.75878076409624,
+          24.090697138518358,
+          27.378863035535506,
+          89.2164471510667,
+          101.94553046941529,
+          2.000000165480742e-09,
+          140.51413059687866,
+          147.4424846753993,
+          80.06136684965037,
+          6.334054686178206,
+          16.120024961677245,
+          15.94551561301023,
+          84.36812694760692,
+          47.57646590652481,
+          28.38964069473377,
+          113.85837233866516,
+          30.099741701740413,
+          100.68507494620849,
+          22.348256279483735,
+          117.44529738088538,
+          176.81400548844914,
+          19.088859245178355,
+          26.417460990100153,
+          19.332435889646604,
+          138.1470692456185,
+          156.45541913316004,
+          2.9995118190441294,
+          21.25357213244172,
+          149.7370858544973,
+          23.746508923505942,
+          97.3989870364163,
+          28.374489186231145,
+          114.3905558398604,
+          79.33008516586796,
+          26.902739838837245,
+          146.7227456666703,
+          102.21483898123296,
+          34.082939411963935,
+          53.66971022001894,
+          20.875696773982135,
+          50.16522731765678,
+          35.17015794935239,
+          10.796829426177318,
+          79.22695937716014,
+          51.27441154500052,
+          22.802717108930135,
+          43.92820507266106,
+          27.501385746707207,
+          42.50510092823458,
+          34.905773827184845,
+          29.905922382248832,
+          71.39360199974419,
+          67.05771853711099,
+          2.000000165480742e-09,
+          3.940060722129601e-09,
+          3.763408695789394e-09,
+          71.95774958425602,
+          96.25755074765188,
+          33.14696570156995,
+          2.000000165480742e-09,
+          24.6822188718246,
+          15.08297250051271,
+          104.71218871155912,
+          28.70680578488964,
+          23.253453082438185,
+          33.7196193118927,
+          7.752534202780907,
+          88.9122759577387,
+          46.68884397969106,
+          84.96163095635046,
+          9.465389541697736,
+          34.74215854315541,
+          22.67294604723662,
+          107.64301352340455,
+          36.2640483342916,
+          107.41342170433785,
+          14.32792014507146,
+          62.05225948759923,
+          7.462937647134254,
+          45.51109204884335,
+          155.2622341630337,
+          59.25310676557967,
+          23.939097825650553,
+          47.00603465840022,
+          2.000000165480742e-09,
+          35.759258759846084,
+          113.95767331639924,
+          2.000000165480742e-09,
+          103.61829452286719,
+          126.5782032593109,
+          193.5246757769722,
+          69.32489108211404,
+          6.781843152070039,
+          134.71131503115748,
+          6.688524563224114,
+          157.95270946896835,
+          31.733129012718905,
+          186.61443232318572,
+          10.12033504962741,
+          2.7276591604276845,
+          58.34897271608122,
+          170.93514745723098,
+          105.97494215337528,
+          21.082915406417893,
+          43.16137598654558,
+          2.635760054658931e-09,
+          5.796635869123293,
+          92.1804198697364,
+          21.187845128903973,
+          114.02076556571961,
+          71.88330767125012,
+          42.86862174259431,
+          25.87812190480755,
+          35.24649091970002,
+          70.87720138131459,
+          68.95329630193186,
+          15.235645504221395,
+          120.17765374509959,
+          98.14787108113728,
+          15.320573060011991,
+          24.620200390536333,
+          30.693908961346224,
+          74.31141107766474,
+          136.93101808656954,
+          32.925472812738406,
+          109.57473879642492,
+          6.744966129232807,
+          10.618533439038062,
+          6.383806864344365,
+          18.181611646039528,
+          115.65415887040636,
+          18.15503695010743,
+          43.55091508393798,
+          16.502691608204277,
+          19.206550409378053,
+          22.08404120977798,
+          3.3298888614406215,
+          103.7857064430985,
+          13.032429129007483,
+          18.163926889505486,
+          17.321918349153293,
+          45.86131013670629,
+          14.626876641128032,
+          140.06855235959023,
+          82.5214622465522,
+          24.61609027309569,
+          7.638619361709516,
+          83.56398545556829,
+          60.212448785046675,
+          61.27900524376747,
+          109.02540771966632,
+          67.96300194822945,
+          11.03815269855015,
+          3.185680377988006,
+          52.57135537453508,
+          6.382079052835188,
+          3.8974569391302425,
+          104.80259991164382,
+          31.53710247620836,
+          178.20365692254543,
+          10.010619253793527,
+          25.163601590230197,
+          56.35097774952533,
+          3.899641510298294,
+          21.511002493689457,
+          19.470813224362782,
+          35.940028323796014,
+          17.322301134653923,
+          134.47022220074138,
+          96.5624591916307,
+          27.011803286630442,
+          12.813939151372274,
+          2.2882074465896705,
+          2.000000165480742e-09,
+          41.58537792959736,
+          33.64784827639137,
+          8.658659848056459,
+          102.50606414369877,
+          9.348122867510831,
+          20.94884993535785,
+          170.28783345919166,
+          67.77489147965917,
+          107.88633518725646,
+          11.553776974631237,
+          76.90433035912463,
+          131.303099125223,
+          59.19228063285604,
+          67.27395121006097,
+          166.38784412098278,
+          113.56990237612092,
+          90.32356220354814,
+          73.9135780384149,
+          2.000000165480742e-09,
+          72.27732885090555,
+          138.92760129342878,
+          141.45371765512408,
+          54.95761724821833,
+          44.01607858382937,
+          63.259624510741745,
+          128.47424935568935,
+          156.12666155679298
+        ],
+        "unanchored_reasons": [
+          [
+            "node_000003",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000005",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000013",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000014",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000018",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000022",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000023",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000026",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000028",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000032",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000033",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000035",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000038",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000042",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000043",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000047",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000049",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000055",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000056",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000058",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000059",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000061",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000065",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000075",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000077",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000078",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000084",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000085",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000086",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000088",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000092",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000097",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000102",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000110",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000112",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000115",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000118",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000119",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000120",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000121",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000125",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000126",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000137",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000141",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000147",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000149",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000150",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000157",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000158",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000163",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000171",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000172",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000174",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000176",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000179",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000183",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000187",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000188",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000190",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000192",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000194",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000195",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000196",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000198",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000201",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000202",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000207",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000211",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000225",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000227",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000231",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000241",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000243",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000244",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000252",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000260",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000264",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000265",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000266",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000268",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000270",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000272",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000274",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000276",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000281",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000282",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000283",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000286",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000289",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000291",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000292",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000297",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000298",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000299",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000300",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000305",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000306",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000312",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000313",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000315",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000317",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000318",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000320",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000322",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000323",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000324",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000325",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000326",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000327",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000329",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000330",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000333",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000336",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000337",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000341",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000343",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000345",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000346",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000347",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000349",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000350",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000351",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000352",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000357",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000359",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000360",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000361",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000362",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000363",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000364",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000365",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000368",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000369",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000370",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000375",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000376",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000377",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000378",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000379",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000380",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000381",
+            "parent_attempt_budget_exhausted"
+          ],
+          [
+            "node_000383",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000386",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000388",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000389",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000390",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000391",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000392",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000394",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000395",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000398",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000400",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000401",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000402",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000403",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000405",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000406",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000407",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000408",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000411",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000412",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000415",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000416",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000418",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000419",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000420",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000421",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000423",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000425",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000426",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000427",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000430",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000431",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000434",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000436",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000437",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000438",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000439",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000440",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000441",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000442",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000446",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000447",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000449",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000450",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000451",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000452",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000453",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000456",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000457",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000458",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000459",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000462",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000463",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000465",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000466",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000467",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000468",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000470",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000472",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000473",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000474",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000476",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000477",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000478",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000479",
+            "run_stopped_before_anchor"
+          ],
+          [
+            "node_000480",
+            "run_stopped_before_anchor"
+          ]
+        ],
+        "readable_failures": 0,
+        "width_failures": 1,
+        "neighbor_ratio_failures": 36,
+        "strict_satisfied": false,
+        "sampled_width_resolution": 10,
+        "minimum_radius": 2.0000000979999997,
+        "maximum_radius": 4.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "cooperate",
+      "palette": "ember",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 479,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2182,
+      "accepted_attempts": 479,
+      "rejected_attempts": 1703,
+      "status": "target_reached",
+      "generation_seconds": 1.2839817999920342,
+      "validation_seconds": 0.016088400006992742,
+      "render_seconds": 0.024285799998324364,
+      "validation": {
+        "objects": 959,
+        "candidate_pairs": 677
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 104,
+        "soft_rejections": 52,
+        "minimum_angle": 30.267028703755685,
+        "angle_histogram": [
+          0,
+          137,
+          156,
+          157,
+          172,
+          159
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 1,
+      "command": "python -m graph_ics render --example cooperate --palette ember --seed 7 --output examples/output/cooperate-ember.png",
+      "options": [
+        "Interaction.attraction",
+        "allow_join",
+        "target_bridges"
+      ],
+      "explanation": "Two colored colonies attract and can join through validated component bridges.",
+      "limitation": "Joining is a permission, not a guaranteed connection; ownership survives a join.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 64.40000000000002,
+        "occupied_tiles": 150,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 1.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "compete",
+      "palette": "forest",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 478,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2278,
+      "accepted_attempts": 478,
+      "rejected_attempts": 1800,
+      "status": "target_reached",
+      "generation_seconds": 0.46193599997786805,
+      "validation_seconds": 0.025847600016277283,
+      "render_seconds": 0.02075269998749718,
+      "validation": {
+        "objects": 958,
+        "candidate_pairs": 3233
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 116,
+        "soft_rejections": 64,
+        "minimum_angle": 30.13612287221998,
+        "angle_histogram": [
+          0,
+          154,
+          156,
+          176,
+          163,
+          167
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 2,
+      "command": "python -m graph_ics render --example compete --palette forest --seed 7 --output examples/output/compete-forest.png",
+      "options": [
+        "Interaction.attraction=-0.3",
+        "clearance=10",
+        "Colony.weight"
+      ],
+      "explanation": "Colony headings turn away while an explicit rival gap separates rings and full strokes.",
+      "limitation": "Repulsion alone does not guarantee clearance; weights grant attempts, not area.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 70.80000000000001,
+        "occupied_tiles": 150,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 1.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "loops",
+      "palette": "blueprint",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 502,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2358,
+      "accepted_attempts": 507,
+      "rejected_attempts": 1851,
+      "status": "target_reached",
+      "generation_seconds": 0.21981290000258014,
+      "validation_seconds": 0.014233599998988211,
+      "render_seconds": 0.020981599984224886,
+      "validation": {
+        "objects": 982,
+        "candidate_pairs": 774
+      },
+      "quality": {
+        "removed_nodes": 2,
+        "refill_passes": 1,
+        "refill_attempts": 20,
+        "refill_additions": 2,
+        "hard_rejections": 124,
+        "soft_rejections": 58,
+        "minimum_angle": 30.197036386976606,
+        "angle_histogram": [
+          0,
+          171,
+          176,
+          202,
+          156,
+          188
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 3,
+      "command": "python -m graph_ics render --example loops --palette blueprint --seed 7 --output examples/output/loops-blueprint.png",
+      "options": [
+        "target_extra_edges",
+        "max_degree",
+        "loop_distance"
+      ],
+      "explanation": "Additional short edges close existing components after branch growth.",
+      "limitation": "Every loop must still pass collision, degree, and both-endpoint angle checks.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 68.60000000000002,
+        "occupied_tiles": 149,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9933333333333333
+      },
+      "fill_area": false
+    },
+    {
+      "example": "newest",
+      "palette": "linen",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 479,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 4671,
+      "accepted_attempts": 484,
+      "rejected_attempts": 4187,
+      "status": "target_reached",
+      "generation_seconds": 0.3291330999927595,
+      "validation_seconds": 0.01642230001743883,
+      "render_seconds": 0.023728300002403557,
+      "validation": {
+        "objects": 959,
+        "candidate_pairs": 738
+      },
+      "quality": {
+        "removed_nodes": 4,
+        "refill_passes": 1,
+        "refill_attempts": 32,
+        "refill_additions": 4,
+        "hard_rejections": 124,
+        "soft_rejections": 41,
+        "minimum_angle": 30.044223194686733,
+        "angle_histogram": [
+          0,
+          109,
+          109,
+          122,
+          119,
+          128
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 1,
+      "command": "python -m graph_ics render --example newest --palette linen --seed 7 --output examples/output/newest-linen.png",
+      "options": [
+        "NewestTip",
+        "failures_per_parent",
+        "node_direction_function"
+      ],
+      "explanation": "Select the most recent active node for winding, less evenly distributed growth.",
+      "limitation": "An explicit parent policy cannot be combined with coverage scheduling or colonies.",
+      "fill_area": false
+    },
+    {
+      "example": "quality",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 477,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 3135,
+      "accepted_attempts": 482,
+      "rejected_attempts": 2653,
+      "status": "target_reached",
+      "generation_seconds": 0.27783579999231733,
+      "validation_seconds": 0.01382190000731498,
+      "render_seconds": 0.02104490000056103,
+      "validation": {
+        "objects": 957,
+        "candidate_pairs": 663
+      },
+      "quality": {
+        "removed_nodes": 2,
+        "refill_passes": 1,
+        "refill_attempts": 57,
+        "refill_additions": 2,
+        "hard_rejections": 328,
+        "soft_rejections": 152,
+        "minimum_angle": 40.10431665902891,
+        "angle_histogram": [
+          0,
+          72,
+          161,
+          185,
+          144,
+          178
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 3,
+      "command": "python -m graph_ics render --example quality --palette porcelain --seed 7 --output examples/output/quality-porcelain.png",
+      "options": [
+        "AngleSettings",
+        "remove_isolated_nodes",
+        "refill_passes"
+      ],
+      "explanation": "A hard 40-degree limit and preferred 75-degree angle reduce sharp clusters; refill retries freed space.",
+      "limitation": "Stricter aesthetic constraints can increase rejection and underfill.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 55.80000000000002,
+        "occupied_tiles": 150,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 1.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "angles_free",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 475,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 1583,
+      "accepted_attempts": 480,
+      "rejected_attempts": 1103,
+      "status": "target_reached",
+      "generation_seconds": 0.16148969999630935,
+      "validation_seconds": 0.015718000009655952,
+      "render_seconds": 0.02228940001805313,
+      "validation": {
+        "objects": 955,
+        "candidate_pairs": 820
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 0,
+        "soft_rejections": 0,
+        "minimum_angle": 19.299511742540403,
+        "angle_histogram": [
+          58,
+          125,
+          151,
+          156,
+          159,
+          153
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 5,
+      "command": "python -m graph_ics render --example angles_free --palette porcelain --seed 7 --output examples/output/angles_free-porcelain.png",
+      "options": [
+        "minimum=0",
+        "preferred=0",
+        "penalty=0"
+      ],
+      "explanation": "No hard or soft angle rule: more acute junctions can survive.",
+      "limitation": "Collision checks still forbid overlapping strokes.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 70.40000000000002,
+        "occupied_tiles": 149,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9933333333333333
+      },
+      "fill_area": false
+    },
+    {
+      "example": "angles_hard",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 476,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2265,
+      "accepted_attempts": 481,
+      "rejected_attempts": 1784,
+      "status": "target_reached",
+      "generation_seconds": 0.20141860001604073,
+      "validation_seconds": 0.013662099983775988,
+      "render_seconds": 0.022804399981396273,
+      "validation": {
+        "objects": 956,
+        "candidate_pairs": 689
+      },
+      "quality": {
+        "removed_nodes": 1,
+        "refill_passes": 1,
+        "refill_attempts": 31,
+        "refill_additions": 1,
+        "hard_rejections": 306,
+        "soft_rejections": 0,
+        "minimum_angle": 45.00618176699029,
+        "angle_histogram": [
+          0,
+          112,
+          170,
+          171,
+          165,
+          169
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 4,
+      "command": "python -m graph_ics render --example angles_hard --palette porcelain --seed 7 --output examples/output/angles_hard-porcelain.png",
+      "options": [
+        "minimum=45",
+        "penalty=0"
+      ],
+      "explanation": "Reject every junction below 45 degrees.",
+      "limitation": "This can reduce feasible connections.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 61.000000000000014,
+        "occupied_tiles": 150,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 1.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "angles_soft",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 476,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 1771,
+      "accepted_attempts": 481,
+      "rejected_attempts": 1290,
+      "status": "target_reached",
+      "generation_seconds": 0.22341740000410937,
+      "validation_seconds": 0.013998699985677376,
+      "render_seconds": 0.021228900004643947,
+      "validation": {
+        "objects": 956,
+        "candidate_pairs": 745
+      },
+      "quality": {
+        "removed_nodes": 1,
+        "refill_passes": 1,
+        "refill_attempts": 3,
+        "refill_additions": 1,
+        "hard_rejections": 0,
+        "soft_rejections": 138,
+        "minimum_angle": 17.946944652198248,
+        "angle_histogram": [
+          27,
+          139,
+          168,
+          182,
+          169,
+          175
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 4,
+      "command": "python -m graph_ics render --example angles_soft --palette porcelain --seed 7 --output examples/output/angles_soft-porcelain.png",
+      "options": [
+        "minimum=0",
+        "preferred=80",
+        "penalty=0.9"
+      ],
+      "explanation": "Prefer 80 degrees with a 0.9 soft penalty, without a hard angle ban.",
+      "limitation": "Soft penalties can still accept sharp angles.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 65.00000000000001,
+        "occupied_tiles": 150,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 1.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "angles_strict",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 476,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 4832,
+      "accepted_attempts": 481,
+      "rejected_attempts": 4351,
+      "status": "target_reached",
+      "generation_seconds": 0.41810279997298494,
+      "validation_seconds": 0.013510600023437291,
+      "render_seconds": 0.020764099986990914,
+      "validation": {
+        "objects": 956,
+        "candidate_pairs": 676
+      },
+      "quality": {
+        "removed_nodes": 1,
+        "refill_passes": 1,
+        "refill_attempts": 5,
+        "refill_additions": 1,
+        "hard_rejections": 1063,
+        "soft_rejections": 143,
+        "minimum_angle": 60.173399040462066,
+        "angle_histogram": [
+          0,
+          0,
+          161,
+          225,
+          148,
+          146
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 4,
+      "command": "python -m graph_ics render --example angles_strict --palette porcelain --seed 7 --output examples/output/angles_strict-porcelain.png",
+      "options": [
+        "minimum=60",
+        "preferred=90",
+        "penalty=0.9"
+      ],
+      "explanation": "Combine a 60-degree ban with a 90-degree preference.",
+      "limitation": "Stricter controls may leave more open space.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 55.600000000000016,
+        "occupied_tiles": 150,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 1.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "shapes",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 477,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2261,
+      "accepted_attempts": 482,
+      "rejected_attempts": 1779,
+      "status": "target_reached",
+      "generation_seconds": 0.20406469999579713,
+      "validation_seconds": 0.014153299998724833,
+      "render_seconds": 0.025140600017039105,
+      "validation": {
+        "objects": 957,
+        "candidate_pairs": 715
+      },
+      "quality": {
+        "removed_nodes": 2,
+        "refill_passes": 1,
+        "refill_attempts": 50,
+        "refill_additions": 2,
+        "hard_rejections": 110,
+        "soft_rejections": 55,
+        "minimum_angle": 30.197036386976606,
+        "angle_histogram": [
+          0,
+          149,
+          155,
+          182,
+          145,
+          176
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 3,
+      "command": "python -m graph_ics render --example shapes --palette porcelain --seed 7 --output examples/output/shapes-porcelain.png",
+      "options": [
+        "node_shape=hexagon",
+        "node_outer_radius"
+      ],
+      "explanation": "Hexagonal hollow nodes retain the same reserved radius as circles.",
+      "limitation": "Collision and edge clipping use conservative enclosing disks.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 68.60000000000002,
+        "occupied_tiles": 149,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9933333333333333
+      },
+      "fill_area": false
+    },
+    {
+      "example": "lines",
+      "palette": "blueprint",
+      "seed": 7,
+      "target_nodes": 480,
+      "nodes": 480,
+      "edges": 475,
+      "dimensions": [
+        632,
+        432
+      ],
+      "attempts": 2189,
+      "accepted_attempts": 480,
+      "rejected_attempts": 1709,
+      "status": "target_reached",
+      "generation_seconds": 0.1975257000012789,
+      "validation_seconds": 0.013657000003149733,
+      "render_seconds": 0.022795199998654425,
+      "validation": {
+        "objects": 955,
+        "candidate_pairs": 795
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 99,
+        "soft_rejections": 48,
+        "minimum_angle": 30.034279495885638,
+        "angle_histogram": [
+          0,
+          157,
+          157,
+          158,
+          169,
+          155
+        ],
+        "achieved_nodes": 480,
+        "target_shortfall": 0
+      },
+      "components": 5,
+      "command": "python -m graph_ics render --example lines --palette blueprint --seed 7 --output examples/output/lines-blueprint.png",
+      "options": [
+        "edge_style=double",
+        "edge_thickness=2"
+      ],
+      "explanation": "Parallel strokes share a single reserved full-width corridor.",
+      "limitation": "Style changes do not open gaps in collision protection.",
+      "coverage": {
+        "expected_nodes": 480.0,
+        "actual_nodes": 480,
+        "residual_underfill": 59.000000000000014,
+        "occupied_tiles": 150,
+        "usable_tiles": 150,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 1.0
+      },
+      "fill_area": false
+    },
+    {
+      "example": "arctic_atlas",
+      "palette": "arctic",
+      "seed": 7,
+      "target_nodes": 4000,
+      "nodes": 4000,
+      "edges": 3995,
+      "dimensions": [
+        1632,
+        1032
+      ],
+      "attempts": 34345,
+      "accepted_attempts": 4000,
+      "rejected_attempts": 30345,
+      "status": "target_reached",
+      "generation_seconds": 3.1394736999936868,
+      "validation_seconds": 0.12281040000380017,
+      "render_seconds": 0.1660762999963481,
+      "validation": {
+        "objects": 7995,
+        "candidate_pairs": 6450
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 1223,
+        "soft_rejections": 467,
+        "minimum_angle": 30.061788281718265,
+        "angle_histogram": [
+          0,
+          1302,
+          1317,
+          1387,
+          1309,
+          1339
+        ],
+        "achieved_nodes": 4000,
+        "target_shortfall": 0
+      },
+      "components": 5,
+      "command": "python -m graph_ics render --example arctic_atlas --palette arctic --seed 7 --output examples/output/arctic_atlas-arctic.png",
+      "options": [
+        "target_nodes=4000",
+        "Text.padding_em",
+        "coverage"
+      ],
+      "explanation": "A broad, dense name composition intended for close inspection at full resolution.",
+      "limitation": "Large output takes more generation, validation, and export time.",
+      "coverage": {
+        "expected_nodes": 3999.9999999999995,
+        "actual_nodes": 4000,
+        "residual_underfill": 405.25127263427663,
+        "occupied_tiles": 937,
+        "usable_tiles": 952,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9981454098241874
+      },
+      "fill_area": false
+    },
+    {
+      "example": "panorama",
+      "palette": "aurora",
+      "seed": 7,
+      "target_nodes": 7000,
+      "nodes": 7000,
+      "edges": 6995,
+      "dimensions": [
+        2632,
+        1432
+      ],
+      "attempts": 52645,
+      "accepted_attempts": 7000,
+      "rejected_attempts": 45645,
+      "status": "target_reached",
+      "generation_seconds": 7.293206700007431,
+      "validation_seconds": 0.21943719999399036,
+      "render_seconds": 0.33588240001699887,
+      "validation": {
+        "objects": 13995,
+        "candidate_pairs": 11186
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 1811,
+        "soft_rejections": 710,
+        "minimum_angle": 30.00102201258256,
+        "angle_histogram": [
+          0,
+          2172,
+          2321,
+          2421,
+          2352,
+          2362
+        ],
+        "achieved_nodes": 7000,
+        "target_shortfall": 0
+      },
+      "components": 5,
+      "command": "python -m graph_ics render --example panorama --palette aurora --seed 7 --output examples/output/panorama-aurora.png",
+      "options": [
+        "target_nodes=7000",
+        "coordinated_scale",
+        "output dimensions"
+      ],
+      "explanation": "A wide network with a coordinated wave in scale and a central title.",
+      "limitation": "A high node target may still leave local gaps.",
+      "coverage": {
+        "expected_nodes": 7000.000000000001,
+        "actual_nodes": 7000,
+        "residual_underfill": 1154.8754336774857,
+        "occupied_tiles": 2134,
+        "usable_tiles": 2170,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.9948592304267495
+      },
+      "fill_area": false
+    },
+    {
+      "example": "archipelago",
+      "palette": "blueprint",
+      "seed": 7,
+      "target_nodes": 8000,
+      "nodes": 8000,
+      "edges": 7997,
+      "dimensions": [
+        3232,
+        1832
+      ],
+      "attempts": 21919,
+      "accepted_attempts": 7997,
+      "rejected_attempts": 13922,
+      "status": "target_reached",
+      "generation_seconds": 9.701457599992864,
+      "validation_seconds": 0.4608285000140313,
+      "render_seconds": 0.3809135000046808,
+      "validation": {
+        "objects": 15997,
+        "candidate_pairs": 46627
+      },
+      "quality": {
+        "removed_nodes": 0,
+        "refill_passes": 0,
+        "refill_attempts": 0,
+        "refill_additions": 0,
+        "hard_rejections": 1277,
+        "soft_rejections": 750,
+        "minimum_angle": 30.005072591512075,
+        "angle_histogram": [
+          0,
+          2111,
+          2522,
+          2702,
+          2678,
+          2697
+        ],
+        "achieved_nodes": 8000,
+        "target_shortfall": 0
+      },
+      "components": 3,
+      "command": "python -m graph_ics render --example archipelago --palette blueprint --seed 7 --output examples/output/archipelago-blueprint.png",
+      "options": [
+        "target_nodes=8000",
+        "three colonies",
+        "pairwise clearance"
+      ],
+      "explanation": "Three colonies claim a large canvas around obstacle islands with hard rival gaps.",
+      "limitation": "This is spatial competition, not resource consumption or biological survival.",
+      "coverage": {
+        "expected_nodes": 7999.999999999999,
+        "actual_nodes": 8000,
+        "residual_underfill": 2135.437067773167,
+        "occupied_tiles": 2817,
+        "usable_tiles": 3487,
+        "tile_size": 40,
+        "reseed_attempts": 0,
+        "reseeds": 0,
+        "occupied_tile_area_fraction": 0.8089413324112494
+      },
+      "fill_area": false
+    },
+    {
+      "example": "uk_density_only",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 18000,
+      "nodes": 5543,
+      "edges": 5031,
+      "dimensions": [
+        2041,
+        3860
+      ],
+      "attempts": 183823,
+      "accepted_attempts": 5791,
+      "rejected_attempts": 178032,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 24.564103700016858,
+      "validation_seconds": 0.2613087999925483,
+      "render_seconds": 0.2992169999924954,
+      "validation": {
+        "objects": 10574,
+        "candidate_pairs": 38908
+      },
+      "quality": {
+        "removed_nodes": 248,
+        "refill_passes": 1,
+        "refill_attempts": 36000,
+        "refill_additions": 54,
+        "hard_rejections": 96,
+        "soft_rejections": 114,
+        "minimum_angle": 30.05177502582519,
+        "angle_histogram": [
+          0,
+          445,
+          1453,
+          1312,
+          1537,
+          1533
+        ],
+        "achieved_nodes": 5543,
+        "target_shortfall": 12457
+      },
+      "components": 512,
+      "command": "python -m graph_ics render --example uk_density_only --palette porcelain --seed 7 --output examples/output/uk_density_only-porcelain.png",
+      "options": [
+        "SpatialFields.density"
+      ],
+      "explanation": "The same population raster changes spacing while node dimensions stay fixed.",
+      "limitation": "Population is mapped logarithmically; dots are not individual people.",
+      "coverage": {
+        "expected_nodes": 9999.3021330522,
+        "actual_nodes": 5543,
+        "residual_underfill": 4472.759716119934,
+        "occupied_tiles": 786,
+        "usable_tiles": 872,
+        "tile_size": 60,
+        "reseed_attempts": 5000,
+        "reseeds": 610,
+        "occupied_tile_area_fraction": 0.9883851763693074
+      },
+      "fill_area": true
+    },
+    {
+      "example": "uk_density_only",
+      "palette": "arctic",
+      "seed": 7,
+      "target_nodes": 18000,
+      "nodes": 5543,
+      "edges": 5031,
+      "dimensions": [
+        2041,
+        3860
+      ],
+      "attempts": 183823,
+      "accepted_attempts": 5791,
+      "rejected_attempts": 178032,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 25.34369819998392,
+      "validation_seconds": 0.24605410001822747,
+      "render_seconds": 0.305727900005877,
+      "validation": {
+        "objects": 10574,
+        "candidate_pairs": 38908
+      },
+      "quality": {
+        "removed_nodes": 248,
+        "refill_passes": 1,
+        "refill_attempts": 36000,
+        "refill_additions": 54,
+        "hard_rejections": 96,
+        "soft_rejections": 114,
+        "minimum_angle": 30.05177502582519,
+        "angle_histogram": [
+          0,
+          445,
+          1453,
+          1312,
+          1537,
+          1533
+        ],
+        "achieved_nodes": 5543,
+        "target_shortfall": 12457
+      },
+      "components": 512,
+      "command": "python -m graph_ics render --example uk_density_only --palette arctic --seed 7 --output examples/output/uk_density_only-arctic.png",
+      "options": [
+        "SpatialFields.density"
+      ],
+      "explanation": "The same population raster changes spacing while node dimensions stay fixed.",
+      "limitation": "Population is mapped logarithmically; dots are not individual people.",
+      "coverage": {
+        "expected_nodes": 9999.3021330522,
+        "actual_nodes": 5543,
+        "residual_underfill": 4472.759716119934,
+        "occupied_tiles": 786,
+        "usable_tiles": 872,
+        "tile_size": 60,
+        "reseed_attempts": 5000,
+        "reseeds": 610,
+        "occupied_tile_area_fraction": 0.9883851763693074
+      },
+      "fill_area": true
+    },
+    {
+      "example": "uk_colors",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 18000,
+      "nodes": 10834,
+      "edges": 10252,
+      "dimensions": [
+        2041,
+        3860
+      ],
+      "attempts": 389226,
+      "accepted_attempts": 11284,
+      "rejected_attempts": 377942,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 73.3212795999716,
+      "validation_seconds": 0.5815036999993026,
+      "render_seconds": 0.5163463999633677,
+      "validation": {
+        "objects": 21086,
+        "candidate_pairs": 86921
+      },
+      "quality": {
+        "removed_nodes": 450,
+        "refill_passes": 1,
+        "refill_attempts": 100000,
+        "refill_additions": 280,
+        "hard_rejections": 0,
+        "soft_rejections": 256,
+        "minimum_angle": 39.722958664232266,
+        "angle_histogram": [
+          0,
+          1682,
+          3215,
+          3296,
+          3381,
+          3380
+        ],
+        "achieved_nodes": 10834,
+        "target_shortfall": 7166
+      },
+      "components": 582,
+      "command": "python -m graph_ics render --example uk_colors --palette porcelain --seed 7 --output examples/output/uk_colors-porcelain.png",
+      "options": [
+        "color_map"
+      ],
+      "explanation": "Population controls colour; geometry uses uniform dimensions and spacing.",
+      "limitation": "Colour encodes log population density, not node count.",
+      "coverage": {
+        "expected_nodes": 16513.718592718542,
+        "actual_nodes": 10834,
+        "residual_underfill": 5759.112425424361,
+        "occupied_tiles": 3953,
+        "usable_tiles": 4378,
+        "tile_size": 25,
+        "reseed_attempts": 15000,
+        "reseeds": 882,
+        "occupied_tile_area_fraction": 0.9826683520362186
+      },
+      "fill_area": true
+    },
+    {
+      "example": "uk_colors",
+      "palette": "arctic",
+      "seed": 7,
+      "target_nodes": 18000,
+      "nodes": 10834,
+      "edges": 10252,
+      "dimensions": [
+        2041,
+        3860
+      ],
+      "attempts": 389226,
+      "accepted_attempts": 11284,
+      "rejected_attempts": 377942,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 73.3212795999716,
+      "validation_seconds": 0.5815036999993026,
+      "render_seconds": 0.4837738999631256,
+      "validation": {
+        "objects": 21086,
+        "candidate_pairs": 86921
+      },
+      "quality": {
+        "removed_nodes": 450,
+        "refill_passes": 1,
+        "refill_attempts": 100000,
+        "refill_additions": 280,
+        "hard_rejections": 0,
+        "soft_rejections": 256,
+        "minimum_angle": 39.722958664232266,
+        "angle_histogram": [
+          0,
+          1682,
+          3215,
+          3296,
+          3381,
+          3380
+        ],
+        "achieved_nodes": 10834,
+        "target_shortfall": 7166
+      },
+      "components": 582,
+      "command": "python -m graph_ics render --example uk_colors --palette arctic --seed 7 --output examples/output/uk_colors-arctic.png",
+      "options": [
+        "color_map"
+      ],
+      "explanation": "Population controls colour; geometry uses uniform dimensions and spacing.",
+      "limitation": "Colour encodes log population density, not node count.",
+      "coverage": {
+        "expected_nodes": 16513.718592718542,
+        "actual_nodes": 10834,
+        "residual_underfill": 5759.112425424361,
+        "occupied_tiles": 3953,
+        "usable_tiles": 4378,
+        "tile_size": 25,
+        "reseed_attempts": 15000,
+        "reseeds": 882,
+        "occupied_tile_area_fraction": 0.9826683520362186
+      },
+      "fill_area": true
+    },
+    {
+      "example": "spain_population",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 32000,
+      "nodes": 17017,
+      "edges": 15929,
+      "dimensions": [
+        4878,
+        3632
+      ],
+      "attempts": 505728,
+      "accepted_attempts": 17605,
+      "rejected_attempts": 488123,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 93.36627810000209,
+      "validation_seconds": 0.7493213999841828,
+      "render_seconds": 0.8208654000191018,
+      "validation": {
+        "objects": 32946,
+        "candidate_pairs": 143036
+      },
+      "quality": {
+        "removed_nodes": 588,
+        "refill_passes": 1,
+        "refill_attempts": 64000,
+        "refill_additions": 75,
+        "hard_rejections": 0,
+        "soft_rejections": 60,
+        "minimum_angle": 30.92256235400388,
+        "angle_histogram": [
+          0,
+          486,
+          5014,
+          4682,
+          5119,
+          5226
+        ],
+        "achieved_nodes": 17017,
+        "target_shortfall": 14983
+      },
+      "components": 1088,
+      "command": "python -m graph_ics render --example spain_population --palette porcelain --seed 7 --output examples/output/spain_population-porcelain.png",
+      "options": [
+        "SpatialFields.density",
+        "SpatialFields.coordinated_scale"
+      ],
+      "explanation": "Population guides spacing and size in Spain, including the Balearics and excluding the Canary Islands.",
+      "limitation": "Small territories may remain empty; this is an artistic map, not a population total.",
+      "coverage": {
+        "expected_nodes": 26358.331140339174,
+        "actual_nodes": 17017,
+        "residual_underfill": 9368.425498651628,
+        "occupied_tiles": 2564,
+        "usable_tiles": 2644,
+        "tile_size": 60,
+        "reseed_attempts": 5000,
+        "reseeds": 1526,
+        "occupied_tile_area_fraction": 0.9972951277400507
+      },
+      "fill_area": true
+    },
+    {
+      "example": "spain_population",
+      "palette": "arctic",
+      "seed": 7,
+      "target_nodes": 32000,
+      "nodes": 17017,
+      "edges": 15929,
+      "dimensions": [
+        4878,
+        3632
+      ],
+      "attempts": 505728,
+      "accepted_attempts": 17605,
+      "rejected_attempts": 488123,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 93.05453440002748,
+      "validation_seconds": 0.7570383000129368,
+      "render_seconds": 0.828478899988113,
+      "validation": {
+        "objects": 32946,
+        "candidate_pairs": 143036
+      },
+      "quality": {
+        "removed_nodes": 588,
+        "refill_passes": 1,
+        "refill_attempts": 64000,
+        "refill_additions": 75,
+        "hard_rejections": 0,
+        "soft_rejections": 60,
+        "minimum_angle": 30.92256235400388,
+        "angle_histogram": [
+          0,
+          486,
+          5014,
+          4682,
+          5119,
+          5226
+        ],
+        "achieved_nodes": 17017,
+        "target_shortfall": 14983
+      },
+      "components": 1088,
+      "command": "python -m graph_ics render --example spain_population --palette arctic --seed 7 --output examples/output/spain_population-arctic.png",
+      "options": [
+        "SpatialFields.density",
+        "SpatialFields.coordinated_scale"
+      ],
+      "explanation": "Population guides spacing and size in Spain, including the Balearics and excluding the Canary Islands.",
+      "limitation": "Small territories may remain empty; this is an artistic map, not a population total.",
+      "coverage": {
+        "expected_nodes": 26358.331140339174,
+        "actual_nodes": 17017,
+        "residual_underfill": 9368.425498651628,
+        "occupied_tiles": 2564,
+        "usable_tiles": 2644,
+        "tile_size": 60,
+        "reseed_attempts": 5000,
+        "reseeds": 1526,
+        "occupied_tile_area_fraction": 0.9972951277400507
+      },
+      "fill_area": true
+    },
+    {
+      "example": "uk_population",
+      "palette": "porcelain",
+      "seed": 7,
+      "target_nodes": 18000,
+      "nodes": 5989,
+      "edges": 5451,
+      "dimensions": [
+        2041,
+        3860
+      ],
+      "attempts": 195888,
+      "accepted_attempts": 6246,
+      "rejected_attempts": 189642,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 36.1077383000229,
+      "validation_seconds": 0.3019580000254791,
+      "render_seconds": 0.38317889999598265,
+      "validation": {
+        "objects": 11440,
+        "candidate_pairs": 44638
+      },
+      "quality": {
+        "removed_nodes": 257,
+        "refill_passes": 1,
+        "refill_attempts": 36000,
+        "refill_additions": 25,
+        "hard_rejections": 3,
+        "soft_rejections": 41,
+        "minimum_angle": 33.16383021583606,
+        "angle_histogram": [
+          0,
+          240,
+          1557,
+          1502,
+          1697,
+          1677
+        ],
+        "achieved_nodes": 5989,
+        "target_shortfall": 12011
+      },
+      "components": 538,
+      "command": "python -m graph_ics render --example uk_population --palette porcelain --seed 7 --output examples/output/uk_population-porcelain.png",
+      "options": [
+        "log density mapping",
+        "variable scale",
+        "12000 target nodes"
+      ],
+      "explanation": "WorldPop 2020 population density guides spacing and scale inside a Natural Earth UK boundary.",
+      "limitation": "Artistic logarithmic mapping, not one dot per person. Small islands and narrow coasts can remain empty.",
+      "coverage": {
+        "expected_nodes": 9999.3021330522,
+        "actual_nodes": 5989,
+        "residual_underfill": 4034.312558270309,
+        "occupied_tiles": 787,
+        "usable_tiles": 872,
+        "tile_size": 60,
+        "reseed_attempts": 5000,
+        "reseeds": 645,
+        "occupied_tile_area_fraction": 0.9883396596061655
+      },
+      "fill_area": true
+    },
+    {
+      "example": "uk_population",
+      "palette": "arctic",
+      "seed": 7,
+      "target_nodes": 18000,
+      "nodes": 5989,
+      "edges": 5451,
+      "dimensions": [
+        2041,
+        3860
+      ],
+      "attempts": 195888,
+      "accepted_attempts": 6246,
+      "rejected_attempts": 189642,
+      "status": "attempt_budget_exhausted",
+      "generation_seconds": 44.81927269999869,
+      "validation_seconds": 0.2670434000028763,
+      "render_seconds": 0.31006290001096204,
+      "validation": {
+        "objects": 11440,
+        "candidate_pairs": 44638
+      },
+      "quality": {
+        "removed_nodes": 257,
+        "refill_passes": 1,
+        "refill_attempts": 36000,
+        "refill_additions": 25,
+        "hard_rejections": 3,
+        "soft_rejections": 41,
+        "minimum_angle": 33.16383021583606,
+        "angle_histogram": [
+          0,
+          240,
+          1557,
+          1502,
+          1697,
+          1677
+        ],
+        "achieved_nodes": 5989,
+        "target_shortfall": 12011
+      },
+      "components": 538,
+      "command": "python -m graph_ics render --example uk_population --palette arctic --seed 7 --output examples/output/uk_population-arctic.png",
+      "options": [
+        "log density mapping",
+        "variable scale",
+        "12000 target nodes"
+      ],
+      "explanation": "WorldPop 2020 population density guides spacing and scale inside a Natural Earth UK boundary.",
+      "limitation": "Artistic logarithmic mapping, not one dot per person. Small islands and narrow coasts can remain empty.",
+      "coverage": {
+        "expected_nodes": 9999.3021330522,
+        "actual_nodes": 5989,
+        "residual_underfill": 4034.312558270309,
+        "occupied_tiles": 787,
+        "usable_tiles": 872,
+        "tile_size": 60,
+        "reseed_attempts": 5000,
+        "reseeds": 645,
+        "occupied_tile_area_fraction": 0.9883396596061655
+      },
+      "fill_area": true
+    }
+  ]
+}

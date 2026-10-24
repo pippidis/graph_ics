@@ -1,0 +1,221 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Examples | graph_ics</title><link rel="icon" type="image/svg+xml" href="../logo/figures/favicon.svg"><link rel="icon" href="../logo/figures/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../logo/figures/icon-180.png"><meta property="og:site_name" content="graph_ics"><meta property="og:type" content="website"><meta property="og:title" content="Examples | graph_ics"><meta property="og:image" content="https://graph-ics.pippidis.no/logo/figures/banner@2x.png"><meta name="description" content="graph_ics: generative artwork from sprawling networks. Explore examples, spatial maps, typography and the Python manual."><style>
+:root{color-scheme:light;--ink:#284d68;--muted:#526872;--paper:#ffffff;--line:#d5dfe5;--accent:#a64152}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{color:#284d68}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #a64152;outline-offset:4px}
+.topbar{position:sticky;top:0;z-index:10;padding:18px max(24px,calc((100vw - 1440px)/2));background:#ffffffed;color:var(--ink);border-bottom:1px solid var(--line);backdrop-filter:blur(12px);display:flex;gap:28px;align-items:center;flex-wrap:wrap}.brand{font-weight:750;letter-spacing:.04em}.topbar a{color:inherit;text-decoration:none}.topbar a[aria-current]{border-bottom:2px solid var(--accent)}.topbar nav{min-width:0;display:flex;gap:24px;flex-wrap:wrap}.container{max-width:1488px;padding:36px 24px 64px;margin:auto}.intro{margin-bottom:32px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;font-weight:700;color:var(--accent)}h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.08;letter-spacing:-.04em;margin:14px 0 20px}h2{font-size:1.55rem;line-height:1.25}h3{font-size:1.1rem;line-height:1.35}.intro p{font-size:1.1rem;color:var(--muted)}.paths{display:flex;gap:14px;flex-wrap:wrap}.button,button{border:1px solid var(--line);background:white;color:var(--ink);padding:9px 14px;border-radius:6px;font:inherit;cursor:pointer;text-decoration:none}.button:hover,button:hover{background:#edf2f5}.filters{display:flex;gap:18px;flex-wrap:wrap;align-items:end;padding:20px;background:#f0f4f6;border:1px solid var(--line);border-radius:8px;margin:28px 0}.filters label{display:grid;gap:5px;font-size:.85rem;font-weight:650}.filters .check{display:flex;align-items:center;padding:10px 0}.filters input[type=search]{min-width:230px}.filters input,.filters select{font:inherit;padding:9px;border:1px solid #aabbb8;border-radius:4px;background:white;color:var(--ink)}.filters input[type=checkbox]{width:18px;height:18px}#count{margin-left:auto;font-size:.9rem;color:var(--muted)}
+.grid,.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}article{min-width:0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:18px}article[hidden]{display:none}article h2,article h3{margin:10px 0}article p{font-size:.94rem}.image-link{display:block;margin:-18px -18px 18px;background:#f5f7f8}.image-link img{display:block;width:100%;height:260px;object-fit:contain}article img{width:100%;height:auto;display:block}article .meta{font-size:.82rem;color:var(--muted)}.swatches{display:flex;gap:4px}.swatches span{width:20px;height:9px;border:1px solid #0002;border-radius:2px}.downloads{display:flex;gap:16px;font-size:.9rem;font-weight:650;margin:15px 0}.downloads a{white-space:nowrap}details{border-top:1px solid var(--line);padding-top:12px;margin-top:16px}summary{cursor:pointer;font-weight:650}li{margin:8px 0}ul{padding-left:21px}code{font-size:.88em}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f4f6;padding:14px;border-radius:5px;font-size:.82rem;line-height:1.65}button.copy{font-size:.78rem;padding:5px 10px;margin-bottom:5px}.hint,.notice{color:var(--muted);font-size:.9rem}.notice{border-left:3px solid #7f9baa;padding:8px 16px;background:#f0f4f6}.section-nav{display:flex;gap:10px 22px;flex-wrap:wrap;margin:24px 0}.section-nav a{font-size:.9rem}section{margin:48px 0}img{max-width:100%;height:auto}.hero{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:center;margin-bottom:40px}.hero .intro{margin:0}.hero img{border-radius:8px;width:100%}.start{background:#f0f4f6;padding:24px;border-radius:8px}table{border-collapse:collapse;width:100%;text-align:left;font-size:.9rem}th,td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.table-scroll{overflow-x:auto}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px}.comparison img{max-width:100%;max-height:1000px;width:auto;display:block;margin:auto}.comparison figure{margin:0;background:white;padding:20px;border:1px solid var(--line)}figcaption{margin-top:15px;font-size:.9rem;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:60px;padding-top:20px;font-size:.85rem;color:var(--muted)}#more{display:block;margin:30px auto}#empty{padding:40px;text-align:center}.alpha{background:repeating-conic-gradient(#ddd 0% 25%,#fff 0% 50%) 0/16px 16px}noscript{display:block;padding:12px}.style-key{max-width:760px;width:100%;height:auto}
+@media(max-width:1050px){.grid,.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{gap:16px}#count{margin-left:0}}@media(max-width:650px){.grid,.cards,.comparison,.hero{grid-template-columns:1fr}.container{padding:24px 16px}.topbar{position:sticky;top:0;z-index:10;padding:16px}.topbar nav{gap:14px}.filters{gap:12px}.filters label,.filters input[type=search]{width:100%;min-width:0}.image-link img{height:240px}h1{font-size:2.5rem}td{padding:8px}}
+
+h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400}h1{letter-spacing:-.035em}.brand{display:flex;align-items:center;gap:10px}.brand img{width:32px;height:32px}.hero{padding:28px 0 50px}.intro{max-width:none}.container{max-width:1320px}.skip-link{position:absolute;top:-100px;left:16px;z-index:20;background:white;padding:12px}.skip-link:focus{top:8px}.manual{max-width:none;margin:0}.manual h2{margin-top:48px}.manual pre{overflow:auto}.manual table{display:block;overflow:auto}.about{border-top:1px solid var(--line);padding-top:30px}.topbar nav{gap:18px;font-size:.9rem}dialog{border:1px solid var(--line);border-radius:8px;width:90vw;max-width:1400px;height:85vh;padding:16px}dialog::backdrop{background:#132b3ddd}.viewer-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.viewer-canvas{overflow:auto;height:calc(100% - 65px);margin-top:16px}.viewer-canvas img{max-width:none;display:block}.animation-toggle{display:block;margin:12px 0}footer{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}section{margin:64px 0}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media(max-width:650px){.hero{padding-top:0}.topbar{position:relative}.manual h1{font-size:2.1rem}html{scroll-padding-top:20px}}
+
+.guide-layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:48px}.chapter-nav{position:sticky;top:100px;align-self:start;max-height:80vh;overflow:auto}.chapter-nav ol{padding-left:24px}.chapter-nav a{text-decoration:none;color:var(--ink)}.chapter-nav a[aria-current]{color:var(--accent);font-weight:700}.guide-body{min-width:0}.guide-body .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-body h2{margin-top:40px}.breadcrumbs{font-size:.85rem;margin-bottom:24px}.chapter-pager{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:24px;margin-top:48px}.on-this-page{border-left:2px solid var(--line);padding-left:20px}.mobile-chapters{display:none}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}.feature-grid img{width:100%;height:230px;object-fit:contain}.guide-body pre{overflow-wrap:anywhere}.guide-body table{display:block;overflow:auto}.guide-body article{padding:16px}.guide-body>article{border:0;padding:0}.guide-body p{max-width:none}@media(max-width:850px){.guide-layout{display:block}.chapter-nav{display:none}.mobile-chapters{display:block;margin-bottom:28px}.feature-grid{grid-template-columns:1fr}}@media(max-width:550px){.guide-body .grid{grid-template-columns:1fr}}
+
+.about-page{width:100%}.about-page .intro{max-width:none;margin-bottom:36px}.about-page .intro p,.about-page section p{font-size:1rem;line-height:1.75;color:var(--ink);max-width:none}.about-page section{margin:36px 0}.about-page section h2{margin-bottom:16px}.about-page h1{font-size:clamp(2.2rem,4vw,3.4rem)}.reference-nav{list-style:none;padding-left:14px;border-left:1px solid var(--line);margin:10px 0}.reference-nav li{font-size:.88rem}.breadcrumbs{display:flex;flex-wrap:wrap;gap:6px}
+
+.repository-link{margin-left:auto;display:inline-flex;align-items:center;gap:8px;min-height:44px;white-space:nowrap;font-size:.9rem}.repository-link svg{width:22px;height:22px;fill:currentColor;flex-shrink:0}.repository-link:hover{color:var(--accent)}@media(max-width:1050px){.topbar .brand{order:0}.topbar .repository-link{order:1}.topbar nav{order:2;flex-basis:100%}}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="../index.html"><img src="../logo/figures/icon-64.png" alt="" width="32" height="32">graph_ics</a><nav aria-label="Library"><a href="../index.html">Home</a><a href="../gallery/index.html">Gallery</a><a href="../guide/index.html" aria-current="page">Guide</a><a href="../about/index.html">About</a></nav><a class="repository-link" href="https://github.com/pippidis/graph_ics" aria-label="graph_ics on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span>GitHub</span></a></header><main class="container" id="main"><!-- CONTENT START --><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../guide/index.html">Guide</a> / <a href="../guide/reference.html">Reference</a> / <span aria-current="page">CLI recipes</span></nav><div class="guide-layout"><aside class="chapter-nav"><nav aria-label="Guide chapters"><ol><li><a href="../guide/index.html">Getting started</a></li><li><a href="../guide/nodes.html">Nodes and connections</a></li><li><a href="../guide/maps.html">Colours and spatial maps</a></li><li><a href="../guide/boundaries.html">Boundaries and filling</a></li><li><a href="../guide/text.html">Text</a></li><li><a href="../guide/colonies.html">Multiple colonies</a></li><li><a href="../guide/animation.html">Animation and export</a></li><li><a href="../guide/scenes.html">Scene files</a></li><li><a href="../guide/reference.html">Reference</a><ul class="reference-nav"><li><a href="API.html">Python API</a></li><li><a href="PARAMETERS.html">Parameters</a></li><li><a href="ALGORITHM.html">Algorithm</a></li><li><a href="SCENES.html">Scene schema</a></li><li><a href="ANIMATION.html">Replay and export</a></li><li><a href="INSTALLATION.html">Installation</a></li><li><a href="EXAMPLES.html" aria-current="page">CLI recipes</a></li><li><a href="DATA.html">Data credits</a></li></ul></li></ol></nav></aside><div class="guide-body"><details class="mobile-chapters"><summary>Guide chapters</summary><nav aria-label="Guide chapters"><ol><li><a href="../guide/index.html">Getting started</a></li><li><a href="../guide/nodes.html">Nodes and connections</a></li><li><a href="../guide/maps.html">Colours and spatial maps</a></li><li><a href="../guide/boundaries.html">Boundaries and filling</a></li><li><a href="../guide/text.html">Text</a></li><li><a href="../guide/colonies.html">Multiple colonies</a></li><li><a href="../guide/animation.html">Animation and export</a></li><li><a href="../guide/scenes.html">Scene files</a></li><li><a href="../guide/reference.html">Reference</a><ul class="reference-nav"><li><a href="API.html">Python API</a></li><li><a href="PARAMETERS.html">Parameters</a></li><li><a href="ALGORITHM.html">Algorithm</a></li><li><a href="SCENES.html">Scene schema</a></li><li><a href="ANIMATION.html">Replay and export</a></li><li><a href="INSTALLATION.html">Installation</a></li><li><a href="EXAMPLES.html" aria-current="page">CLI recipes</a></li><li><a href="DATA.html">Data credits</a></li></ul></li></ol></nav></details><!-- CHAPTER CONTENT --><h1 id="explained-sample-library">Explained sample library</h1>
+<p>The sample library is executable documentation. <code>python -m graph_ics list</code> lists recipes and palettes; <code>python -m graph_ics describe NAME</code> explains a recipe before generating it. Each gallery card includes its important options, limitations, exact command, seed, dimensions, and timings. Use the <a href="PARAMETERS.html">parameter guide</a> for individual option definitions.</p><nav class="on-this-page" aria-label="On this page"><strong>On this page</strong><ul><li><a href="#runnable-source-examples">Runnable source examples</a></li><li><a href="#generate-one-example-from-python">Generate one example from Python</a></li><li><a href="#cli-reference">CLI reference</a></li><li><a href="#visual-controls-and-new-recipes">Visual controls and new recipes</a></li></ul></nav>
+<pre><code class="language-console">python -m graph_ics describe density
+python -m graph_ics render --example density --palette arctic --seed 7 --output examples/output/density.png
+python -m graph_ics gallery
+</code></pre>
+<p>Open <a href="../index.html">docs/index.html</a> directly from the checkout. Its curated selection includes large compositions, UK and Spain map treatments in two palettes, and all regular recipes. <code>--all-palettes</code> expands regular recipes across all ten palettes. The integrated visual guide adds dimension, shape, line, angle, boundary and spatial-field comparisons, downloadable JSON/YAML scenes, glyph wrapping, graph lettering and an animated GIF. <code>--quick</code> produces six small scenes. Every completed scene passes independent final-geometry validation, including rival gaps, hard angles, and isolated-node rules. Full-resolution PNG/SVG figures sit below the index in <code>figures/</code>. The index filters by palette, recipe, and large-only output.</p>
+<table>
+<thead>
+<tr>
+<th>Recipe</th>
+<th>What it demonstrates</th>
+<th>What changing it entails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sprawl</code></td>
+<td>Coverage-guided branching</td>
+<td>Tile size and parent-choice count change distribution; retry budgets change work and saturation behavior.</td>
+</tr>
+<tr>
+<td><code>typography</code></td>
+<td>Centered text and relative padding</td>
+<td>Font size changes the exclusion; padding reserves extra space. Font-dependent ink becomes a fixed path.</td>
+</tr>
+<tr>
+<td><code>density</code></td>
+<td>Procedural left-to-right density</td>
+<td>Density changes desired node population and spacing, not ring size unless a scale field is also supplied.</td>
+</tr>
+<tr>
+<td><code>raster</code></td>
+<td>A world-mapped scalar image</td>
+<td>Pixel rows run downward from minimum y; bilinear sampling smooths the input.</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td>Coordinated geometric scaling</td>
+<td>Node radii, gaps, buffers, lengths, and strokes grow together; feasibility still limits placement.</td>
+</tr>
+<tr>
+<td><code>obstacles</code></td>
+<td>Concave outline and an excluded rectangle</td>
+<td>Full disks/strokes must fit; an edge cannot shortcut a concavity or obstacle.</td>
+</tr>
+<tr>
+<td><code>band</code></td>
+<td>A region around a polygon boundary</td>
+<td><code>band_width</code> defines usable area; thin bands can reject geometry and saturate early.</td>
+</tr>
+<tr>
+<td><code>follow</code></td>
+<td>Experimental boundary guidance</td>
+<td>More guidance biases along anchors; it does not guarantee a closed silhouette.</td>
+</tr>
+<tr>
+<td><code>terminate</code></td>
+<td>Experimental tip anchoring</td>
+<td>Boundary-seeking tips may still fail; strict mode reports unmet terminals rather than silently claiming success.</td>
+</tr>
+<tr>
+<td><code>cooperate</code></td>
+<td>Attraction plus permitted joining</td>
+<td>Colonies retain ownership; bridges join components after growth and obey all geometry rules.</td>
+</tr>
+<tr>
+<td><code>compete</code></td>
+<td>Repulsion plus hard clearance</td>
+<td>Directional repulsion is soft; the explicit gap guarantees separation between rival rings and full strokes.</td>
+</tr>
+<tr>
+<td><code>loops</code></td>
+<td>Bounded extra cycles</td>
+<td>More requested loops require spare degree and legal local edges; count can remain below target.</td>
+</tr>
+<tr>
+<td><code>newest</code></td>
+<td>Winding newest-tip growth</td>
+<td>Parent selection favors the latest tip; coverage and colony schedulers are not mixed with this policy.</td>
+</tr>
+<tr>
+<td><code>quality</code></td>
+<td>Hard/soft angle limits, cleanup, refill</td>
+<td>Stricter angles can underfill. Cleanup removes degree-zero dots; finite refill retries survivors.</td>
+</tr>
+<tr>
+<td><code>arctic_atlas</code></td>
+<td>4,000-node graph_ics composition in the Arctic palette</td>
+<td>Larger canvas and population reveal local structure at full resolution.</td>
+</tr>
+<tr>
+<td><code>panorama</code></td>
+<td>7,000-node wave-scaled panorama</td>
+<td>Coordinated scale varies across a wide canvas; output is intended for zooming.</td>
+</tr>
+<tr>
+<td><code>archipelago</code></td>
+<td>8,000-node territorial scene</td>
+<td>Three owners grow around obstacle islands with pairwise repulsion and hard gaps.</td>
+</tr>
+</tbody>
+</table>
+<p>Palettes are <code>porcelain</code>, <code>linen</code>, <code>historical</code>, <code>light</code>, <code>arctic</code>, <code>aurora</code>, <code>ember</code>, <code>forest</code>, <code>orchid</code>, and <code>blueprint</code>. Each defines ring, edge, background, text, and colony colors. Text examples use the palette name as their label, so switching palettes there also changes the text exclusion. Other identical recipes preserve geometry under color changes.</p>
+<h2 id="runnable-source-examples">Runnable source examples</h2>
+<p>The repository also contains a <a href="https://github.com/pippidis/graph_ics/tree/main/examples">folder-based example library</a>: each folder includes code, instructions, configuration where relevant, and local outputs. Run <code>python -m scripts.generate_examples --list</code> to list demonstrations, <code>--quick</code> for a small validation set, or select names such as <code>density text_hug</code>. Full runs include large country maps and may take several minutes. README files are maintained by hand.</p>
+<h2 id="generate-one-example-from-python">Generate one example from Python</h2>
+<pre><code class="language-python">from graph_ics import build_example, describe_example, GraphStyle, export_graph
+
+recipe = describe_example('raster')
+print(recipe.explanation)
+print(recipe.options)
+print(recipe.limitation)
+graph = build_example(recipe.name, palette='arctic', seed=7, nodes=500)
+graph.build()
+export_graph(graph, 'raster.svg', frame='region', margin=16,
+             background=GraphStyle.named('arctic').background)
+</code></pre>
+<p><code>python -m examples.sample_library</code> runs a complete explanatory example and writes PNG/SVG plus a replay log. It can be edited as a small starting script. The installed factories live in <code>graph_ics.samples</code>; they do not depend on repository-only scripts.</p>
+<p>Factories return a graph with growth settings already configured. Use <code>graph.growth().step(...)</code>, <code>graph.build()</code>, or attach <code>EventRecorder</code> immediately. To choose every parameter yourself, use <code>Graph</code> or <code>GraphStyle.create_graph()</code> and <code>GrowthSettings</code> rather than modifying a configured run in place. <code>dataclasses.replace(GraphStyle.named('arctic'), node_outer_radius=5)</code> is a typed way to customize a style.</p>
+<h2 id="cli-reference">CLI reference</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list</code></td>
+<td>Lists recipe names and palettes.</td>
+</tr>
+<tr>
+<td><code>describe NAME</code></td>
+<td>Prints description, key controls, limitation, target count, and dimensions as JSON.</td>
+</tr>
+<tr>
+<td><code>render</code></td>
+<td><code>--example</code>, <code>--palette</code>, <code>--seed</code>, <code>--nodes</code>, required <code>--output</code> ending in PNG/SVG; <code>--margin</code>, <code>--scale</code>, <code>--transparent</code>, optional <code>--record</code> JSONL; <code>--force</code> permits replacement.</td>
+</tr>
+<tr>
+<td><code>frames</code></td>
+<td>Build an example with the same selection options, or pass <code>--log</code> to replay stored geometry. Required output directory, <code>--fps</code>, <code>--seconds-per-event</code>, <code>--max-frames</code>; margin, scale, transparency, and palette background also apply.</td>
+</tr>
+<tr>
+<td><code>gallery</code></td>
+<td><code>--output</code> directory (default <code>gallery</code>), <code>--quick</code> for six scenes, <code>--all-palettes</code> for the full colour matrix. Regenerates known gallery outputs in that directory.</td>
+</tr>
+</tbody>
+</table>
+<p>A saved log already contains geometry and colors; when <code>frames --log</code> is used, example/seed/node settings are not applied. Palette selection then only supplies the background. Frame export refuses existing sequence frame filenames. Commands return status 2 for invalid options or expected installation/output errors. Node targets are goals and are not forced by disabling collision rules.</p>
+<p>The CLI uses the same Python factories as the library. Replay JSONL is an animation record, not a user-code configuration format.</p>
+<h2 id="visual-controls-and-new-recipes">Visual controls and new recipes</h2>
+<p>Open the visual guide on the gallery home page for direct comparisons: five hollow node shapes, four line patterns, unrestricted/hard/soft/strict angles, ten palettes, random seeds, population targets, output resolution, whitespace, alpha, and replay timing. Every CLI option links to a relevant visual demonstration. File-management switches are explained beside their output files because they do not change appearance.</p>
+<p>Additional recipes are <code>angles_free</code>, <code>angles_hard</code>, <code>angles_soft</code>, <code>angles_strict</code>, <code>shapes</code>, <code>lines</code>, and <code>uk_population</code>. Porcelain adds a pure white background; Linen adds a warm near-white alternative. The gallery index includes the examples, guide, and UK explanation together. Standalone guide pages remain available, with figures underneath in <code>figures/</code>. The curated public gallery is tracked. Additional local outputs belong in <code>examples/output/</code> or <code>artifacts/</code>, which are ignored.</p>
+<pre><code class="language-console">graph-ics render --example sprawl --node-shape diamond --edge-style dashed --minimum-angle 45 --preferred-angle 80 --angle-penalty 0.8 --palette porcelain --output examples/output/styled.png
+graph-ics render --example uk_population --palette porcelain --output examples/output/uk.png
+</code></pre>
+<p><code>--node-shape</code> and <code>--edge-style</code> override recipe defaults. Angle flags override the corresponding recipe setting; leave unspecified values at their recipe defaults. Set all three when comparing angle policies. Saved logs retain shapes, patterns and angles; geometry overrides with <code>frames --log</code> are rejected. The additional white palettes preserve non-text layouts.</p>
+<p>See <a href="DATA.html">UK data provenance</a>. The population map is deliberately an artistic compression of measured density, not one dot per person or an exact statistical map.</p>
+<p>See <a href="SCENES.html">scene files, dimensions, glyph contours and spatial colour maps</a> for JSON/YAML input and complete visual comparisons.</p><!-- CHAPTER END --><nav class="chapter-pager" aria-label="Chapter navigation"><a href="INSTALLATION.html">Previous: Installation</a><a href="DATA.html">Next: Data credits</a></nav></div></div><!-- CONTENT END --><footer><span>graph_ics &middot; Art grown from connections.</span><span>A project by <a href="https://pippidis.no">Johannes Pippidis Lorentzen</a></span></footer></main><script>
+for(const pre of document.querySelectorAll('pre.command')){const button=document.createElement('button');button.className='copy';button.type='button';button.textContent='Copy command';button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(pre.textContent);button.textContent='Copied';setTimeout(()=>button.textContent='Copy command',1800);}catch{const range=document.createRange();range.selectNodeContents(pre);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='Selected - press Ctrl/Cmd+C';}});pre.before(button);}
+
+(()=>{
+    const links=Array.from(document.querySelectorAll('.topbar nav a'));
+    const sections=links.map(link=>({link,section:document.getElementById(new URL(link.href).hash.slice(1))})).filter(item=>item.section);
+    if(!sections.length)return;
+    const select=link=>{for(const item of links){if(item===link)item.setAttribute('aria-current','location');else item.removeAttribute('aria-current');}};
+    const fromHash=()=>{
+        const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if(!target)return false;
+        const match=sections.find(item=>item.section===target||item.section.contains(target));
+        if(match){select(match.link);return true;}
+        return false;
+    };
+    const fromScroll=()=>{
+        const offset=document.querySelector('.topbar').getBoundingClientRect().bottom+30;
+        let current=sections[0];
+        for(const item of sections){if(item.section.getBoundingClientRect().top<=offset)current=item;}
+        if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)current=sections[sections.length-1];
+        select(current.link);
+    };
+    let scrollingToHash=false,settle;
+    const navigate=()=>{scrollingToHash=fromHash();clearTimeout(settle);settle=setTimeout(()=>{scrollingToHash=false;},1200);};
+    for(const item of sections)item.link.addEventListener('click',()=>{select(item.link);scrollingToHash=true;clearTimeout(settle);settle=setTimeout(()=>{scrollingToHash=false;},1200);});
+    window.addEventListener('hashchange',navigate);
+    window.addEventListener('scroll',()=>{if(!scrollingToHash)fromScroll();},{passive:true});
+    window.addEventListener('scrollend',()=>{scrollingToHash=false;fromScroll();});
+    if(location.hash)navigate();else fromScroll();
+})();
+
+(()=>{
+ for(const image of document.querySelectorAll('img[data-animation]')){
+  const button=document.createElement('button');button.className='animation-toggle';button.textContent='Play animation';button.type='button';let playing=false;
+  button.onclick=()=>{playing=!playing;image.src=playing?image.dataset.animation:image.dataset.poster;button.textContent=playing?'Pause animation':'Play animation';button.setAttribute('aria-pressed',String(playing));};
+  button.setAttribute('aria-pressed','false');image.before(button);
+ }
+ const links=[...document.querySelectorAll('a.image-link')];if(!links.length)return;
+ const dialog=document.createElement('dialog');dialog.setAttribute('aria-label','Artwork viewer');
+ dialog.innerHTML='<div class="viewer-tools"><button type="button" data-close>Close</button><label>Zoom <input type="range" min="50" max="300" value="100" aria-label="Image zoom"></label><a download>Download original</a></div><div class="viewer-canvas"><img alt=""></div>';
+ document.body.append(dialog);const picture=dialog.querySelector('img'),slider=dialog.querySelector('input'),download=dialog.querySelector('a');let origin;
+ const zoom=()=>{picture.style.width=slider.value+'%';};slider.oninput=zoom;
+ dialog.querySelector('[data-close]').onclick=()=>dialog.close();dialog.addEventListener('close',()=>origin?.focus());
+ for(const link of links)link.addEventListener('click',event=>{if(event.ctrlKey||event.metaKey||event.shiftKey)return;event.preventDefault();origin=link;picture.src=link.href;picture.alt=link.querySelector('img')?.alt||'Graph artwork';download.href=link.href;slider.value='100';zoom();dialog.showModal();});
+})();
+</script></body></html>

@@ -1,0 +1,23 @@
+version: 1
+palette: porcelain
+width: 600
+height: 360
+nodes: 650
+seed: 7
+growth:
+  total_attempts: 35000
+  refill_passes: 2
+  coverage:
+    tile_size: 30
+    reseed_attempts: 1200
+color_map:
+  field:
+    kind: raster
+    pixels:
+    - [0, 0.4, 1]
+    - [0.8, 0.2, 0.7]
+    - [1, 0.5, 0]
+  colors:
+  - '#274f7c'
+  - '#a7c6ad'
+  - '#b34d6a'

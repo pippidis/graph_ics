@@ -1,0 +1,57 @@
+[
+  {
+    "example": "basic_graph",
+    "succeeded": true,
+    "returncode": 0,
+    "seconds": 0.4663328999886289,
+    "command": [
+      "examples.basic_graph.example"
+    ],
+    "stdout": "Generated 180 nodes and 177 edges in C:\\code\\graph_ics\\examples\\basic_graph\\output\n",
+    "stderr": ""
+  },
+  {
+    "example": "density",
+    "succeeded": true,
+    "returncode": 0,
+    "seconds": 0.8281675999751315,
+    "command": [
+      "examples.density.example"
+    ],
+    "stdout": "density: 229 nodes; C:\\code\\graph_ics\\examples\\density\\output\n",
+    "stderr": ""
+  },
+  {
+    "example": "quality",
+    "succeeded": true,
+    "returncode": 0,
+    "seconds": 0.8424220000160858,
+    "command": [
+      "examples.quality.example"
+    ],
+    "stdout": "quality: 480 nodes; C:\\code\\graph_ics\\examples\\quality\\output\n",
+    "stderr": ""
+  },
+  {
+    "example": "text_hug",
+    "succeeded": true,
+    "returncode": 0,
+    "seconds": 1.6097313999780454,
+    "command": [
+      "examples.text_hug.example"
+    ],
+    "stdout": "text_hug: 650 nodes; C:\\code\\graph_ics\\examples\\text_hug\\output\n",
+    "stderr": ""
+  },
+  {
+    "example": "area_fill",
+    "succeeded": true,
+    "returncode": 0,
+    "seconds": 3.442882200004533,
+    "command": [
+      "examples.area_fill.example"
+    ],
+    "stdout": "area_fill: 816 nodes; C:\\code\\graph_ics\\examples\\area_fill\\output\n",
+    "stderr": ""
+  }
+]

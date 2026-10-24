@@ -1,0 +1,33 @@
+{
+  "year": 2020,
+  "units": "persons per square kilometre",
+  "accessed": "2026-10-23",
+  "raster_source": "https://worldpop.arcgis.com/arcgis/rest/services/WorldPop_Population_Density_1km/ImageServer",
+  "raster_query": "https://worldpop.arcgis.com/arcgis/rest/services/WorldPop_Population_Density_1km/ImageServer/exportImage?f=json&bbox=-9.6%2C35.5%2C4.5%2C44.1&bboxSR=4326&imageSR=4326&size=360%2C560&format=tiff&pixelType=F32&interpolation=RSP_BilinearInterpolation&time=1577836800000&adjustAspectRatio=false&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D",
+  "raster_sha256": "2e143d0f21a6020e825010ecba5dd8d8540cd9ae62e2bfc6c7c761d341496071",
+  "boundary_source": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_countries.geojson",
+  "boundary_sha256": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb",
+  "raster_license": "CC BY 4.0",
+  "boundary_license": "Public domain",
+  "bbox": [
+    -9.6,
+    35.5,
+    4.5,
+    44.1
+  ],
+  "dimensions": [
+    360,
+    560
+  ],
+  "extent": {
+    "xmin": -9.6,
+    "ymin": 35.5,
+    "xmax": 4.5,
+    "ymax": 44.1,
+    "spatialReference": {
+      "wkid": 4326,
+      "latestWkid": 4326
+    }
+  },
+  "note": "Bilinear resampling of 1-km estimates to an educational grid; not population totals. Simplified Natural Earth 5.1.2 boundary."
+}

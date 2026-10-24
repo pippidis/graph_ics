@@ -1,0 +1,9 @@
+include README.md README-PYPI.md CONTRIBUTING.md CHANGELOG.md LICENSE LICENSE-ARTWORK LICENSING.md requirements*.txt
+include src/py.typed
+recursive-include src/data *.gz *.json *.md
+prune docs
+prune examples
+prune scripts
+prune tests
+prune artifacts
+prune .github

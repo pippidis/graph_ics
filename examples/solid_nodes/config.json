@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "palette": "porcelain",
+  "width": 600,
+  "height": 360,
+  "nodes": 650,
+  "seed": 7,
+  "growth": {
+    "total_attempts": 35000,
+    "refill_passes": 2,
+    "coverage": {
+      "tile_size": 30,
+      "reseed_attempts": 1200
+    }
+  },
+  "style": {
+    "node_outer_radius": 3,
+    "node_inner_radius": 0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "palette": "porcelain",
+  "width": 600,
+  "height": 360,
+  "nodes": 650,
+  "seed": 7,
+  "growth": {
+    "total_attempts": 35000,
+    "refill_passes": 2,
+    "coverage": {
+      "tile_size": 30,
+      "reseed_attempts": 1200
+    }
+  },
+  "texts": [
+    {
+      "content": "graph_ics",
+      "x": 300,
+      "y": 210,
+      "size": 95,
+      "align": "center",
+      "bold": true,
+      "padding": 2,
+      "color": "#a64152",
+      "exclusion_mode": "glyph"
+    }
+  ]
+}

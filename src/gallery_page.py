@@ -1,0 +1,95 @@
+"""Shared, self-contained presentation for the offline example library."""
+from html import escape
+import re
+
+CSS = """
+:root{color-scheme:light;--ink:#284d68;--muted:#526872;--paper:#ffffff;--line:#d5dfe5;--accent:#a64152}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:hover{color:#284d68}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #a64152;outline-offset:4px}
+.topbar{position:sticky;top:0;z-index:10;padding:18px max(24px,calc((100vw - 1440px)/2));background:#ffffffed;color:var(--ink);border-bottom:1px solid var(--line);backdrop-filter:blur(12px);display:flex;gap:28px;align-items:center;flex-wrap:wrap}.brand{font-weight:750;letter-spacing:.04em}.topbar a{color:inherit;text-decoration:none}.topbar a[aria-current]{border-bottom:2px solid var(--accent)}.topbar nav{min-width:0;display:flex;gap:24px;flex-wrap:wrap}.container{max-width:1488px;padding:36px 24px 64px;margin:auto}.intro{margin-bottom:32px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:.75rem;font-weight:700;color:var(--accent)}h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.08;letter-spacing:-.04em;margin:14px 0 20px}h2{font-size:1.55rem;line-height:1.25}h3{font-size:1.1rem;line-height:1.35}.intro p{font-size:1.1rem;color:var(--muted)}.paths{display:flex;gap:14px;flex-wrap:wrap}.button,button{border:1px solid var(--line);background:white;color:var(--ink);padding:9px 14px;border-radius:6px;font:inherit;cursor:pointer;text-decoration:none}.button:hover,button:hover{background:#edf2f5}.filters{display:flex;gap:18px;flex-wrap:wrap;align-items:end;padding:20px;background:#f0f4f6;border:1px solid var(--line);border-radius:8px;margin:28px 0}.filters label{display:grid;gap:5px;font-size:.85rem;font-weight:650}.filters .check{display:flex;align-items:center;padding:10px 0}.filters input[type=search]{min-width:230px}.filters input,.filters select{font:inherit;padding:9px;border:1px solid #aabbb8;border-radius:4px;background:white;color:var(--ink)}.filters input[type=checkbox]{width:18px;height:18px}#count{margin-left:auto;font-size:.9rem;color:var(--muted)}
+.grid,.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}article{min-width:0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;padding:18px}article[hidden]{display:none}article h2,article h3{margin:10px 0}article p{font-size:.94rem}.image-link{display:block;margin:-18px -18px 18px;background:#f5f7f8}.image-link img{display:block;width:100%;height:260px;object-fit:contain}article img{width:100%;height:auto;display:block}article .meta{font-size:.82rem;color:var(--muted)}.swatches{display:flex;gap:4px}.swatches span{width:20px;height:9px;border:1px solid #0002;border-radius:2px}.downloads{display:flex;gap:16px;font-size:.9rem;font-weight:650;margin:15px 0}.downloads a{white-space:nowrap}details{border-top:1px solid var(--line);padding-top:12px;margin-top:16px}summary{cursor:pointer;font-weight:650}li{margin:8px 0}ul{padding-left:21px}code{font-size:.88em}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f4f6;padding:14px;border-radius:5px;font-size:.82rem;line-height:1.65}button.copy{font-size:.78rem;padding:5px 10px;margin-bottom:5px}.hint,.notice{color:var(--muted);font-size:.9rem}.notice{border-left:3px solid #7f9baa;padding:8px 16px;background:#f0f4f6}.section-nav{display:flex;gap:10px 22px;flex-wrap:wrap;margin:24px 0}.section-nav a{font-size:.9rem}section{margin:48px 0}img{max-width:100%;height:auto}.hero{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:center;margin-bottom:40px}.hero .intro{margin:0}.hero img{border-radius:8px;width:100%}.start{background:#f0f4f6;padding:24px;border-radius:8px}table{border-collapse:collapse;width:100%;text-align:left;font-size:.9rem}th,td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.table-scroll{overflow-x:auto}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px}.comparison img{max-width:100%;max-height:1000px;width:auto;display:block;margin:auto}.comparison figure{margin:0;background:white;padding:20px;border:1px solid var(--line)}figcaption{margin-top:15px;font-size:.9rem;color:var(--muted)}footer{border-top:1px solid var(--line);margin-top:60px;padding-top:20px;font-size:.85rem;color:var(--muted)}#more{display:block;margin:30px auto}#empty{padding:40px;text-align:center}.alpha{background:repeating-conic-gradient(#ddd 0% 25%,#fff 0% 50%) 0/16px 16px}noscript{display:block;padding:12px}.style-key{max-width:760px;width:100%;height:auto}
+@media(max-width:1050px){.grid,.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{gap:16px}#count{margin-left:0}}@media(max-width:650px){.grid,.cards,.comparison,.hero{grid-template-columns:1fr}.container{padding:24px 16px}.topbar{position:sticky;top:0;z-index:10;padding:16px}.topbar nav{gap:14px}.filters{gap:12px}.filters label,.filters input[type=search]{width:100%;min-width:0}.image-link img{height:240px}h1{font-size:2.5rem}td{padding:8px}}
+"""
+CSS += """
+h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400}h1{letter-spacing:-.035em}.brand{display:flex;align-items:center;gap:10px}.brand img{width:32px;height:32px}.hero{padding:28px 0 50px}.intro{max-width:none}.container{max-width:1320px}.skip-link{position:absolute;top:-100px;left:16px;z-index:20;background:white;padding:12px}.skip-link:focus{top:8px}.manual{max-width:none;margin:0}.manual h2{margin-top:48px}.manual pre{overflow:auto}.manual table{display:block;overflow:auto}.about{border-top:1px solid var(--line);padding-top:30px}.topbar nav{gap:18px;font-size:.9rem}dialog{border:1px solid var(--line);border-radius:8px;width:90vw;max-width:1400px;height:85vh;padding:16px}dialog::backdrop{background:#132b3ddd}.viewer-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.viewer-canvas{overflow:auto;height:calc(100% - 65px);margin-top:16px}.viewer-canvas img{max-width:none;display:block}.animation-toggle{display:block;margin:12px 0}footer{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}section{margin:64px 0}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media(max-width:650px){.hero{padding-top:0}.topbar{position:relative}.manual h1{font-size:2.1rem}html{scroll-padding-top:20px}}
+"""
+MEDIA_SCRIPT = """
+(()=>{
+ for(const image of document.querySelectorAll('img[data-animation]')){
+  const button=document.createElement('button');button.className='animation-toggle';button.textContent='Play animation';button.type='button';let playing=false;
+  button.onclick=()=>{playing=!playing;image.src=playing?image.dataset.animation:image.dataset.poster;button.textContent=playing?'Pause animation':'Play animation';button.setAttribute('aria-pressed',String(playing));};
+  button.setAttribute('aria-pressed','false');image.before(button);
+ }
+ const links=[...document.querySelectorAll('a.image-link')];if(!links.length)return;
+ const dialog=document.createElement('dialog');dialog.setAttribute('aria-label','Artwork viewer');
+ dialog.innerHTML='<div class="viewer-tools"><button type="button" data-close>Close</button><label>Zoom <input type="range" min="50" max="300" value="100" aria-label="Image zoom"></label><a download>Download original</a></div><div class="viewer-canvas"><img alt=""></div>';
+ document.body.append(dialog);const picture=dialog.querySelector('img'),slider=dialog.querySelector('input'),download=dialog.querySelector('a');let origin;
+ const zoom=()=>{picture.style.width=slider.value+'%';};slider.oninput=zoom;
+ dialog.querySelector('[data-close]').onclick=()=>dialog.close();dialog.addEventListener('close',()=>origin?.focus());
+ for(const link of links)link.addEventListener('click',event=>{if(event.ctrlKey||event.metaKey||event.shiftKey)return;event.preventDefault();origin=link;picture.src=link.href;picture.alt=link.querySelector('img')?.alt||'Graph artwork';download.href=link.href;slider.value='100';zoom();dialog.showModal();});
+})();
+"""
+
+
+CSS += """
+.guide-layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:48px}.chapter-nav{position:sticky;top:100px;align-self:start;max-height:80vh;overflow:auto}.chapter-nav ol{padding-left:24px}.chapter-nav a{text-decoration:none;color:var(--ink)}.chapter-nav a[aria-current]{color:var(--accent);font-weight:700}.guide-body{min-width:0}.guide-body .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-body h2{margin-top:40px}.breadcrumbs{font-size:.85rem;margin-bottom:24px}.chapter-pager{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding-top:24px;margin-top:48px}.on-this-page{border-left:2px solid var(--line);padding-left:20px}.mobile-chapters{display:none}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}.feature-grid img{width:100%;height:230px;object-fit:contain}.guide-body pre{overflow-wrap:anywhere}.guide-body table{display:block;overflow:auto}.guide-body article{padding:16px}.guide-body>article{border:0;padding:0}.guide-body p{max-width:none}@media(max-width:850px){.guide-layout{display:block}.chapter-nav{display:none}.mobile-chapters{display:block;margin-bottom:28px}.feature-grid{grid-template-columns:1fr}}@media(max-width:550px){.guide-body .grid{grid-template-columns:1fr}}
+"""
+CSS += """
+.about-page{width:100%}.about-page .intro{max-width:none;margin-bottom:36px}.about-page .intro p,.about-page section p{font-size:1rem;line-height:1.75;color:var(--ink);max-width:none}.about-page section{margin:36px 0}.about-page section h2{margin-bottom:16px}.about-page h1{font-size:clamp(2.2rem,4vw,3.4rem)}.reference-nav{list-style:none;padding-left:14px;border-left:1px solid var(--line);margin:10px 0}.reference-nav li{font-size:.88rem}.breadcrumbs{display:flex;flex-wrap:wrap;gap:6px}
+"""
+CSS += """
+.repository-link{margin-left:auto;display:inline-flex;align-items:center;gap:8px;min-height:44px;white-space:nowrap;font-size:.9rem}.repository-link svg{width:22px;height:22px;fill:currentColor;flex-shrink:0}.repository-link:hover{color:var(--accent)}@media(max-width:1050px){.topbar .brand{order:0}.topbar .repository-link{order:1}.topbar nav{order:2;flex-basis:100%}}
+"""
+REPOSITORY_LINK = '<a class="repository-link" href="https://github.com/pippidis/graph_ics" aria-label="graph_ics on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span>GitHub</span></a>'
+
+COPY_SCRIPT = """
+for(const pre of document.querySelectorAll('pre.command')){const button=document.createElement('button');button.className='copy';button.type='button';button.textContent='Copy command';button.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(pre.textContent);button.textContent='Copied';setTimeout(()=>button.textContent='Copy command',1800);}catch{const range=document.createRange();range.selectNodeContents(pre);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);button.textContent='Selected - press Ctrl/Cmd+C';}});pre.before(button);}
+"""
+
+
+NAVIGATION_SCRIPT = """
+(()=>{
+    const links=Array.from(document.querySelectorAll('.topbar nav a'));
+    const sections=links.map(link=>({link,section:document.getElementById(new URL(link.href).hash.slice(1))})).filter(item=>item.section);
+    if(!sections.length)return;
+    const select=link=>{for(const item of links){if(item===link)item.setAttribute('aria-current','location');else item.removeAttribute('aria-current');}};
+    const fromHash=()=>{
+        const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if(!target)return false;
+        const match=sections.find(item=>item.section===target||item.section.contains(target));
+        if(match){select(match.link);return true;}
+        return false;
+    };
+    const fromScroll=()=>{
+        const offset=document.querySelector('.topbar').getBoundingClientRect().bottom+30;
+        let current=sections[0];
+        for(const item of sections){if(item.section.getBoundingClientRect().top<=offset)current=item;}
+        if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2)current=sections[sections.length-1];
+        select(current.link);
+    };
+    let scrollingToHash=false,settle;
+    const navigate=()=>{scrollingToHash=fromHash();clearTimeout(settle);settle=setTimeout(()=>{scrollingToHash=false;},1200);};
+    for(const item of sections)item.link.addEventListener('click',()=>{select(item.link);scrollingToHash=true;clearTimeout(settle);settle=setTimeout(()=>{scrollingToHash=false;},1200);});
+    window.addEventListener('hashchange',navigate);
+    window.addEventListener('scroll',()=>{if(!scrollingToHash)fromScroll();},{passive:true});
+    window.addEventListener('scrollend',()=>{scrollingToHash=false;fromScroll();});
+    if(location.hash)navigate();else fromScroll();
+})();
+"""
+
+
+def gallery_page(title: str, content: str, *, active: str = 'gallery', script: str = '') -> str:
+    prefix = '../' if active in ('logo', 'manuals', 'guide') else ''
+    selected = 'guide' if active in ('manuals', 'guide', 'controls', 'uk') else 'about' if active == 'logo' else active
+    links = [(key, prefix+path, label) for key,path,label in [('home','index.html','Home'),('gallery','gallery/index.html','Gallery'),('guide','guide/index.html','Guide'),('about','about/index.html','About')]]
+    icon_base = prefix+'logo/figures/'
+    home = prefix+'index.html'
+    content = re.sub(r'<img(?![^>]*loading=)', '<img loading="lazy" decoding="async"', content)
+    icons = f'<link rel="icon" type="image/svg+xml" href="{icon_base}favicon.svg"><link rel="icon" href="{icon_base}favicon.ico" sizes="any"><link rel="apple-touch-icon" href="{icon_base}icon-180.png">'
+    metadata = '<meta property="og:site_name" content="graph_ics"><meta property="og:type" content="website"><meta property="og:title" content="'+escape(title)+' | graph_ics"><meta property="og:image" content="https://graph-ics.pippidis.no/logo/figures/banner@2x.png">'
+    navigation = ''.join(f'<a href="{path}"'+(' aria-current="page"' if key == selected else '')+f'>{label}</a>' for key,path,label in links)
+    return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' | graph_ics</title>'+icons+metadata+'<meta name="description" content="graph_ics: generative artwork from sprawling networks. Explore examples, spatial maps, typography and the Python manual."><style>'+CSS+'</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="topbar"><a class="brand" href="'+home+'"><img src="'+icon_base+'icon-64.png" alt="" width="32" height="32">graph_ics</a><nav aria-label="Library">'+navigation+'</nav>'+REPOSITORY_LINK+'</header><main class="container" id="main"><!-- CONTENT START -->'+content+'<!-- CONTENT END --><footer><span>graph_ics &middot; Art grown from connections.</span><span>A project by <a href="https://pippidis.no">Johannes Pippidis Lorentzen</a></span></footer></main><script>'+COPY_SCRIPT+NAVIGATION_SCRIPT+MEDIA_SCRIPT+script+'</script></body></html>'
+
+
+def page_content(path: str) -> str:
+    """Extract the generated content fragment for the single-page public gallery."""
+    return path.split('<!-- CONTENT START -->', 1)[1].split('<!-- CONTENT END -->', 1)[0]

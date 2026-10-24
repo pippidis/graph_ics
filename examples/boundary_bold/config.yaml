@@ -1,0 +1,32 @@
+version: 1
+palette: porcelain
+width: 600
+height: 360
+nodes: 650
+seed: 7
+growth:
+  total_attempts: 35000
+  refill_passes: 2
+  coverage:
+    tile_size: 30
+    reseed_attempts: 1200
+boundary:
+  type: Polygon
+  coordinates:
+  - - [20, 20]
+    - [580, 20]
+    - [580, 340]
+    - [350, 340]
+    - [300, 240]
+    - [250, 340]
+    - [20, 340]
+    - [20, 20]
+  - - [250, 70]
+    - [350, 70]
+    - [350, 150]
+    - [250, 150]
+    - [250, 70]
+boundary_style:
+  visible: true
+  width: 4
+  color: '#a64152'

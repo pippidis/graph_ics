@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "palette": "porcelain",
+  "width": 600,
+  "height": 360,
+  "nodes": 3200,
+  "seed": 7,
+  "growth": {
+    "fill_area": true,
+    "total_attempts": 180000,
+    "seed_attempts": 2000,
+    "refill_passes": 2,
+    "coverage": {
+      "tile_size": 20,
+      "max_tiles": 12000,
+      "reseed_attempts": 6000,
+      "reseed_interval": 100,
+      "seed_components": true
+    }
+  },
+  "seeds": 30,
+  "text_region": {
+    "content": "graph_ics",
+    "x": 0,
+    "y": 260,
+    "size": 300,
+    "bold": true,
+    "padding": 0
+  },
+  "style": {
+    "node_outer_radius": 2,
+    "node_inner_radius": 1,
+    "node_buffer": 0.3,
+    "edge_thickness": 0.7,
+    "edge_node_distance": 0.5,
+    "edge_length_min": 3,
+    "edge_length_max": 7
+  }
+}
