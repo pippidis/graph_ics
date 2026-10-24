@@ -12,8 +12,8 @@ def main() -> None:
     parser = ArgumentParser(description=__doc__)
     parser.add_argument('--dist', type=Path, default=Path('dist'), help='Directory containing exactly one wheel and one source archive')
     args = parser.parse_args()
-    wheels = list(args.dist.glob('graph_ics-*.whl'))
-    sources = list(args.dist.glob('graph_ics-*.tar.gz'))
+    wheels = list(args.dist.glob("graph_graphics-*.whl"))
+    sources = list(args.dist.glob("graph_graphics-*.tar.gz"))
     if len(wheels) != 1 or len(sources) != 1: raise RuntimeError('Build exactly one wheel and source archive before running this check')
     for artifact in (*wheels, *sources): check_distribution(artifact.resolve())
 

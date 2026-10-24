@@ -6,10 +6,10 @@ A visual art project and Python library for growing sprawling graph compositions
 
 ## Installation
 
-Requires Python 3.11–3.15. Install `graph-ics` for geometry and graph generation, or `graph-ics[render]` for images, text measurement and GIF export:
+Requires Python 3.11–3.15. Install `graph-graphics` for geometry and graph generation, or `graph-graphics[render]` for images, text measurement and GIF export:
 
 ```console
-python -m pip install "graph-ics[render]"
+python -m pip install "graph-graphics[render]"
 graph-ics render --example sprawl --palette porcelain --output graph.png
 graph-ics list
 ```

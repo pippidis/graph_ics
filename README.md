@@ -1,3 +1,4 @@
+
 # graph_ics
 
 graph_ics is a long-running visual art project, developed into a Python package for growing sprawling graph compositions. It explores how small connections fill space, respond to contours, and form patterns.
@@ -8,21 +9,47 @@ Generate sprawling graph artwork with hollow nodes, clipped connections, and roo
 
 [Gallery website](https://graph-ics.pippidis.no) | [User guide](https://graph-ics.pippidis.no/guide/) | [Logo](docs/logo/index.html) | [Install](scripts/site_content/INSTALLATION.md) | [Runnable examples](examples/README.md) | [Examples and CLI](scripts/site_content/EXAMPLES.md) | [Parameters](scripts/site_content/PARAMETERS.md) | [Animation](scripts/site_content/ANIMATION.md) | [API](scripts/site_content/API.md)
 
-The website address is prepared for the upcoming launch. For offline browsing, open [the included gallery](docs/index.html) from a downloaded checkout.
+The project website, gallery and documentation are available at [graph-ics.pippidis.no](https://graph-ics.pippidis.no). For offline browsing, open [the included gallery](docs/index.html) from a downloaded checkout.
 
 ## Get started
 
-Requires Python 3.11-3.15. From the repository root, install into a virtual environment:
+Requires Python 3.11-3.15. The package is distributed on PyPI as `graph-graphics`, imported in Python as `graph_ics`, and accessed through the `graph-ics` command-line interface.
+
+### Install from PyPI
+
+Install the package with rendering support:
 
 ```console
+python -m pip install "graph-graphics[render]"
+```
+
+For geometry and graph generation without the optional rendering dependencies:
+
+```console
+python -m pip install graph-graphics
+```
+
+Generate your first image:
+
+```console
+graph-ics render --example typography --palette arctic --output arctic.png
+graph-ics list
+```
+
+### Install from source
+
+To develop or modify the library, clone the repository and create a virtual environment:
+
+```console
+git clone https://github.com/pippidis/graph_ics.git
+cd graph_ics
 python -m venv .venv
 ```
 
-Activate it with `.venv\Scripts\activate` on Windows or `source .venv/bin/activate` on Linux/macOS, then:
+Activate it with `.venv\Scripts\Activate.ps1` on Windows PowerShell or `source .venv/bin/activate` on Linux/macOS, then:
 
 ```console
-python -m pip install -e ".[render]"
-graph-ics render --example typography --palette arctic --output examples/output/arctic.png
+python -m pip install -e ".[dev,render]"
 ```
 
 The image is written to the path you choose. `python -m graph_ics` also works if the console command is not on your PATH. See [installation](scripts/site_content/INSTALLATION.md) for PowerShell helpers, Cairo prerequisites, and geometry-only use.
@@ -46,7 +73,7 @@ graph-ics render --example uk_population --palette porcelain --output examples/o
 
 The UK example uses bundled WorldPop 2020 density estimates and a Natural Earth boundary, so it runs offline. Its logarithmic mapping favours readable urban detail rather than representing one person per node. [Data sources and transformations](src/data/README.md).
 
-To host the documentation website, select **Deploy from a branch**, **main**, and **/docs** under **Settings > Pages** in your public repository. See [GitHub's Pages setup guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+The documentation website is hosted through GitHub Pages and deployed from the `docs/` directory on the `main` branch. The public website is available at [graph-ics.pippidis.no](https://graph-ics.pippidis.no), while its source files remain available in the repository for offline browsing and regeneration.
 
 ## Use Python
 
@@ -79,19 +106,27 @@ Containment and collision rules apply to all geometry. Boundary following and te
 ## Tests and tooling
 
 ```console
-python -m pip install -r requirements_dev.txt
-python -m pytest --cov=graph_ics
+python -m pip install -e ".[dev,render]"
+python -m pytest --cov=graph_ics --basetemp=.pytest_tmp
 python -m scripts.typecheck
 python -m ruff check .
-python -m build --no-isolation
 ```
 
-Source modules live directly in `src/`, installed as `graph_ics`. The package includes type information. CI runs behavioral tests, typing, linting, wheel installation, and visual generation on Windows and Linux. Figures complement numerical checks: density and composition need visual review as well as collision assertions.
+To build and validate the distributions for PyPI:
+
+```console
+python -m scripts.release --check
+python -m scripts.check_wheel
+python -m twine check dist/*
+```
+
+The release script requires an empty `dist/` directory and creates both the wheel and source distribution. The wheel-checking script installs each distribution into a fresh environment and verifies core functionality.
+
+Source modules live directly in `src/`, installed as `graph_ics`. The package includes type information. Release validation includes behavioral tests, typing, linting, distribution builds and clean-install checks. Figures complement numerical checks: density and composition need visual review as well as collision assertions.
 
 ## Licence
 
 The code is licensed under [PolyForm Noncommercial 1.0.0](LICENSE). Project-owned artwork and documentation are licensed under [CC BY-NC 4.0](LICENSE-ARTWORK). For commercial use, contact [Johannes Pippidis Lorentzen](https://pippidis.no) to arrange a separate paid licence. See [licensing scope and exceptions](LICENSING.md). Bundled population data retains its own [attribution and licence](src/data/README.md).
-
 
 See [scene files, dimensions, glyph contours and spatial colour maps](scripts/site_content/SCENES.md) for JSON/YAML input and complete visual comparisons.
 
