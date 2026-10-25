@@ -69,12 +69,12 @@ def _export_logo(graph: Graph, destination: Path, width: float, height: float, s
 
 
 def generate_logos(directory: str | Path = 'docs/logo') -> Path:
-    """Write landscape, banner, square and portrait assets beneath a logo index."""
+    """Write landscape, banner, wide banner, square and portrait assets beneath a logo index."""
     from .gallery_page import gallery_page
     output=Path(directory)
     figures=output/'figures'
     figures.mkdir(parents=True,exist_ok=True)
-    variants=(('landscape',600,250),('banner',1000,250),('square',512,512),('portrait',500,750))
+    variants=(('landscape',600,250),('banner',1000,250),('wide-banner',2000,250),('square',512,512),('portrait',500,750))
     cards=[]
     for name,width,height in variants:
         graph=_build_logo(width,height,1.15,'porcelain',7)
