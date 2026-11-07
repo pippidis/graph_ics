@@ -2,7 +2,7 @@
 
 A visual art project and Python library for growing sprawling graph compositions. Shape networks with text, polygon boundaries, density maps, angle constraints and cooperating or competing colonies. Export PNG, SVG and recorded growth animations.
 
-[PyPI](https://pypi.org/project/graph-graphics/) ? [Website and gallery](https://graph-ics.pippidis.no) · [User guide](https://graph-ics.pippidis.no/guide/) · [Source and runnable examples](https://github.com/pippidis/graph_ics)
+[PyPI](https://pypi.org/project/graph-graphics/) · [Website and gallery](https://graph-ics.pippidis.no) · [User guide](https://graph-ics.pippidis.no/guide/) · [Source and runnable examples](https://github.com/pippidis/graph_ics)
 
 ## Installation
 
