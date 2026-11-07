@@ -58,7 +58,7 @@ def generate_gallery(output: str | Path = 'docs', *, quick: bool = False, all_pa
         if graph.contours is not None: report['contours'] = asdict(graph.contour_report())
         records.append(report)
         print(f'{stem}: {len(graph.nodes)} nodes, {generation_seconds:.2f}s growth, {validation_seconds:.2f}s validation', flush=True)
-    environment = dict(python=platform.python_version(), platform=platform.platform(), dependencies={name: importlib.metadata.version(name) for name in ('graph-ics', 'shapely', 'networkx', 'pycairo')})
+    environment = dict(python=platform.python_version(), platform=platform.platform(), dependencies={name: importlib.metadata.version(name) for name in ('graph-graphics', 'shapely', 'networkx', 'pycairo')})
     (destination/'manifest.json').write_text(json.dumps(dict(environment=environment, quick=quick, all_palettes=all_palettes, cases=records), indent=2)+'\n', encoding='utf-8')
     from .logo import generate_logos
     generate_logos(destination/'logo')

@@ -7,6 +7,7 @@ Establishes the stable baseline for the Python API and CLI: graph generation, JS
 - Make PyPI installation and package naming consistent across the READMEs, website and installation manual.
 - Validate tests, lint and typing before the publishing workflow builds distributions.
 - Extend isolated wheel/source installation checks with PNG and SVG rendering checks.
+- Fix gallery generation to look up the published `graph-graphics` package metadata.
 
 Finite growth budgets, font-dependent output, experimental boundary following and terminal anchoring remain documented limitations.
 
