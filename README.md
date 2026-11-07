@@ -7,7 +7,7 @@ Generate sprawling graph artwork with hollow nodes, clipped connections, and roo
 
 ![graph_ics wordmark in a continuing graph network](docs/images/preview.png)
 
-[Gallery website](https://graph-ics.pippidis.no) | [User guide](https://graph-ics.pippidis.no/guide/) | [Logo](docs/logo/index.html) | [Install](scripts/site_content/INSTALLATION.md) | [Runnable examples](examples/README.md) | [Examples and CLI](scripts/site_content/EXAMPLES.md) | [Parameters](scripts/site_content/PARAMETERS.md) | [Animation](scripts/site_content/ANIMATION.md) | [API](scripts/site_content/API.md)
+[PyPI](https://pypi.org/project/graph-graphics/) | [Gallery website](https://graph-ics.pippidis.no) | [User guide](https://graph-ics.pippidis.no/guide/) | [Logo](docs/logo/index.html) | [Install](scripts/site_content/INSTALLATION.md) | [Runnable examples](examples/README.md) | [Examples and CLI](scripts/site_content/EXAMPLES.md) | [Parameters](scripts/site_content/PARAMETERS.md) | [Animation](scripts/site_content/ANIMATION.md) | [API](scripts/site_content/API.md)
 
 The project website, gallery and documentation are available at [graph-ics.pippidis.no](https://graph-ics.pippidis.no). For offline browsing, open [the included gallery](docs/index.html) from a downloaded checkout.
 
@@ -99,7 +99,7 @@ Replay preserves accepted geometry, styles, and text paths. It does not rerun ge
 
 ## Limits
 
-This is an early library. Node targets and requested density are subject to finite attempt budgets and available space. Inspect the achieved count and growth status when exact population matters.
+The 1.0 release provides graph generation, scene configuration, rendering and growth replay through the Python API and CLI. Node targets and requested density are subject to finite attempt budgets and available space. Inspect the achieved count and growth status when exact population matters.
 
 Containment and collision rules apply to all geometry. Boundary following and terminal anchoring are experimental: complex letters, narrow coastlines, and small islands may remain incomplete. Text supports rectangular or glyph exclusions, and graphs can grow inside letter contours. Area-fill mode searches disconnected and underfilled regions while reporting caps and remaining tile gaps. Curved edges, moving-node simulation, and video encoding are not included.
 
@@ -120,7 +120,7 @@ python -m scripts.check_wheel
 python -m twine check dist/*
 ```
 
-The release script requires an empty `dist/` directory and creates both the wheel and source distribution. The wheel-checking script installs each distribution into a fresh environment and verifies core functionality.
+The release script requires an empty `dist/` directory and creates both the wheel and source distribution. The wheel-checking script installs each distribution into a fresh environment and verifies base-only functionality, then installs the rendering extra and checks PNG/SVG output.
 
 Source modules live directly in `src/`, installed as `graph_ics`. The package includes type information. Release validation includes behavioral tests, typing, linting, distribution builds and clean-install checks. Figures complement numerical checks: density and composition need visual review as well as collision assertions.
 

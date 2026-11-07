@@ -13,7 +13,7 @@ Run Python modules from the repository root after installing `requirements_dev.t
 | `python -m scripts.generate_animation` | Generate the animation example's logs, frames and playback page |
 | `python -m scripts.benchmark_spatial` | Compare collision-query performance |
 | `python -m scripts.typecheck` | Run strict typing with the flat source mapped to `graph_ics` |
-| `python -m scripts.check_wheel --dist dist` | Install each built distribution in an isolated environment and check base operation |
+| `python -m scripts.check_wheel --dist dist` | Install each built distribution in an isolated environment and check base operation and PNG/SVG rendering |
 | `python -m scripts.prepare_uk_data uk` | Prepare population inputs (`uk` or `spain`); follow the data provenance instructions |
 
 `setup_venv.bat` installs the requested dependency group on Windows. Dot-source `toggle_venv.ps1` to toggle activation when local PowerShell policy permits it. Neither changes machine execution policy. See [installation](../scripts/site_content/INSTALLATION.md).

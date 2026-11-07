@@ -1,6 +1,22 @@
 # Installation and environment setup
 
-Use Python 3.11 through 3.15. Install from a source checkout or a locally built wheel. The installed package name is `graph-ics`, the import is `graph_ics`, and the CLI is `graph-ics` or `python -m graph_ics`.
+Use Python 3.11 through 3.15. The package is published on [PyPI as `graph-graphics`](https://pypi.org/project/graph-graphics/), imported as `graph_ics`, and run with `graph-ics` or `python -m graph_ics`.
+
+## Install from PyPI
+
+Create a virtual environment with `python -m venv .venv`. Activate it with `.venv\Scripts\Activate.ps1` in Windows PowerShell or `source .venv/bin/activate` on Linux/macOS. Install rendering support and make an image:
+
+```console
+python -m pip install "graph-graphics[render]"
+graph-ics render --example typography --palette arctic --output arctic.png
+graph-ics list
+```
+
+For geometry and graph generation without image rendering, use `python -m pip install graph-graphics`. The rendering extra installs Pycairo and Pillow. If Pycairo must build from source, see the platform prerequisites below.
+
+## Develop from source
+
+Clone `https://github.com/pippidis/graph_ics.git` and enter the checkout before using the development helpers below. Source installation is intended for modifying the package or regenerating the complete documentation website.
 
 ## Windows / PowerShell
 
@@ -41,7 +57,7 @@ Create an environment with `python3 -m venv .venv`. If building Cairo bindings o
 
 The short requirements files deliberately reference project extras rather than duplicate version constraints. Geometry-only import, graph generation, validation, event logging, and playback timing do not import Cairo. Text specifications can be created without Cairo; measuring them requires it.
 
-For an installed wheel, use `python -m pip install path/to/graph_ics-...whl` for base use, then install Pycairo for rendering. The wheel contains the CLI and `py.typed`. `python -m scripts.check_wheel` creates a fresh environment and verifies base-only operation; its dependency installation needs network access or a configured local package source.
+For an installed wheel, use `python -m pip install path/to/graph_graphics-1.0.0-py3-none-any.whl` for base use, then install `graph-graphics[render]==1.0.0` for rendering. The wheel contains the CLI and `py.typed`. `python -m scripts.check_wheel` creates a fresh environment and verifies base-only operation followed by PNG/SVG rendering with the rendering extra; its dependency installation needs network access or a configured local package source.
 
 The optional `.[data]` extra installs Pillow for `scripts/prepare_uk_data.py`. It is only needed to refresh the public-source UK and Spain inputs; the bundled example itself works offline with the normal render installation. Development extras include this preparation dependency.
 

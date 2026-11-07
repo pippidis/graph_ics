@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "graph-graphics"
-version = "0.0.1"
+version = "1.0.0"
 description = "Generative artwork from sprawling spatial graphs"
 keywords = ["generative-art", "graph", "svg", "procedural", "visualization"]
-classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only", "Topic :: Multimedia :: Graphics"]
+classifiers = ["Development Status :: 5 - Production/Stable", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only", "Topic :: Multimedia :: Graphics"]
 readme = "README-PYPI.md"
 requires-python = ">=3.11,<3.16"
 license = "PolyForm-Noncommercial-1.0.0 AND CC-BY-NC-4.0"

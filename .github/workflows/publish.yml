@@ -32,8 +32,22 @@ jobs:
           assert os.environ["GITHUB_REF_NAME"] == f"v{version}", "Release tag does not match package version"
           PY
 
-      - name: Install build tools
-        run: python -m pip install --upgrade build twine
+      - name: Install Cairo build dependencies
+        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev pkg-config python3-dev
+
+      - name: Install development and rendering dependencies
+        env:
+          PYYAML_FORCE_LIBYAML: "0"
+        run: python -m pip install -e ".[dev,render]"
+
+      - name: Run tests
+        run: python -m pytest --cov=graph_ics
+
+      - name: Check typing
+        run: python -m scripts.typecheck
+
+      - name: Lint
+        run: python -m ruff check .
 
       - name: Build and validate distributions
         run: python -m scripts.release --check

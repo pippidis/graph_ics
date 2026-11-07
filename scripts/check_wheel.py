@@ -1,4 +1,4 @@
-"""Install wheel and source distributions in fresh environments and check base-only imports."""
+"""Check isolated base installs, then PNG/SVG output with the rendering extra."""
 
 from argparse import ArgumentParser
 from pathlib import Path
@@ -29,6 +29,14 @@ def check_distribution(artifact: Path) -> None:
         code = "import graph_ics, importlib.util; assert graph_ics.Graph().build(); assert graph_ics.build_example('sprawl', nodes=8).build(); from graph_ics.uk import population_data; assert population_data()['metadata']['year'] == 2020; assert importlib.util.find_spec('cairo') is None; assert importlib.util.find_spec('colormap') is None; print(graph_ics.__file__)"
         subprocess.run([str(python), '-I', '-c', code], cwd=root, check=True)
         subprocess.run([str(python), '-I', '-m', 'graph_ics', 'list'], cwd=root, check=True)
+        subprocess.run([str(python), '-m', 'pip', 'install', f'{artifact}[render]'], env=environment, check=True)
+        for suffix in ('png', 'svg'):
+            output = root / f'smoke.{suffix}'
+            subprocess.run([str(python), '-I', '-m', 'graph_ics', 'render', '--example', 'sprawl', '--nodes', '12', '--output', str(output)], cwd=root, check=True)
+            if not output.is_file() or output.stat().st_size == 0:
+                raise RuntimeError(f'Rendering did not produce {output.name}')
+        verify = "from PIL import Image; import xml.etree.ElementTree as ET; from importlib.metadata import version; image = Image.open('smoke.png'); image.verify(); assert ET.parse('smoke.svg').getroot().tag == '{http://www.w3.org/2000/svg}svg'; print('Installed version:', version('graph-graphics'))"
+        subprocess.run([str(python), '-I', '-c', verify], cwd=root, check=True)
         print(f'Installed and checked {artifact.name}', flush=True)
 
 
